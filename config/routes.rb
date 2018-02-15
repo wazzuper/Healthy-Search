@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'registration', to: 'pages#registration', as: :registration
+  get 'login', to: 'pages#login', as: :login
 
   devise_for :patients, path: 'patients',
   controllers: {
