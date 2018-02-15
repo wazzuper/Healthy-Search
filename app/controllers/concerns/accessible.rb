@@ -8,10 +8,10 @@ module Accessible
   def check_user
     if current_doctor
       flash.clear
-      redirect_to(authenticated_doctor_root_path) && return
+      redirect_to(root_path) && return
     elsif current_patient
       flash.clear
-      redirect_to(authenticated_patient_root_path) && return
+      redirect_to(root_path) && return
     end
   end
 end

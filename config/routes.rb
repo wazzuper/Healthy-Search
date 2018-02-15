@@ -1,21 +1,28 @@
 Rails.application.routes.draw do
-  devise_for :patients, path: 'patients', controllers: {
+  root 'pages#home'
+
+  devise_for :patients, path: 'patients',
+  controllers: {
     sessions: 'patients/sessions',
     registrations: 'patients/registrations',
     passwords: 'patients/passwords'
+  },
+  path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    edit: 'profile',
+    sign_up: 'registration'
   }
-
-  # devise_scope :patient do
-  #   get 'sign_in', to: 'patients/sessions#new'
-  # end
 
   devise_for :doctors, path: 'doctors', controllers: {
     sessions: 'doctors/sessions',
     registrations: 'doctors/registrations',
     passwords: 'doctors/passwords'
+  },
+  path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    edit: 'profile',
+    sign_up: 'registration'
   }
-
-  # devise_scope :doctor do
-  #   get 'sign_in', to: 'doctors/sessions#new'
-  # end
 end
