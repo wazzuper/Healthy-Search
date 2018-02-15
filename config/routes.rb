@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  get 'registration', to: 'pages#registration', as: :registration
+
   devise_for :patients, path: 'patients',
   controllers: {
     sessions: 'patients/sessions',
