@@ -1,7 +1,7 @@
 class AddFieldsToDoctor < ActiveRecord::Migration[5.1]
   def change
     add_column :doctors, :full_name, :string
-    add_column :doctors, :phone, :string
+    add_column :doctors, :phone_number, :string
     add_column :doctors, :address, :string
     add_column :doctors, :experience, :integer
     add_column :doctors, :is_cardiologist, :boolean

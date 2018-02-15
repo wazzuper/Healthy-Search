@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180215172626) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "full_name"
-    t.string "phone"
+    t.string "phone_number"
     t.string "address"
     t.integer "experience"
     t.boolean "is_cardiologist"
