@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215172626) do
+ActiveRecord::Schema.define(version: 20180216140641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180215172626) do
     t.boolean "is_ophthalmologist"
     t.boolean "is_pediatrician"
     t.boolean "is_physiatrist"
+    t.text "bio"
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
   end
