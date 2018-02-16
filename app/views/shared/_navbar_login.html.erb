@@ -1,59 +1,47 @@
-<nav>
-  <div class="nav-wrapper light-blue">
-    <div class="row">
-      <div class="col s11">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to 'Healthy Search', root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        
-        <%= link_to 'Healthy Search', root_path, class: 'brand-logo center' %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Something</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Something</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if doctor_signed_in? %>
 
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_doctor.full_name %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Your patients</a>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Edit profile', edit_doctor_registration_path, class: 'dropdown-item' %>
+            <%= link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'dropdown-item' %>      
+          </div>
+        </li>
 
-          <% if current_doctor %>
-            <li class="welcome">Welcome, <%= current_doctor.full_name %></li>
-          <% else %>
-            <li class="welcome">Welcome, <%= current_patient.full_name %></li>
-          <% end %>
+      <% else %>
 
-          <% if current_doctor %>
-            <li><%= link_to 'Edit profile', edit_doctor_registration_path %></li>
-          <% else %>
-            <li><%= link_to 'Edit profile', edit_patient_registration_path %></li>
-          <% end %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_patient.full_name %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Your doctors</a>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Edit profile', edit_patient_registration_path, class: 'dropdown-item' %>
+            <%= link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'dropdown-item' %>      
+          </div>
 
-          <% if current_doctor %>
-            <li><%= link_to 'Log out', destroy_doctor_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'Log out', destroy_patient_session_path, method: :delete %></li>
-          <% end %>
-          
-        </ul>
-
-        <ul class="side-nav" id="mobile-demo">
-          
-          <% if current_doctor %>
-            <li class="welcome mob">Welcome, <%= current_doctor.full_name %></li>
-          <% else %>
-            <li class="welcome mob">Welcome, <%= current_patient.full_name %></li>
-          <% end %>
-
-          <li class="divider"></li>
-
-          <% if current_doctor %>
-            <li><%= link_to 'Edit profile', edit_doctor_registration_path %></li>
-          <% else %>
-            <li><%= link_to 'Edit profile', edit_patient_registration_path %></li>
-          <% end %>
-
-          <% if current_doctor %>
-            <li><%= link_to 'Log out', destroy_doctor_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'Log out', destroy_patient_session_path, method: :delete %></li>
-          <% end %>
-
-        </ul>
-
-      </div>
-    </div>
+      <% end %>
+    </ul>
   </div>
 </nav>

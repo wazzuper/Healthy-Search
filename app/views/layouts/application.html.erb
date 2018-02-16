@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HealthySearch</title>
+    <title>Healthy Search</title>
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -16,22 +16,14 @@
       <%= render 'shared/navbar_login' %>
     <% else %>
       <%= render 'shared/navbar' %>
-    <% end %>
-    
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% end %>    
 
     <div class="container">
       <%= yield %>
-    </div>
-    
-    <!-- <footer>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2018 Healthy Search
-          <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
-        </div>
-      </div>
-    </footer> -->
+    </div>    
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
   </body>
 </html>

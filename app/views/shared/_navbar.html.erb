@@ -1,30 +1,21 @@
-<nav>
-  <div class="nav-wrapper light-blue">
-    <div class="row">
-      <div class="col s11">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to 'Healthy Search', root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        
-        <%= link_to 'Healthy Search', root_path, class: 'brand-logo center' %>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <%= link_to 'Login', login_page_path %>
-          </li>
-          <li>
-            <%= link_to 'Registration', registration_page_path %>
-          </li>
-        </ul>
-
-        <ul class="side-nav" id="mobile-demo">
-          <li>
-            <%= link_to 'Login', login_page_path %>
-          </li>
-          <li>
-            <%= link_to 'Registration', registration_page_path %>
-          </li>
-        </ul>
-
-      </div>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Something</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Something</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item"><%= link_to 'Login', login_page_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Registration', registration_page_path, class: 'nav-link' %></li>
+    </ul>
   </div>
 </nav>

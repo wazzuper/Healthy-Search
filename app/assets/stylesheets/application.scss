@@ -1,30 +1,7 @@
-@import "materialize";
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "bootstrap";
 
-
-.welcome {
-  padding-right: 15px;
-}
-
-.mob {
-  padding-left: 32px;
-  color: #000;
-}
-
-.btn, .btn-large {
-  background-color: #00e676;
-}
-
-.btn:hover, .btn-large:hover {
-  background-color: #00c853;
-}
-
-.footer-copyright {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  color: #f5f5f5;
-  background-color: #ee6e73;
+body {
+  color: #565a5c;
+  background-color: #cfd8dc;
+  font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
