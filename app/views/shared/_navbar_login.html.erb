@@ -1,0 +1,57 @@
+<nav>
+  <div class="nav-wrapper light-blue">
+    <div class="row">
+      <div class="col s11">
+
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        
+        <%= link_to 'Healthy Search', root_path, class: 'brand-logo center' %>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+          <% if current_doctor %>
+            <li>Welcome, <%= current_doctor.email %></li>
+          <% else %>
+            <li>Welcome, <%= current_patient.email %></li>
+          <% end %>
+
+          <% if current_doctor %>
+            <li><%= link_to 'Edit profile', edit_doctor_registration_path %></li>
+          <% else %>
+            <li><%= link_to 'Edit profile', edit_patient_registration_path %></li>
+          <% end %>
+
+          <% if current_doctor %>
+            <li><%= link_to 'Log out', destroy_doctor_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Log out', destroy_patient_session_path, method: :delete %></li>
+          <% end %>
+          
+        </ul>
+
+        <ul class="side-nav" id="mobile-demo">
+          
+          <% if current_doctor %>
+            <li>Welcome, <%= current_doctor.email %></li>
+          <% else %>
+            <li>Welcome, <%= current_patient.email %></li>
+          <% end %>
+
+          <% if current_doctor %>
+            <li><%= link_to 'Edit profile', edit_doctor_registration_path %></li>
+          <% else %>
+            <li><%= link_to 'Edit profile', edit_patient_registration_path %></li>
+          <% end %>
+
+          <% if current_doctor %>
+            <li><%= link_to 'Log out', destroy_doctor_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Log out', destroy_patient_session_path, method: :delete %></li>
+          <% end %>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
