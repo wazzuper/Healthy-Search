@@ -1,2 +1,11 @@
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+
+.btn, .btn-large {
+  background-color: #00e676;
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #00c853;
+}

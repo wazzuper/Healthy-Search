@@ -1,1 +1,47 @@
-<h2>Registration page</h2>
+<div class="row">
+  <h2 class="center-align">Who are you?</h2>
+
+
+  <div class="col m4 center-align offset-m2">
+    
+    <div class="row">
+      <div class="col s12 m12">
+        <h4>Doctor</h4>
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag 'cox.jpg', class: 'circle responsive-img' %>
+            <a href="<%= new_doctor_registration_path %>" class="waves-effect waves-light btn">
+              <i class="material-icons right">chevron_right</i>Sign up as a doctor
+            </a>
+          </div>
+          <div class="card-content">
+            <p>You can sign up as a doctor to help people with their problems. Start working after registration!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col m4 center-align">
+    
+    <div class="row">
+      <div class="col s12 m12">
+        <h4>Patient</h4>
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag 'jd.png', class: 'circle responsive-img' %>
+            <a href="<%= new_patient_registration_path %>" class="waves-effect waves-light btn">
+              <i class="material-icons right">chevron_right</i>Sign up as a patient
+            </a>
+          </div>
+          <div class="card-content">
+            <p>You can sign up as a patient to find your doctor!</p>
+            <p>It's free. Promise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
