@@ -5,3 +5,80 @@ body {
   background-color: #cfd8dc;
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
+
+.container {
+  width: 80%;
+}
+
+// for <h> tags
+
+.heading {
+  margin-bottom: 20px;
+}
+
+.heading-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// card
+
+.card .card-header {
+  color: #fff;
+  background-color: #039be5;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+// buttons
+
+.btn.btn-normal {
+  border: 1px solid #20c997;
+  background-color: #20c997;
+}
+
+.btn.btn-normal:active {
+  outline: none;
+  border-color: #169972;
+  background-color: #169972;
+}
+
+.btn-block {
+  display: block;
+  white-space: normal;
+}
+
+.btn {
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 9px 27px;
+}
+
+// forms
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 2px;
+  height: 4rem;
+}
+
+.form-group input {
+  height: 45px;
+  border: 1px solid #00a699;
+}
+
+.form-group textarea {
+  border: 1px solid #00a699;
+}

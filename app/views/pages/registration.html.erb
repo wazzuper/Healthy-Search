@@ -1,48 +1,33 @@
+<h2 class="heading text-center">Who are you?</h2>
+
 <div class="row">
-  <h2 class="center-align">Who are you?</h2>
 
-
-  <div class="col m4 center-align offset-m2">
+  <div class="col-md-6">
     
-    <div class="row">
-      <div class="col s12 m12">
-        <h4>Doctor</h4>
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag 'cox.jpg' %>
-            <a href="<%= new_doctor_registration_path %>" class="waves-effect waves-light btn">
-              <i class="material-icons right">chevron_right</i>Sign up as a doctor
-            </a>
-          </div>
-          <div class="card-content">
-            <p>You can sign up as a doctor to help people with their problems. Start working after registration!</p>
-          </div>
-        </div>
+    <div class="card text-center center-block" style="width: 30rem;">
+      <%= image_tag 'cox.jpg', class: 'card-img-top' %>
+      <div class="card-body">
+        <h5 class="card-title">Doctor</h5>
+        <p class="card-text">Start working with us and helping people!</p>
+        <p class="card-text">We are looking for you.</p>
+        <%= link_to 'Sign up as a doctor', new_doctor_registration_path, class: 'btn btn-info btn-block' %>
       </div>
     </div>
 
   </div>
 
-  <div class="col m4 center-align">
-    
-    <div class="row">
-      <div class="col s12 m12">
-        <h4>Patient</h4>
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag 'jd.png' %>
-            <a href="<%= new_patient_registration_path %>" class="waves-effect waves-light btn">
-              <i class="material-icons right">chevron_right</i>Sign up as a patient
-            </a>
-          </div>
-          <div class="card-content">
-            <p>You can sign up as a patient to find your doctor!</p>
-            <p>It's free. Promise.</p>
-          </div>
-        </div>
+  <div class="col-md-6">
+
+    <div class="card text-center center-block" style="width: 30rem;">
+      <%= image_tag 'jd.png', class: 'card-img-top' %>
+      <div class="card-body">
+        <h5 class="card-title">Patient</h5>
+        <p class="card-text">You can sign up as a patient to find your doctor!</p>
+        <p class="card-text">It's free. We promise.</p>
+        <%= link_to 'Sign up as a patient', new_patient_registration_path, class: 'btn btn-info btn-block' %>
       </div>
     </div>
-
+    
   </div>
 
 </div>
