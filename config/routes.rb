@@ -28,4 +28,13 @@ Rails.application.routes.draw do
     edit: 'profile',
     sign_up: 'registration'
   }
+
+  resources :doctors, except: [:new, :create, :edit] do
+    member do
+      get 'address'
+      get 'bio'
+      get 'patients'
+      get 'reviews'
+    end
+  end
 end
