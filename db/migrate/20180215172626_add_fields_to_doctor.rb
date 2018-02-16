@@ -3,7 +3,7 @@ class AddFieldsToDoctor < ActiveRecord::Migration[5.1]
     add_column :doctors, :full_name, :string
     add_column :doctors, :phone_number, :string
     add_column :doctors, :address, :string
-    add_column :doctors, :experience, :integer
+    add_column :doctors, :experience, :string
     add_column :doctors, :is_cardiologist, :boolean
     add_column :doctors, :is_dermatologist, :boolean
     add_column :doctors, :is_endocrinologist, :boolean

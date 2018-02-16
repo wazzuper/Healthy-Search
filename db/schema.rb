@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180216140641) do
     t.string "full_name"
     t.string "phone_number"
     t.string "address"
-    t.integer "experience"
+    t.string "experience"
     t.boolean "is_cardiologist"
     t.boolean "is_dermatologist"
     t.boolean "is_endocrinologist"
