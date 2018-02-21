@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'doctors/profile_menu' %>
+  </div>
+
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-header text-center">Address</div>
+
+      <div class="card-body">
+        <div class="container">
+          <%= form_for @doctor do |f| %>
+            
+            <div class="form-group">
+              <%= f.text_field :address, placeholder: 'Type your address here', class: 'form-control' %>
+            </div>
+
+            <%= f.submit 'Update', class: 'btn btn-normal btn-block' %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
