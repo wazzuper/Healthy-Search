@@ -46,6 +46,12 @@ body {
   background-color: #20c997;
 }
 
+.btn.btn-normal:hover {
+  color: #fff;
+  border-color: #20dba4;
+  background-color: #20dba4;
+}
+
 .btn.btn-normal:active {
   outline: none;
   border-color: #169972;
@@ -114,4 +120,15 @@ body {
   position: absolute;
   text-align: center;
   color: #00a699;
+}
+
+// bootstrap alers
+.alert.alert-success {
+  color: #fff;
+  background-color: #20c997;
+}
+
+.alert.alert-danger {
+  color: #fff;
+  background-color: #dc3545;
 }
