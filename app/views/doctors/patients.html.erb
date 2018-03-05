@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'doctors/profile_menu' %>
+  </div>
+
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-header text-center">Your patients</div>
+
+      <div class="card-body">
+        <div class="container">
+
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th>Full name</th>
+                <th>Phone number</th>
+                <th>Visiting date</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @appointments.each do |appointment| %>
+                <tr>
+                  <th><%= appointment.patient.full_name %></th>
+                  <th><%= appointment.patient.phone_number %></th>
+                  <th><%= appointment.appointment_date %></th>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

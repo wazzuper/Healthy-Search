@@ -14,6 +14,10 @@ class DoctorsController < ApplicationController
   def address
   end
 
+  def patients
+    @appointments = Appointment.where(doctor_id: @doctor).order(created_at: :desc)
+  end
+
   def update
     if @doctor.update(doctor_params)
       redirect_to edit_doctor_registration_path(@doctor)
