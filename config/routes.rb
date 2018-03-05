@@ -37,4 +37,6 @@ Rails.application.routes.draw do
       get 'reviews'
     end
   end
+
+  resources :appointments
 end

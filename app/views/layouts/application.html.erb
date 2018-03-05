@@ -16,14 +16,18 @@
       <%= render 'shared/navbar_login' %>
     <% else %>
       <%= render 'shared/navbar' %>
-    <% end %>    
+    <% end %>
 
     <div class="container">
-      <%= yield %>
-    </div>    
+      <% if flash[:notice] %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger"><%= alert %></div>
+      <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
 
   </body>
 </html>
