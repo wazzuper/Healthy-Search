@@ -5,7 +5,7 @@
 
   <div class="col-md-9">
     <div class="card">
-      <div class="card-header text-center">Personal info</div>
+      <div class="card-header text-center"><%= t('patients.profile.info') %></div>
 
       <div class="card-body">
         <div class="container">
@@ -43,9 +43,9 @@
             </div>
           <% end %>
 
-          <h3 class="heading-form text-center">Cancel my account</h3>
+          <h3 class="heading-form text-center"><%= t('patients.profile.delete') %></h3>
 
-          <p class="text-center">Unhappy?</p>
+          <p class="text-center"><%= t('devise.registrations.delete') %></p>
           <%= link_to 'Delete my account', registration_path(resource_name),
                       data: { confirm: "Are you sure?" }, method: :delete,
                       class: 'btn btn-danger btn-block' %>
