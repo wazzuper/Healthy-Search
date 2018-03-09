@@ -1,6 +1,6 @@
 <ul class="list-group">
   <li class="list-group-item disabled">My profile</li>
   <%= link_to 'Personal info', edit_patient_registration_path, class: 'list-group-item list-group-item-action' %>
-  <li class="list-group-item">Your appointments</li>
+  <%= link_to 'Your appointments', appointments_patient_path(current_patient), class: 'list-group-item list-group-item-action' %>
   <li class="list-group-item">Your reviews</li>
 </ul>
