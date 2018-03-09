@@ -38,5 +38,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :patients, except: [:index, :show, :new, :create, :edit] do
+    member do
+      get 'appointments'
+      get 'reviews'
+    end
+  end
+
   resources :appointments
 end
