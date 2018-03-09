@@ -39,6 +39,11 @@ body {
   font-weight: 400;
 }
 
+.list-group-item.disabled {
+  color: #fff;
+  background-color: #039be5;
+}
+
 // buttons
 
 .btn.btn-normal {
