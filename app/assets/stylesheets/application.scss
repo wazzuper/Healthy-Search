@@ -7,8 +7,20 @@ body {
   font-family: "Chivo", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+// nav
+
 .navbar {
   margin-bottom: 20px;
+}
+
+// sticky nav
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .center-block {
@@ -96,37 +108,37 @@ body {
   padding: 9px 27px;
 }
 
-.btn.btn-outline-login {
+.btn.btn-outline-green {
   background-color: transparent;
   background-image: none;
   border-color: #20c997;
 }
 
-.btn.btn-outline-login:hover {
+.btn.btn-outline-green:hover {
   color: #fff;
   background-color: #20c997;
   border-color: #20c997;
 }
 
-.btn.btn-outline-login:active {
+.btn.btn-outline-green:active {
   color: #fff;
   background-color: #169972;
   border-color: #169972;
 }
 
-.btn.btn-outline-reg {
+.btn.btn-outline-blue {
   background-color: transparent;
   background-image: none;
   border-color: #039be5;
 }
 
-.btn.btn-outline-reg:hover {
+.btn.btn-outline-blue:hover {
   color: #fff;
   background-color: #039be5;
   border-color: #039be5;
 }
 
-.btn.btn-outline-reg:active {
+.btn.btn-outline-blue:active {
   color: #fff;
   background-color: #017fbc;
   border-color: #017fbc;

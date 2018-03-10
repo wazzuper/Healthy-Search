@@ -4,8 +4,15 @@
       <h1>Healthy Search</h1>
       <p>Find a trusted doctor to<br/>
         make your life healthy</p>
-      <%= link_to 'Login', login_page_path, class: 'btn btn-outline-login' %>
-      <%= link_to 'Registration', registration_page_path, class: 'btn btn-outline-reg' %>
+      <% if doctor_signed_in? || patient_signed_in? %>
+        <%= link_to 'My profile', edit_doctor_registration_path, class: 'btn btn-outline-green' if current_doctor %>
+        <%= link_to 'My profile', edit_patient_registration_path, class: 'btn btn-outline-green' if current_patient %>
+        <%= link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'btn btn-outline-blue' if current_doctor %>
+        <%= link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'btn btn-outline-blue' if current_patient %>
+      <% else %>
+        <%= link_to 'Log in', login_page_path, class: 'btn btn-outline-green' %>
+        <%= link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue' %>
+      <% end %>
       </div>
     </div>
   </div>
