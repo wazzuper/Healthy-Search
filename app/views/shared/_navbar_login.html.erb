@@ -22,8 +22,7 @@
                   <%= current_doctor.full_name %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to 'Your appointments', patients_doctor_path(current_doctor), class: 'dropdown-item' %>
-              <a class="dropdown-item" href="#">Your patients</a>
+              <%= link_to 'Your patients', patients_doctor_path(current_doctor), class: 'dropdown-item' %>
               <div class="dropdown-divider"></div>
               <%= link_to 'Edit profile', edit_doctor_registration_path, class: 'dropdown-item' %>
               <%= link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'dropdown-item' %>      
