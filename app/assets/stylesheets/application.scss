@@ -2,8 +2,8 @@
 
 body {
   color: #565a5c;
-  background-color: #cfd8dc;
-  font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: #fff;
+  font-family: "Chivo", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .navbar {
@@ -18,6 +18,30 @@ body {
 .container {
   width: 80%;
 }
+
+// bg image
+
+.page-intro {
+  min-height: 500px;
+  max-width: 100%;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.page-intro .container {
+  padding: 100px;
+}
+
+.page-intro .container .d-inline-block {
+  padding: 15px;
+  color: white;
+  background-color: rgba(31,29,15,0.54);
+}
+
+// .page-intro .container .d-inline-block h1, p {
+//   margin: 0;
+// }
 
 // for <h> tags
 
