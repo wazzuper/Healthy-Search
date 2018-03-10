@@ -53,6 +53,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'toastr-rails'
 
 gem 'rubocop', '~> 0.53.0', require: false
 gem 'rubocop-rspec'
