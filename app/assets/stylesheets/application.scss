@@ -7,20 +7,17 @@ body {
   font-family: "Chivo", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-// nav
-
-.navbar {
-  margin-bottom: 20px;
-}
-
 // sticky nav
 
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+nav.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 2px #efefef;
+}
+
+// main nav
+
+#main-nav {
+  margin-bottom: 20px;
 }
 
 .center-block {

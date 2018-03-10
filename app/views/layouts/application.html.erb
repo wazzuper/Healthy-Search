@@ -3,24 +3,14 @@
   <head>
     <title>Healthy Search</title>
     <%= csrf_meta_tags %>
-
     <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
-    <% if doctor_signed_in? || patient_signed_in? %>
-      <%= render 'shared/navbar_login' %>
-    <% else %>
-      <%= render 'shared/navbar' %>
-    <% end %>
-
+    <%= render 'shared/navbar' unless current_page?(root_path) %>
     <%= render 'shared/messages' %>
-
     <%= yield %>
-
   </body>
 </html>
