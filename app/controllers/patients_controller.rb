@@ -11,10 +11,13 @@ class PatientsController < ApplicationController
 
   def update
     if @patient.update(patient_params)
-      redirect_to edit_patient_registration_path
+      flash[:notice] = 'Updated'
     else
-      render 'registrations/edit'
+      flash[:alert] = 'Something went wrong'
     end
+
+    # get back to the current page
+    redirect_back(fallback_location: request.referer)
   end
 
   private
