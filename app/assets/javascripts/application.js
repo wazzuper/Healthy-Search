@@ -19,19 +19,19 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('nav.navbar.navbar-expand-sm.navbar-light').hide();
+  $('#sticky-nav').hide();
 
   var waypoint = new Waypoint({
-    element: document.getElementsByClassName('benefits'),
+    element: document.getElementsByClassName('section-benefits'),
     handler: function(direction) {
       if(direction == 'down') {
-        $('nav.navbar.navbar-expand-sm.navbar-light').show();
-        $('nav.navbar.navbar-expand-sm.navbar-light').addClass('fixed-top')
+        $('#sticky-nav').show();
+        $('#sticky-nav').addClass('fixed-top')
       } else {
-        $('nav.navbar.navbar-expand-sm.navbar-light').hide();
-        $('nav.navbar.navbar-expand-sm.navbar-light').removeClass('fixed-top')
+        $('#sticky-nav').hide();
+        $('#sticky-nav').removeClass('fixed-top')
       }
     },
-    offset: 100
+    offset: 60
   });
 });
