@@ -21,6 +21,12 @@
 $(document).ready(function() {
   $('#sticky-nav').hide();
 
+  if(window.location.pathname == '/') {
+    waypoint();
+  };
+});
+
+const waypoint = () => {
   var waypoint = new Waypoint({
     element: document.getElementsByClassName('section-benefits'),
     handler: function(direction) {
@@ -34,4 +40,4 @@ $(document).ready(function() {
     },
     offset: 60
   });
-});
+}
