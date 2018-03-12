@@ -1,6 +1,7 @@
 <ul class="list-group">
   <li class="list-group-item disabled">Edit my profile</li>
   <%= link_to 'Personal info', edit_doctor_registration_path, class: 'list-group-item list-group-item-action' %>
+  <%= link_to 'Profile photo', photo_upload_doctor_path(current_doctor), class: 'list-group-item list-group-item-action' %>
   <%= link_to 'Address', address_doctor_path(current_doctor), class: 'list-group-item list-group-item-action' %>
   <%= link_to 'Biography', bio_doctor_path(current_doctor), class: 'list-group-item list-group-item-action' %>
   <%= link_to 'Your patients', patients_doctor_path(current_doctor), class: 'list-group-item list-group-item-action' %>

@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   resources :doctors, except: [:new, :create, :edit] do
     member do
       get 'address'
+      get 'photo_upload'
       get 'bio'
       get 'patients'
       get 'reviews'
