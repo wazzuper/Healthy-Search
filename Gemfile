@@ -54,6 +54,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'toastr-rails'
+gem 'carrierwave', '~> 1.0'
 
 gem 'rubocop', '~> 0.53.0', require: false
 gem 'rubocop-rspec'
