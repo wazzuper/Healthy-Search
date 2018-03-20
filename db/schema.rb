@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320124406) do
+ActiveRecord::Schema.define(version: 20180320124848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,14 +42,6 @@ ActiveRecord::Schema.define(version: 20180320124406) do
     t.string "phone_number"
     t.string "address"
     t.string "experience"
-    t.boolean "is_cardiologist"
-    t.boolean "is_dermatologist"
-    t.boolean "is_endocrinologist"
-    t.boolean "is_gastroenterologist"
-    t.boolean "is_oncologist"
-    t.boolean "is_ophthalmologist"
-    t.boolean "is_pediatrician"
-    t.boolean "is_physiatrist"
     t.text "bio"
     t.string "avatar"
     t.index ["email"], name: "index_doctors_on_email", unique: true
