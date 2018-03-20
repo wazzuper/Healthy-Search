@@ -8,30 +8,27 @@
       <div class="card">
         <div class="card-header text-center">Profile photo</div>
         <div class="card-body">
-          <div class="container">
+          <div class="container profile-photo">
 
-            <div class="card" style="width: 18rem;">
-              <% if current_doctor.avatar.url.present? %>
-                <%= image_tag current_doctor.avatar.url, class: 'card-img-top' %>
-              <% end %>
-              <div class="card-body">
-                <%= form_for @doctor, html: { method: :put, multipart: true } do |f| %>
-                  <div class="form-group text-center">
-                    <span class="btn btn-primary">
-                      <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Select Photo
-                      <%= f.file_field :avatar %>
-                      <%= f.hidden_field :avatar_cache %>
-                    </span>
+            <% if current_doctor.avatar.url.present? %>
+              <%= image_tag current_doctor.avatar.url, class: 'profile-photo-edit center-block' %>
+            <% end %>
 
-                    <% if current_doctor.avatar.url.present? %>
-                      <%= f.check_box :remove_avatar %>remove
-                    <% end %>
+            <%= form_for @doctor, html: { method: :put, multipart: true } do |f| %>
+              <div class="form-group text-center">
+                <span class="btn btn-primary">
+                  <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Select Photo
+                  <%= f.file_field :avatar %>
+                  <%= f.hidden_field :avatar_cache %>
+                </span>
+
+                <% if current_doctor.avatar.url.present? %>
+                  <%= f.check_box :remove_avatar %>remove
+                <% end %><br/><hr>
                 
-                    <%= f.submit 'Update', class: 'btn btn-normal' %>
-                  </div>
-                <% end %>
+                <%= f.submit 'Update', class: 'btn btn-normal' %>
               </div>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
