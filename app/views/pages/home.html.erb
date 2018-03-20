@@ -7,7 +7,7 @@
       <p>Find a trusted doctor to<br/>
         make your life healthy</p>
       <% if doctor_signed_in? || patient_signed_in? %>
-        <%= link_to 'My profile', edit_doctor_registration_path, class: 'btn btn-outline-green' if current_doctor %>
+        <%= link_to 'My profile', profile_area_doctor_path(current_doctor), class: 'btn btn-outline-green' if current_doctor %>
         <%= link_to 'My profile', edit_patient_registration_path, class: 'btn btn-outline-green' if current_patient %>
         <%= link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'btn btn-outline-blue' if current_doctor %>
         <%= link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'btn btn-outline-blue' if current_patient %>
