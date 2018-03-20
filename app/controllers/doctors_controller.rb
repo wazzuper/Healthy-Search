@@ -17,7 +17,7 @@ class DoctorsController < ApplicationController
   def photo_upload
   end
 
-  def patients
+  def appointments
     @appointments = Appointment.where(doctor_id: @doctor).order(created_at: :desc)
   end
 

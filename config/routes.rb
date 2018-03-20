@@ -34,7 +34,7 @@ Rails.application.routes.draw do
       get 'address'
       get 'photo_upload'
       get 'bio'
-      get 'patients'
+      get 'appointments'
       get 'reviews'
     end
   end
