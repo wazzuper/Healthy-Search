@@ -228,3 +228,21 @@ nav.navbar {
   text-align: center;
   color: #00a699;
 }
+
+
+// photo upload for doctor
+
+span.btn.btn-primary {
+  border: none;
+  width: 35%;
+  position: relative;
+  overflow: hidden;
+}
+
+input[type=file] {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}

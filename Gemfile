@@ -37,6 +37,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rubocop', '~> 0.53.0', require: false
+  gem 'rubocop-rspec'
 end
 
 group :development do
@@ -55,6 +57,3 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'toastr-rails'
 gem 'carrierwave', '~> 1.0'
-
-gem 'rubocop', '~> 0.53.0', require: false
-gem 'rubocop-rspec'

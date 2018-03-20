@@ -8,37 +8,30 @@
       <div class="card">
         <div class="card-header text-center">Profile photo</div>
         <div class="card-body">
-          <div class="row container">
+          <div class="container">
 
-            <div class="col-md-4">
-              <%= form_for @doctor, html: { method: :put, multipart: true } do |f| %>
-                <div class="form-group">
-                  <%= f.label :avatar do %>
-                    <%= f.file_field :avatar %>
-                    <%= f.hidden_field :avatar_cache %>
-                  <% end %>
-
-                  <% if current_doctor.avatar.url.present? %>
-                    <%= image_tag current_doctor.avatar.url, class: 'card-img-top' %>
-                    <%= f.label :remove_avatar do %>
-                      <%= f.check_box :remove_avatar %>
-                      remove
-                    <% end %>
-                  <% end %>
-
-                  <%= f.submit 'Update', class: 'btn btn-normal btn-block' %>
-                </div>
+            <div class="card" style="width: 18rem;">
+              <% if current_doctor.avatar.url.present? %>
+                <%= image_tag current_doctor.avatar.url, class: 'card-img-top' %>
               <% end %>
-            </div>
+              <div class="card-body">
+                <%= form_for @doctor, html: { method: :put, multipart: true } do |f| %>
+                  <div class="form-group text-center">
+                    <span class="btn btn-primary">
+                      <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i> Select Photo
+                      <%= f.file_field :avatar %>
+                      <%= f.hidden_field :avatar_cache %>
+                    </span>
 
-            <div class="col-md-8">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+                    <% if current_doctor.avatar.url.present? %>
+                      <%= f.check_box :remove_avatar %>remove
+                    <% end %>
+                
+                    <%= f.submit 'Update', class: 'btn btn-normal' %>
+                  </div>
+                <% end %>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
