@@ -17,7 +17,7 @@ class DoctorsController < ApplicationController
   def photo_upload
   end
 
-  def appointments
+  def profile_area
     @appointments = Appointment.where(doctor_id: @doctor).order(created_at: :desc)
   end
 

@@ -34,8 +34,8 @@ Rails.application.routes.draw do
       get 'address'
       get 'photo_upload'
       get 'bio'
-      get 'appointments'
       get 'reviews'
+      get 'profile_area'
     end
   end
 
