@@ -4,21 +4,20 @@
       = render 'profile_settings'
     .col-md-8
       .card
-        .card-header.text-center Specialization and experience
+        .card-header.text-center = t('doctors.profile.spec_title')
         .card-body
           .container
             = form_for @doctor do |f|
               .row.form-group
                 .col-md-12
-                  = f.label :specialization
+                  = f.label :specialization_id
                   = f.select :specialization_id, options_from_collection_for_select(@specializations, :id, :name,
-                    selected: @doctor.specialization_id), prompt: 'Choose your specialization', class: 'form-control'
+                    selected: @doctor.specialization_id), class: 'form-control'
               .row.form-group
                 .col-md-12
                   = f.label :eperience
                   = f.select :experience, [['0 - 5 years', '0 - 5 years'], ['5 - 10 years', '5 - 10 years'],
                     ['10 - 15 years', '10 - 15 years'], ['15+ years', '15+ years']],
-                    id: :experience, prompt: 'Experience (years)',
-                    class: 'form-control'
+                    id: :experience, class: 'form-control'
               .actions
-                = f.submit 'Update', class: 'btn btn-normal btn-block'
+                = f.submit t('doctors.profile.update'), class: 'btn btn-normal btn-block'

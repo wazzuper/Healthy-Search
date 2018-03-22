@@ -13,3 +13,30 @@ en:
     profile:
       info: 'Personal info'
       delete: 'Delete my account'
+  doctors:
+    profile:
+      appointments: 'Appointments'
+      bio: 'Biography'
+      bio_label: 'Your story, what you can do, experience'
+      spec_and_exp: 'Specialization and experience'
+      address: 'Address'
+      reviews: 'Reviews about you'
+      settings: 'Profile settings'
+      spec_title: 'Specialization and experience'
+      update: 'Update'
+      table_name: 'Full name'
+      table_phone: 'Phone number'
+      table_date: 'Visiting date'
+      photo_title: 'Profile photo'
+      photo_select: 'Select photo'
+      photo_remove: 'Remove?'
+    account:
+      title: 'Account'
+      settings: 'Settings'
+  forms:
+    type: 'Type here'
+  login_page:
+    doctor: 'Log in as a doctor'
+    log_in: 'Log in'
+    email: 'Email'
+    password: 'Password'

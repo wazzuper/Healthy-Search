@@ -1,24 +1,24 @@
 .container
   .row
     .col-md-4.text-center
-      = render 'account_settings'
+      = render 'profile_settings'
     .col-md-8
       .card
-        .card-header.text-center Profile photo
+        .card-header.text-center = t('doctors.profile.photo_title')
         .card-body
           .container.profile-photo
-            - if current_doctor.avatar.url.present?
+            - if current_doctor.avatar.present?
               = image_tag current_doctor.avatar.url, class: 'profile-photo-edit center-block'
             = form_for @doctor, html: { method: :put, multipart: true } do |f|
               .form-group.text-center
                 span.btn.btn-primary
                   i.fas.fa-cloud-upload-alt aria-hidden="true" 
-                  | Select Photo
+                  = t('doctors.profile.photo_select')
                   = f.file_field :avatar
                   = f.hidden_field :avatar_cache
                 - if current_doctor.avatar.url.present?
                   = f.check_box :remove_avatar
-                  | remove
+                  = t('doctors.profile.photo_remove')
                 br/
                 hr/
-                = f.submit 'Update', class: 'btn btn-normal'
+                = f.submit t('doctors.profile.update'), class: 'btn btn-normal'

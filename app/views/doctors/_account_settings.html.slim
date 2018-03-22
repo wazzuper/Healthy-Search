@@ -1,4 +1,3 @@
 ul.list-group
-  li.list-group-item.disabled Edit my account
-  = link_to 'Personal info', edit_doctor_registration_path, class: 'list-group-item list-group-item-action'
-  = link_to 'Profile photo', photo_upload_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
+  li.list-group-item.disabled = t('doctors.account.title')
+  = link_to t('doctors.account.settings'), edit_doctor_registration_path, class: 'list-group-item list-group-item-action'

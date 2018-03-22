@@ -3,14 +3,14 @@
     .col-md-4.text-center
       = render 'profile_settings'
     .col-md-8.text-center
-      h2 Appointments
+      h2 = t('doctors.profile.appointments')
       .container
         table.table
           thead.thead-light
             tr
-              th Full name
-              th Phone number
-              th Visiting date
+              th= t('doctors.profile.table_name')
+              th= t('doctors.profile.table_phone')
+              th= t('doctors.profile.table_date')
           tbody
             - @appointments.each do |appointment|
               tr
