@@ -1,0 +1,22 @@
+nav#main-nav.navbar.navbar-expand-sm.navbar-light
+  .container
+    = link_to 'Healthy Search', root_path, class: 'navbar-brand'
+    ul.nav.navbar-nav
+      - if doctor_signed_in?
+        li.nav-item.dropdown
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" 
+            | Welcome, #{current_doctor.email}
+          .dropdown-menu aria-labelledby="navbarDropdownMenuLink" 
+            = link_to 'My profile', profile_area_doctor_path(current_doctor), class: 'dropdown-item'
+            = link_to 'Settings', edit_doctor_registration_path, class: 'dropdown-item'
+            = link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'dropdown-item'
+      - elsif patient_signed_in?
+        li.nav-item.dropdown
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" 
+            | Welcome, #{current_patient.email}
+          .dropdown-menu aria-labelledby="navbarDropdownMenuLink" 
+            = link_to 'Settings', edit_patient_registration_path, class: 'dropdown-item'
+            = link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'dropdown-item'
+      - else
+        li.nav-item= link_to 'Log in', login_page_path, class: 'nav-link'
+        li.nav-item= link_to 'Registration', registration_page_path, class: 'nav-link'

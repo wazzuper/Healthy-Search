@@ -1,0 +1,19 @@
+.container
+  h2.heading.text-center Who are you?
+  .row
+    .col-md-6
+      .card.text-center.center-block style=("width: 30rem;") 
+        = image_tag 'cox.jpg', class: 'card-img-top'
+        .card-body
+          h5.card-title Doctor
+          p.card-text Start working with us and helping people!
+          p.card-text We are looking for you.
+          = link_to 'Sign up as a doctor', new_doctor_registration_path, class: 'btn btn-normal btn-block'
+    .col-md-6
+      .card.text-center.center-block style=("width: 30rem;") 
+        = image_tag 'jd.png', class: 'card-img-top'
+        .card-body
+          h5.card-title Patient
+          p.card-text You can sign up as a patient to find your doctor!
+          p.card-text It's free. We promise.
+          = link_to 'Sign up as a patient', new_patient_registration_path, class: 'btn btn-normal btn-block'

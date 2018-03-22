@@ -1,0 +1,19 @@
+.container
+  h2.heading.text-center Log in page
+  .row
+    .col-md-6
+      .card.text-center.center-block style=("width: 30rem;") 
+        = image_tag 'cox.jpg', class: 'card-img-top'
+        .card-body
+          h5.card-title Doctor
+          p.card-text Are you a doctor?
+          p.card-text Alright, log in here!
+          = link_to 'Log in as a doctor', new_doctor_session_path, class: 'btn btn-normal btn-block'
+    .col-md-6
+      .card.text-center.center-block style=("width: 30rem;") 
+        = image_tag 'jd.png', class: 'card-img-top'
+        .card-body
+          h5.card-title Patient
+          p.card-text Are you a patient?
+          p.card-text Alright, log in here!
+          = link_to 'Log in as a patient', new_patient_session_path, class: 'btn btn-normal btn-block'

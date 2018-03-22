@@ -1,0 +1,6 @@
+ul.list-group
+  li.list-group-item.disabled= t('patients.profile_menu.my_profile')
+  = link_to t('patients.profile_menu.personal_info'), edit_patient_registration_path, class: 'list-group-item list-group-item-action'
+  = link_to t('patients.profile_menu.appointments'), appointments_patient_path(current_patient),
+    class: 'list-group-item list-group-item-action'
+  li.list-group-item= t('patients.profile_menu.reviews')

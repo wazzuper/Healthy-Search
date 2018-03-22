@@ -1,0 +1,7 @@
+= link_to 'Appointments', profile_area_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
+ul.list-group
+  li.list-group-item.disabled Profile settings
+  = link_to 'Biography', bio_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
+  = link_to 'Address', address_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
+hr/
+h4 Reviews about you

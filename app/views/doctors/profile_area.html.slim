@@ -1,0 +1,19 @@
+.container
+  .row
+    .col-md-4.text-center
+      = render 'profile_settings'
+    .col-md-8.text-center
+      h2 Appointments
+      .container
+        table.table
+          thead.thead-light
+            tr
+              th Full name
+              th Phone number
+              th Visiting date
+          tbody
+            - @appointments.each do |appointment|
+              tr
+                th= appointment.patient.full_name
+                th= appointment.patient.phone_number
+                th= appointment.date

@@ -1,0 +1,34 @@
+.container
+  .row
+    .col-md-3
+      = render 'patients/profile_menu'
+    .col-md-9
+      .card
+        .card-header.text-center= t('patients.profile.info')
+        .card-body
+          .container
+            = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+              = render 'shared/devise_messages'
+              .form-group
+                = f.text_field :full_name, autofocus: true, placeholder: 'Full name', class: 'form-control'
+              .form-group
+                = f.text_field :phone_number, placeholder: 'Phone', class: 'form-control'
+              .form-group
+                = f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form-control'
+              - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                div
+                  | Currently waiting confirmation for: #{resource.unconfirmed_email}
+              .form-group
+                = f.password_field :password, autocomplete: "off", placeholder: 'Password (leave blank if you do not want to change it)',
+                  class: 'form-control'
+              .form-group
+                = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Password confirmation',
+                  class: 'form-control'
+              .actions
+                = f.submit 'Update', class: 'btn btn-normal btn-block'
+            h3.heading-form.text-center= t('patients.profile.delete')
+            p.text-center= t('devise.registrations.delete')
+            = link_to 'Delete my account', registration_path(resource_name),
+              data: { confirm: "Are you sure?" }, method: :delete,
+              class: 'btn btn-danger btn-block'
+            = link_to 'Back', :back, class: 'btn btn-normal btn-block'

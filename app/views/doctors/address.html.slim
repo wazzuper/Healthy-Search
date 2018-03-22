@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-md-4.text-center
+      = render 'profile_settings'
+    .col-md-8
+      .card
+        .card-header.text-center Address
+        .card-body
+          .container
+            = form_for @doctor do |f|
+              .form-group
+                = f.text_field :address, placeholder: 'Type your address here', class: 'form-control'
+              = f.submit 'Update', class: 'btn btn-normal btn-block'

@@ -1,0 +1,44 @@
+= render 'shared/navbar_sticky'
+.page-intro
+  .container
+    .d-inline-block
+      h1 Healthy Search
+      p
+        | Find a trusted doctor to
+        br/
+        | make your life healthy
+      - if doctor_signed_in? || patient_signed_in?
+        = link_to 'My profile', profile_area_doctor_path(current_doctor), class: 'btn btn-outline-green' if current_doctor
+        = link_to 'My profile', edit_patient_registration_path, class: 'btn btn-outline-green' if current_patient
+        = link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'btn btn-outline-blue' if current_doctor
+        = link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'btn btn-outline-blue' if current_patient
+      - else
+        = link_to 'Log in', login_page_path, class: 'btn btn-outline-green'
+        = link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue'
+section.section-benefits
+  .container
+    h2.heading.text-center Why Healthy Search is so cool?
+    nav
+      #nav-tab.nav.nav-tabs.nav-justified role="tablist" 
+        a#nav-home-tab.nav-item.nav-link.active aria-controls="nav-home" aria-selected="true" data-toggle="tab" href="#nav-home" role="tab"  Home
+        a#nav-profile-tab.nav-item.nav-link aria-controls="nav-profile" aria-selected="false" data-toggle="tab" href="#nav-profile" role="tab"  Profile
+        a#nav-contact-tab.nav-item.nav-link aria-controls="nav-contact" aria-selected="false" data-toggle="tab" href="#nav-contact" role="tab"  Contact
+    #nav-tabContent.tab-content.justify-content-center
+      #nav-home.tab-pane.fade.show.active aria-labelledby="nav-home-tab" role="tabpanel" 
+        .card style=("width: 18rem;") 
+          .card-body
+            h5.card-title Card title
+            h6.card-subtitle.mb-2.text-muted Card subtitle
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            a.card-link href="#"  Card link
+            a.card-link href="#"  Another link
+      #nav-profile.tab-pane.fade aria-labelledby="nav-profile-tab" role="tabpanel" 
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
+      #nav-contact.tab-pane.fade aria-labelledby="nav-contact-tab" role="tabpanel" 
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
+hr/
+section.section-doctors
+  .container
+    h2.heading.text-center List of our best doctors
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
