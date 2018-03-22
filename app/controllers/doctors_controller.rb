@@ -21,6 +21,10 @@ class DoctorsController < ApplicationController
     @appointments = Appointment.where(doctor_id: @doctor).order(created_at: :desc)
   end
 
+  def specialization
+    @specializations = Specialization.all
+  end
+
   def update
     if @doctor.update(doctor_params)
       flash[:notice] = 'Updated'
@@ -39,10 +43,7 @@ class DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:full_name, :phone_number, :email, :experience, :bio,
-                                    :is_cardiologist, :is_dermatologist, :is_endocrinologist,
-                                    :is_gastroenterologist, :is_oncologist, :is_ophthalmologist,
-                                    :is_pediatrician, :is_physiatrist, :address, :avatar,
-                                    :remove_avatar, :avatar_cache)
+    params.require(:doctor).permit %i[full_name phone_number email experience bio address specialization_id
+      avatar remove_avatar avatar_cache]
   end
 end

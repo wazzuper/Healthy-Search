@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       get 'bio'
       get 'reviews'
       get 'profile_area'
+      get 'specialization'
     end
   end
 
