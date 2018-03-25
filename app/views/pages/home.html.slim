@@ -19,9 +19,9 @@ header
             = link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue'
       .row
         .search-box.col-md-8
-          = form_for specializations_path do |f|
+          = form_for specializations_path, method: :get do |f|
             .search-field
-              = f.text_field 'Example', placeholder: 'Type specialization'
+              = f.text_field :search, placeholder: 'Type specialization'
               i.fas.fa-search.fa-1x aria-hidden="true"
             = f.submit 'Search', class: 'btn-search'
 section.section-benefits

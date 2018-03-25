@@ -8,4 +8,7 @@ class PagesController < ApplicationController
 
   def login
   end
+
+  def search
+  end
 end
