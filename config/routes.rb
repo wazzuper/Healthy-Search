@@ -48,4 +48,5 @@ Rails.application.routes.draw do
   end
 
   resources :appointments
+  resources :specializations
 end

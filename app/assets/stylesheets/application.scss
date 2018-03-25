@@ -43,10 +43,66 @@ nav.navbar {
   padding: 100px;
 }
 
-.page-intro .container .d-inline-block {
+.page-intro .container .row .welcome-box.col-md-4 {
   padding: 15px;
   color: white;
+  box-shadow: 1px 1px 15px #444;
   background-color: rgba(31,29,15,0.54);
+}
+
+// search
+
+.row .search-box.col-md-8 {
+  margin-top: 30px;
+  padding: 0px;
+}
+
+.search-box .search-field input[type=text] {
+  padding-left: 29px;
+  height: 26px;
+  width: 35%;
+  border: none;
+  box-shadow: 1px 1px 15px #444;
+  background-color: rgba(31,29,15,0.54);
+  color: white;
+}
+
+.search-box .search-field input[type=text]::placeholder {
+  color: white;
+}
+
+.search-box .search-field input[type=text]:focus {
+  color: white;
+}
+
+.search-field {
+  position: relative;
+}
+
+.search-box .search-field i {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 1px;
+  color: white;
+}
+
+.btn-search {
+  position: absolute;
+  top: 0px;
+  right: 323px;
+  color: white;
+  border: none;
+  box-shadow: 1px 1px 15px #444;
+  background-color: rgba(31,29,15,0.54);
+}
+
+.btn-search:hover {
+  background-color: #20c997;
+}
+
+.btn-search:active {
+  background-color: #169972;
 }
 
 // benefits
@@ -56,6 +112,10 @@ nav.navbar {
 }
 
 .section-doctors {
+  padding: 80px 0;
+}
+
+.section-specializations {
   padding: 80px 0;
 }
 
