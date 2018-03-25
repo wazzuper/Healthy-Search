@@ -9,4 +9,8 @@ class Doctor < ApplicationRecord
   has_many :appointments
   has_many :patients, through: :appointments
   belongs_to :specialization
+
+  def specialization_name(spec_id)
+    Specialization.find_by_id(spec_id).name
+  end
 end
