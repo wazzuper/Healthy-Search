@@ -1,5 +1,9 @@
 class SpecializationsController < ApplicationController
   def index
-    @doctors = Doctor.all
+    if params[:search].eql?('')
+      @doctors = Doctor.all
+    else
+      @specialization = Specialization.find_by_name(params[:search])
+    end
   end
 end

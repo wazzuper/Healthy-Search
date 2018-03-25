@@ -1,7 +1,8 @@
 .container
   h2.heading.text-center Search page
   .row
-    - @doctors.each do |doctor|
+    /= render partial: 'all_doctors', locals: { doctors: @doctors }
+    - @specialization.doctors.each do |doctor|
       .col-md-12
         .card
           .card-header
