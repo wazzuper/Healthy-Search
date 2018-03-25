@@ -12,3 +12,11 @@ require 'open-uri'
 #   word = word_to_arr[0].strip
 #   Specialization.create(name: word)
 # end
+
+# 50.times do
+#   spec_id = rand(106..157)
+#   Doctor.create(full_name: Faker::Name.name,
+#                 email: Faker::Internet.safe_email,
+#                 password: '123456',
+#                 specialization_id: spec_id)
+# end
