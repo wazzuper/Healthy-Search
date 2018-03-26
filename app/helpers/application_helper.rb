@@ -1,7 +1,7 @@
 module ApplicationHelper
   def doctor_avatar(doctor)
     if doctor.avatar.present?
-      current_doctor.avatar
+      doctor.avatar
     else
       'default_avatar.svg'
     end
