@@ -1,11 +1,7 @@
 .container
   h2.heading.text-center Search page
   .row
-    /= render partial: 'all_doctors', locals: { doctors: @doctors }
-    - @specialization.doctors.each do |doctor|
-      .col-md-12
-        .card
-          .card-header
-            = "#{doctor.full_name}, #{doctor.specialization_name(doctor.specialization_id)}"
-          .card.card-body
-            = doctor.phone_number
+    - if @filter.eql?('')
+      = render partial: 'all_doctors', locals: { doctors: @doctors }
+    - else
+      = render partial: 'certain_specialization', locals: { specialization: @specialization }
