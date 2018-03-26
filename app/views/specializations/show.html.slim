@@ -1,0 +1,4 @@
+.container
+  h2.heading.text-center = @specialization.name
+  .row
+    = render partial: 'certain_specialization', locals: { specialization: @specialization }

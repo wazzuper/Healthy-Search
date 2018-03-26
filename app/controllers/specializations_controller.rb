@@ -8,4 +8,8 @@ class SpecializationsController < ApplicationController
       @specialization = Specialization.find_by_name(@filter)
     end
   end
+
+  def show
+    @specialization = Specialization.find(params[:id])
+  end
 end

@@ -55,5 +55,7 @@ hr/
 section.section-specializations
   .container
     h2.heading.text-center Doctors specializations
-    - @specializations.each do |specialization|
-        = specialization.name
+    .row
+      - @specializations.each do |specialization|
+        .col-md-3
+          = link_to specialization.name, specialization_path(specialization)
