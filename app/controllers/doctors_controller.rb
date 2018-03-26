@@ -1,9 +1,6 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, except: [:index]
+  before_action :set_doctor
   before_action :authenticate_doctor!, except: [:show]
-
-  def index
-  end
 
   def show
   end
