@@ -4,6 +4,7 @@ ul.list-group
   = link_to t('doctors.profile.bio'), bio_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
   = link_to t('doctors.profile.spec_and_exp'), specialization_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
   = link_to t('doctors.profile.address'), address_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
+  = link_to t('doctors.profile.price'), price_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
   = link_to t('doctors.profile.photo_title'), photo_upload_doctor_path(current_doctor), class: 'list-group-item list-group-item-action'
 hr/
 h4 = t('doctors.profile.reviews')

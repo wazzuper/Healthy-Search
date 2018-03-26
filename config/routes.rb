@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       get 'reviews'
       get 'profile_area'
       get 'specialization'
+      get 'price'
     end
   end
 

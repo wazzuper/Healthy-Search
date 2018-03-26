@@ -20,6 +20,7 @@ en:
       bio_label: 'Your story, what you can do, experience'
       spec_and_exp: 'Specialization and experience'
       address: 'Address'
+      price: 'Price'
       reviews: 'Reviews about you'
       settings: 'Profile settings'
       spec_title: 'Specialization and experience'

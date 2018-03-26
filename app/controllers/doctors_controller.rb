@@ -22,6 +22,9 @@ class DoctorsController < ApplicationController
     @specializations = Specialization.all
   end
 
+  def price
+  end
+
   def update
     if @doctor.update(doctor_params)
       flash[:notice] = 'Updated'
@@ -41,6 +44,6 @@ class DoctorsController < ApplicationController
 
   def doctor_params
     params.require(:doctor).permit %i[full_name phone_number email experience bio address specialization_id
-      avatar remove_avatar avatar_cache]
+      avatar remove_avatar avatar_cache price]
   end
 end
