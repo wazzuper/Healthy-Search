@@ -58,4 +58,4 @@ section.section-specializations
     .row
       - @specializations.each do |specialization|
         .col-md-3
-          = link_to specialization.name, specialization_path(specialization)
+          = link_to "#{specialization.name} (#{specialization.doctors.count})", specialization_path(specialization)
