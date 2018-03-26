@@ -1,4 +1,4 @@
 .container
-  h2.heading.text-center = @specialization.name
+  h2.heading.text-center Find by certain specialization
   .row
-    = render partial: 'certain_specialization', locals: { specialization: @specialization }
+    = render partial: 'all_doctors', locals: { doctors: @doctors.paginate(page: @page_params, per_page: 10) }

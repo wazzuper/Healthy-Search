@@ -1,15 +1,23 @@
 class SpecializationsController < ApplicationController
-  def index
-    @filter = params[:search]
+  before_action :set_page_params
 
-    if @filter.eql?('')
+  def index
+    filter = params[:search]
+
+    if filter.eql?('')
       @doctors = Doctor.all
     else
-      @specialization = Specialization.find_by_name(@filter)
+      @doctors = Specialization.find_by_name(filter).doctors
     end
   end
 
   def show
-    @specialization = Specialization.find(params[:id])
+    @doctors = Specialization.find(params[:id]).doctors
+  end
+
+  private
+
+  def set_page_params
+    @page_params = params[:page]
   end
 end
