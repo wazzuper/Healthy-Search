@@ -15,7 +15,7 @@
                     selected: @doctor.specialization_id), class: 'form-control'
               .row.form-group
                 .col-md-12
-                  = f.label :experience
-                  = f.number_field :experience, class: 'form-control'
+                  = f.label :experience, 'Experience (in years)'
+                  = f.number_field :experience, in: 1..45, class: 'form-control'
               .actions
                 = f.submit t('doctors.profile.update'), class: 'btn btn-normal btn-block'
