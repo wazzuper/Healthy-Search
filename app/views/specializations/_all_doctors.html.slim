@@ -1,10 +1,18 @@
 - doctors.each do |doctor|
   .col-md-12
-    .card
-      .card-header
-        = "#{doctor.full_name}, #{doctor.specialization_name(doctor.specialization_id)}"
-      .card.card-body
-        = doctor.phone_number
-        = doctor.email
+    .jumbotron.row
+      .col-md-3.text-center
+        = image_tag doctor_avatar(current_doctor), class: 'rounded-circle avatar-card'
+        p Reviews here
+      .col-md-6
+        p.lead = doctor.full_name
+        p.small
+          = doctor.specialization_name(doctor.specialization_id)
+          br/
+          | Experience
+        p Price
+        p Phone number
+      .col-md-3
+        p Appointment here
 .flickr_pagination.center-block
   = will_paginate doctors
