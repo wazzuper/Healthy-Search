@@ -1,2 +1,12 @@
 .container
+  = month_calendar do |date|
+    = date
+    = link_to 'Main page', root_path, class: 'btn btn-normal' if date >= Date.today
   = link_to 'Back', :back
+
+javascript:
+  var pastElementsArray = document.getElementsByClassName('past');
+  for (var i = 0; i < pastElementsArray.length; i++) {
+    pastElementsArray[i].style.background = "#ddd";
+    pastElementsArray[i].style.border = "1px solid #eee";
+  };
