@@ -18,5 +18,6 @@
           = doctor.phone_number
       .col-md-4.appointments
         p Appointment here
+        = link_to 'Book here', new_appointment_path, class: 'btn btn-normal'
 .flickr_pagination.center-block
   = will_paginate doctors

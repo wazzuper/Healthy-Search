@@ -48,6 +48,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :appointments
+  resources :appointments, only: [:new, :create, :show]
   resources :specializations
 end
