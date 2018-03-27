@@ -1,18 +1,22 @@
 - doctors.each do |doctor|
-  .col-md-12
+  .col-md-12.text-center
     .jumbotron.row
-      .col-md-3.text-center
-        = image_tag doctor_avatar(doctor), class: 'rounded-circle avatar-card'
+      .col-md-3
+        .crop
+          = image_tag doctor_avatar(doctor)
         p Reviews here
-      .col-md-6
+      .col-md-5
         p.lead = doctor.full_name
         p.small
           = doctor.specialization_name(doctor.specialization_id)
           br/
-          | Experience
-        p Price
-        p Phone number
-      .col-md-3
+          = "Experience: #{doctor.experience} years"
+        p.lead = "Price: $#{doctor.price}"
+        p
+          | Phone number:
+          br/
+          = doctor.phone_number
+      .col-md-4.appointments
         p Appointment here
 .flickr_pagination.center-block
   = will_paginate doctors

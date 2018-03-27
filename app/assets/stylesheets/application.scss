@@ -366,6 +366,17 @@ input[type=file] {
 
 // doctors cards (search page)
 
-.avatar-card {
-  width: 50%;
+.crop {
+    height: 200px;
+    overflow: hidden;
+}
+
+.crop img {
+    height: auto;
+    width: 100%;
+    border-radius: 15px 50px 30px 5px;
+}
+
+.appointments {
+  border-left: 1px dashed #039be5;
 }
