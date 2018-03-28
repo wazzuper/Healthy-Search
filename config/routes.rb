@@ -38,7 +38,9 @@ Rails.application.routes.draw do
       get 'profile_area'
       get 'specialization'
       get 'price'
+      get 'visiting_hours'
     end
+    resources :visiting_hours, only: [:create]
   end
 
   resources :patients, except: [:index, :show, :new, :create, :edit] do

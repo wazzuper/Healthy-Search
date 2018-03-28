@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-md-4.text-center
+      = render 'profile_settings'
+    .col-md-8
+      .card
+        .card-header.text-center = t('doctors.profile.hours_title', default: 'Visiting hours')
+        .card-body
+          .container
+            p.text-center
+              | Add visiting hours for patients
+              br/
+              | (you can remove or change them at any time)
+            = form_for [@doctor, @doctor.visiting_hours.build] do |f|
+              .row
+                .col-md-4
+                  = f.label :time
+                  span.time
+                    = f.time_field :time
+                .col-md-8
+                  = f.submit 'Add', class: 'btn btn-normal btn-block'
+            hr/
+            p.lead.text-center Already added hours

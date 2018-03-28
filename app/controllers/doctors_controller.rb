@@ -26,6 +26,9 @@ class DoctorsController < ApplicationController
   def price
   end
 
+  def visiting_hours
+  end
+
   def update
     if @doctor.update(doctor_params)
       flash[:notice] = 'Updated'
