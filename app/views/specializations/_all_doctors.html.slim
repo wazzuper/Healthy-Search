@@ -1,6 +1,6 @@
 - doctors.each do |doctor|
   .col-md-12.text-center
-    .jumbotron.row
+    .jumbotron.row.doctor-card
       .col-md-3
         .crop
           = image_tag doctor_avatar(doctor)
@@ -13,11 +13,16 @@
           = "Experience: #{doctor.experience} years"
         p.lead = "Price: $#{doctor.price}"
         p
-          | Phone number:
+          <strong>Phone number:</strong>
           br/
           = doctor.phone_number
       .col-md-4.appointments
-        p Appointment here
+        p Make an appointment
         = link_to 'Book here', new_appointment_path, class: 'btn btn-normal'
+        .address
+          p
+            <strong>Address:</strong>
+            br/
+            = doctor.address
 .flickr_pagination.center-block
   = will_paginate doctors

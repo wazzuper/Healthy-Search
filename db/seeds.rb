@@ -32,5 +32,6 @@ require 'open-uri'
 #                 specialization_id: spec_id,
 #                 experience: exp,
 #                 price: price,
-#                 phone_number: Faker::PhoneNumber.phone_number)
+#                 phone_number: Faker::PhoneNumber.phone_number,
+#                 address: "#{Faker::Address.city}, #{Faker::Address.street_address}")
 # end

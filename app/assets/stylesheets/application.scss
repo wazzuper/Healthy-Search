@@ -376,19 +376,27 @@ input[type=file] {
 
 // doctors cards (search page)
 
+.doctor-card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .crop {
-    height: 200px;
-    overflow: hidden;
+  height: 200px;
+  overflow: hidden;
 }
 
 .crop img {
-    height: auto;
-    width: 100%;
-    border-radius: 15px 50px 30px 5px;
+  height: auto;
+  width: 100%;
+  border-radius: 15px 50px 30px 5px;
 }
 
 .appointments {
-  border-left: 1px dashed #039be5;
+  border-left: 1px solid #d7d7d7;
+}
+
+.address {
+  margin-top: 25px;
 }
 
 // new appointments
