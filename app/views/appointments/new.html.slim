@@ -2,13 +2,12 @@
   = month_calendar do |date|
     = date.strftime("%-d")
     br/
-    / = link_to 'Main page', root_path, class: 'btn-check-time' if date >= Date.today
     - if date >= Date.today
-      span.btn-check-time data-toggle="modal" data-target="#exampleModalCenter" data-date-for-modal="#{date}"
+      span.btn-check-time data-toggle="modal" data-target="#modalForAppointment" data-date-for-modal="#{date}"
         | Check time
-  = link_to 'Back', :back
+  = link_to 'Back', :back, class: 'btn btn-back'
 
-.modal.fade#exampleModalCenter tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+.modal.fade#modalForAppointment tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
   .modal-dialog.modal-dialog-centered role="document"
     .modal-content
       .modal-header
@@ -26,8 +25,7 @@ javascript:
     pastElementsArray[i].style.border = "1px solid #eee";
   };
 
-  $('body').on('shown.bs.modal', '#exampleModalCenter', function (e) {
+  $('body').on('shown.bs.modal', '#modalForAppointment', function (e) {
     var date_for_modal = $(e.relatedTarget).data('date-for-modal');
-    console.log(date_for_modal);
   $('#appointment_date').val(date_for_modal);
   });

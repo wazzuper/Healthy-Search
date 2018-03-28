@@ -243,6 +243,15 @@ nav.navbar {
   border-color: #017fbc;
 }
 
+.btn.btn-back {
+  background-color: #039be5;
+}
+
+.btn.btn-back:hover {
+  color: #fff;
+  background-color: #017fbc;
+}
+
 // forms
 .form-group {
   margin-bottom: 20px;
@@ -419,6 +428,7 @@ input[type=file] {
 }
 
 .btn-check-time:hover {
+  cursor: pointer;
   text-decoration: none;
   color: #fff;
   border: 1px solid #20dba4;
