@@ -52,6 +52,6 @@ class DoctorsController < ApplicationController
 
   def doctor_params
     params.require(:doctor).permit %i[full_name phone_number email experience bio address specialization_id
-      avatar remove_avatar avatar_cache price]
+      avatar remove_avatar avatar_cache price time]
   end
 end
