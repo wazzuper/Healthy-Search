@@ -1,7 +1,8 @@
 .container
   = month_calendar do |date|
-    = date
-    = link_to 'Main page', root_path, class: 'btn btn-normal' if date >= Date.today
+    = date.strftime("%-d")
+    br/
+    = link_to 'Main page', root_path, class: 'btn-check-time' if date >= Date.today
   = link_to 'Back', :back
 
 javascript:
