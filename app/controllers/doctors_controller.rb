@@ -1,6 +1,7 @@
 class DoctorsController < ApplicationController
   before_action :set_doctor
   before_action :authenticate_doctor!, except: [:show]
+  before_action :is_authorised?, except: [:show]
 
   def show
   end
@@ -37,6 +38,10 @@ class DoctorsController < ApplicationController
   end
 
   private
+
+  def is_authorised?
+    redirect_to root_path, alert: 'You do not have permission for this.' unless current_doctor.id == @doctor.id
+  end
 
   def set_doctor
     @doctor = Doctor.find(params[:id])
