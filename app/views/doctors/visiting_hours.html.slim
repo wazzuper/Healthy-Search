@@ -13,11 +13,25 @@
               | (you can remove or change them at any time)
             = form_for [@doctor, @doctor.visiting_hours.build] do |f|
               .row
-                .col-md-4
+                .col-md-5
                   = f.label :time
                   span.time
                     = f.time_field :time
-                .col-md-8
+                .col-md-7
                   = f.submit 'Add', class: 'btn btn-normal btn-block'
-            hr/
-            p.lead.text-center Already added hours
+            - if current_doctor.visiting_hours.present?
+              hr/
+              p.lead.text-center Already added hours
+              table.table.text-center
+                thead
+                  tr
+                    td Visiting hour
+                    td Remove
+                tbody
+                  - current_doctor.visiting_hours.each do |hour|
+                    tr
+                      td
+                        = hour.time.strftime("%k:%M")
+                        br/
+                        = "(or #{hour.time.strftime("%l:%M %p")})"
+                      td = link_to 'Delete', [hour.doctor, hour], method: :delete, class: 'btn btn-danger'

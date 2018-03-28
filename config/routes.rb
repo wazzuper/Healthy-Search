@@ -40,7 +40,7 @@ Rails.application.routes.draw do
       get 'price'
       get 'visiting_hours'
     end
-    resources :visiting_hours, only: [:create]
+    resources :visiting_hours, only: [:create, :destroy]
   end
 
   resources :patients, except: [:index, :show, :new, :create, :edit] do

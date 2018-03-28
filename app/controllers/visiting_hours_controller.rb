@@ -16,6 +16,16 @@ class VisitingHoursController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
 
+  def destroy
+    @doctor = Doctor.find(params[:doctor_id])
+
+    visiting_hour = @doctor.visiting_hours.find(params[:id])
+    visiting_hour.destroy
+
+    redirect_back(fallback_location: request.referer)
+    flash[:alert] = 'Deleted'
+  end
+
   private
 
   def visiting_hour_params
