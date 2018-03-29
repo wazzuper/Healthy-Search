@@ -10,6 +10,8 @@ en:
       doctor: 'Doctor'
       phone: 'Phone number'
       visit: 'Visiting date'
+      price: 'Price in $'
+      details: 'Details'
     profile:
       info: 'Personal info'
       delete: 'Delete my account'

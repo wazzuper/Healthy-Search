@@ -6,16 +6,24 @@
       .card
         .card-header.text-center= t('patients.appointments.table')
         .card-body
-          .container
-            table.table
-              thead.thead-light
+          table.table
+            thead.thead-light
+              tr
+                th = t('patients.appointments.doctor')
+                th = t('patients.appointments.phone')
+                th = t('patients.appointments.visit')
+                th = t('patients.appointments.price')
+                th = t('patients.appointments.details')
+            tbody
+              - @appointments.each do |appointment|
                 tr
-                  th= t('patients.appointments.doctor')
-                  th= t('patients.appointments.phone')
-                  th= t('patients.appointments.visit')
-              tbody
-                - @appointments.each do |appointment|
-                  tr
-                    th= appointment.doctor.full_name
-                    th= appointment.doctor.phone_number
-                    th= appointment.date
+                  th = appointment.doctor.full_name
+                  th
+                    = appointment.doctor.phone_number
+                    br/
+                    = appointment.doctor.email
+                  th
+                    = appointment.date.strftime("%B %e, %Y")
+                    br/
+                    = appointment.visiting_hour.time.strftime("%l:%M %p")
+                  th = appointment.doctor.price
