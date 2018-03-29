@@ -442,3 +442,18 @@ input[type=file] {
   border: 1px solid #20dba4;
   background-color: #20dba4;
 }
+
+.time-box {
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  color: #fff;
+  background-color: #039be5;
+}
+
+.time-box:hover, .time-box:focus {
+  color: #fff;
+  background-color: #017fbc;
+  cursor: pointer;
+}

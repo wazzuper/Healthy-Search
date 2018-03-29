@@ -1,4 +1,6 @@
 class VisitingHour < ApplicationRecord
   belongs_to :doctor
-  belongs_to :appointment, optional: true
+  has_many :appointment
+
+  default_scope { order(time: :asc) }
 end

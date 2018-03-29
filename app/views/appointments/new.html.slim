@@ -11,12 +11,12 @@
   .modal-dialog.modal-dialog-centered role="document"
     .modal-content
       .modal-header
-        h5.modal-title#exampleModalLongTitle Make appointment here
+        h5.modal-title#exampleModalLongTitle
+          = "Your doctor is #{@doctor.full_name}"
       .modal-body
         = render 'form', appointment: @appointment
       .modal-footer
         button.btn.btn-secondary data-dismiss="modal" Close
-        button.btn.btn-primary
 
 javascript:
   var pastElementsArray = document.getElementsByClassName('past');

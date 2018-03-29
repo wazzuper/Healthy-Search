@@ -1,3 +1,19 @@
-= form_for appointment do |f|
-  = f.hidden_field :date
-  = f.hidden_field :doctor_id
+p.lead Choose a time for your visit
+.row
+  - @doctor.visiting_hours.each do |hour|
+    .col-md-3
+      button.time-box.text-center onclick="add_hour(#{hour.id})"
+        = hour.time.strftime("%k:%M")
+
+  .col-md-4.offset-md-4
+    = form_for appointment do |f|
+      = f.hidden_field :date
+      = f.hidden_field :doctor_id
+      = f.hidden_field :visiting_hour_id
+      = f.hidden_field :patient_id, value: current_patient.id
+      = f.submit 'Book now', class: 'btn btn-normal'
+
+javascript:
+  function add_hour(id) {
+    $('#appointment_visiting_hour_id').val(id);
+  };
