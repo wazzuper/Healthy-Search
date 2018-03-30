@@ -2,10 +2,6 @@ p.lead Choose a time for your visit
 .row
   - @doctor.visiting_hours.each do |hour|
     .col-md-3
-      - if current_patient.present?
-        button.time-box.text-center onclick="add_hour(#{hour.id}); add_patient(#{current_patient.id})"
-          = hour.time.strftime("%k:%M")
-      - else
         button.time-box.text-center onclick="add_hour(#{hour.id})"
           = hour.time.strftime("%k:%M")
 
@@ -20,7 +16,4 @@ p.lead Choose a time for your visit
 javascript:
   function add_hour(id) {
     $('#appointment_visiting_hour_id').val(id);
-  };
-  function add_patient(id) {
-    $('#appointment_patient_id').val(id);
   };
