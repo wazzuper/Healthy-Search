@@ -4,24 +4,26 @@
       .col-md-3
         .crop
           = image_tag doctor_avatar(doctor)
-        p Reviews here
+        p = t('search.reviews')
       .col-md-5
         p.lead = doctor.full_name
         p.small
           = doctor.specialization_name(doctor.specialization_id)
           br/
-          = "Experience: #{doctor.experience} years"
-        p.lead = "Price: $#{doctor.price}"
+          = t('search.experience', doc_exp: doctor.experience)
+        p.lead = t('search.price', doc_price: doctor.price)
         p
-          <strong>Phone number:</strong>
+          strong
+            = t('search.phone')
           br/
           = doctor.phone_number
       .col-md-4.appointments
-        p Make an appointment
-        = link_to 'Book here', new_appointment_path(doctor_id: doctor.id), class: 'btn btn-normal'
+        p = t('search.appointment')
+        = link_to t('search.book'), new_appointment_path(doctor_id: doctor.id), class: 'btn btn-normal'
         .address
           p
-            <strong>Address:</strong>
+            strong
+              = t('search.address')
             br/
             = doctor.address
 .flickr_pagination.center-block

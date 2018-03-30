@@ -60,3 +60,13 @@ en:
     log_in: 'Log in'
     email: 'Email'
     password: 'Password'
+  search:
+    title: 'Search page'
+    experience: 'Experience: %{doc_exp} years'
+    price: 'Price: $%{doc_price}'
+    phone: 'Phone number:'
+    appointment: 'Make an appointment'
+    book: 'Book here'
+    address: 'Address:'
+    reviews: 'Reviews'
+    find_by: 'Find by certain specialization'
