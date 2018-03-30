@@ -3,7 +3,7 @@ class PatientsController < ApplicationController
   before_action :authenticate_patient!
 
   def appointments
-    @appointments = Appointment.where(patient_id: @patient).order(created_at: :desc)
+    @appointments = Appointment.order_by_date_for_patients(@patient)
   end
 
   def reviews

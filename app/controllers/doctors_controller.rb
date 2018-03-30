@@ -16,7 +16,7 @@ class DoctorsController < ApplicationController
   end
 
   def profile_area
-    @appointments = Appointment.where(doctor_id: @doctor).order(created_at: :desc)
+    @appointments = Appointment.order_by_date_for_doctors(@doctor)
   end
 
   def specialization
