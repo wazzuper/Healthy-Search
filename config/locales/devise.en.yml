@@ -65,6 +65,8 @@ en:
       log_in: 'Log in'
       email: 'Email'
       password: 'Password'
+      not_registered: 'Not registered?'
+      sign_up: 'Sign up now, it is free'
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
