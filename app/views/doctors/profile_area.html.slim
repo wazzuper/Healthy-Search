@@ -8,12 +8,19 @@
         table.table
           thead.thead-light
             tr
-              th= t('doctors.profile.table_name')
-              th= t('doctors.profile.table_phone')
-              th= t('doctors.profile.table_date')
+              th = t('doctors.profile.table_patient')
+              th = t('doctors.profile.table_contacts')
+              th = t('doctors.profile.table_date')
+              th = t('doctors.profile.table_details')
           tbody
             - @appointments.each do |appointment|
               tr
-                th= appointment.patient.full_name
-                th= appointment.patient.phone_number
-                th= appointment.date
+                td = appointment.patient.full_name
+                td
+                  = appointment.patient.phone_number
+                  br/
+                  = appointment.patient.email
+                td
+                  = appointment.date.strftime("%B %e, %Y")
+                  br/
+                  = appointment.visiting_hour.time.strftime("%l:%M %p")

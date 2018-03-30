@@ -10,20 +10,20 @@
             thead.thead-light
               tr
                 th = t('patients.appointments.doctor')
-                th = t('patients.appointments.phone')
+                th = t('patients.appointments.contacts')
                 th = t('patients.appointments.visit')
                 th = t('patients.appointments.price')
                 th = t('patients.appointments.details')
             tbody
               - @appointments.each do |appointment|
                 tr
-                  th = appointment.doctor.full_name
-                  th
+                  td = appointment.doctor.full_name
+                  td
                     = appointment.doctor.phone_number
                     br/
                     = appointment.doctor.email
-                  th
+                  td
                     = appointment.date.strftime("%B %e, %Y")
                     br/
                     = appointment.visiting_hour.time.strftime("%l:%M %p")
-                  th = appointment.doctor.price
+                  td = appointment.doctor.price
