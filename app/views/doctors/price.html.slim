@@ -4,11 +4,11 @@
       = render 'profile_settings'
     .col-md-8
       .card
-        .card-header.text-center = t('doctors.profile.price')
+        .card-header.text-center = t('doctors.profile.price.title')
         .card-body
           .container
             = form_for @doctor do |f|
               .form-group
-                = f.label :price, 'Set the price for one visit (in $)'
+                = f.label :price, t('doctors.profile.price.set_price')
                 = f.number_field :price, in: 1..1000, class: 'form-control'
-              = f.submit t('doctors.profile.update'), class: 'btn btn-normal btn-block'
+              = f.submit t('doctors.profile.btns.update'), class: 'btn btn-normal btn-block'

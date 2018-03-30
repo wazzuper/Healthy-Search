@@ -4,7 +4,7 @@
       = render 'profile_settings'
     .col-md-8
       .card
-        .card-header.text-center = t('doctors.profile.photo_title')
+        .card-header.text-center = t('doctors.profile.photo.title')
         .card-body
           .container.profile-photo
             - if current_doctor.avatar.present?
@@ -13,12 +13,12 @@
               .form-group.text-center
                 span.btn.btn-primary
                   i.fas.fa-cloud-upload-alt aria-hidden="true" 
-                  = t('doctors.profile.photo_select')
+                  = t('doctors.profile.photo.select')
                   = f.file_field :avatar
                   = f.hidden_field :avatar_cache
                 - if current_doctor.avatar.url.present?
                   = f.check_box :remove_avatar
-                  = t('doctors.profile.photo_remove')
+                  = t('doctors.profile.photo.remove')
                 br/
                 hr/
-                = f.submit t('doctors.profile.update'), class: 'btn btn-normal'
+                = f.submit t('doctors.profile.btns.update'), class: 'btn btn-normal'

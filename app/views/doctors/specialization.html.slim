@@ -4,7 +4,7 @@
       = render 'profile_settings'
     .col-md-8
       .card
-        .card-header.text-center = t('doctors.profile.spec_title')
+        .card-header.text-center = t('doctors.profile.specialization.title')
         .card-body
           .container
             = form_for @doctor do |f|
@@ -15,7 +15,7 @@
                     selected: @doctor.specialization_id), class: 'form-control'
               .row.form-group
                 .col-md-12
-                  = f.label :experience, 'Experience (in years)'
+                  = f.label :experience, t('doctors.profile.specialization.experience')
                   = f.number_field :experience, in: 1..45, class: 'form-control'
               .actions
-                = f.submit t('doctors.profile.update'), class: 'btn btn-normal btn-block'
+                = f.submit t('doctors.profile.btns.update'), class: 'btn btn-normal btn-block'

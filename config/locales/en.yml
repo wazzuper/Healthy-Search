@@ -17,23 +17,39 @@ en:
       delete: 'Delete my account'
   doctors:
     profile:
-      appointments: 'Appointments'
-      bio: 'Biography'
-      bio_label: 'Your story, what you can do, experience'
-      spec_and_exp: 'Specialization and experience'
-      address: 'Address'
-      price: 'Price'
+      appointments:
+        title: 'Appointments'
+        patient: 'Patient'
+        contacts: 'Contacts'
+        date: 'Visiting date'
+        details: 'Details'
+      bio:
+        title: 'Biography'
+        label: 'Your story, what you can do, experience'
+      specialization:
+        title: 'Specialization and experience'
+        experience: 'Experience (in years)'
+      address:
+        title: 'Address'
+      price:
+        title: 'Price'
+        set_price: 'Set the price for one visit (in $)'      
+      photo:
+        title: 'Profile photo'
+        select: ' Select photo'
+        remove: 'Remove?'
+      visiting_hours:
+        title: 'Visiting hours'
+        add_hours: 'Add visiting hours for patients'
+        added_hours: 'Already added hours'
+        hour: 'Visiting hour'
+        remove: 'Remove'
       reviews: 'Reviews about you'
       settings: 'Profile settings'
-      spec_title: 'Specialization and experience'
-      update: 'Update'
-      table_patient: 'Patient'
-      table_contacts: 'Contacts'
-      table_date: 'Visiting date'
-      table_details: 'Details'
-      photo_title: 'Profile photo'
-      photo_select: 'Select photo'
-      photo_remove: 'Remove?'
+      btns:
+        add: 'Add'
+        update: 'Update'
+        delete: 'Delete'
     account:
       title: 'Account'
       settings: 'Settings'

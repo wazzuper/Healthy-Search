@@ -4,11 +4,11 @@
       = render 'profile_settings'
     .col-md-8
       .card
-        .card-header.text-center = t('doctors.profile.address')
+        .card-header.text-center = t('doctors.profile.address.title')
         .card-body
           .container
             = form_for @doctor do |f|
               .form-group
                 = f.label :address
                 = f.text_field :address, placeholder: t('forms.type'), class: 'form-control'
-              = f.submit t('doctors.profile.update'), class: 'btn btn-normal btn-block'
+              = f.submit t('doctors.profile.btns.update'), class: 'btn btn-normal btn-block'
