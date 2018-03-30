@@ -14,10 +14,7 @@
         h5.modal-title#exampleModalLongTitle
           = "Your doctor is #{@doctor.full_name}"
       .modal-body
-        - if current_patient.present?
-          = render 'form_for_signed_in_patient', appointment: @appointment
-        - else
-          = render 'form_for_guests', appointment: @appointment
+        = render 'form_for_signed_in_patient', appointment: @appointment
       .modal-footer
         button.btn.btn-secondary data-dismiss="modal" Close
 
