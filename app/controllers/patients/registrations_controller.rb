@@ -8,7 +8,6 @@ class Patients::RegistrationsController < Devise::RegistrationsController
 
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: %i(full_name email))
-      # appointment_attributes: [:date, :doctor_id, :patient_id, :visiting_hour_id]])
   end
 
   def configure_account_update_params

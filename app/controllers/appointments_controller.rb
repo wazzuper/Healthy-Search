@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_patient!
-  
+
   def new
     @appointment = Appointment.new
     @appointment.doctor_id = params[:doctor_id]
