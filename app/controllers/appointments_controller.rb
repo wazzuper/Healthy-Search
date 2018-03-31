@@ -6,6 +6,7 @@ class AppointmentsController < ApplicationController
     @appointment.doctor_id = params[:doctor_id]
     @appointment.date = params[:date]
     @doctor = Doctor.find(params[:doctor_id])
+    @appointments_with_booked_hours = Appointment.find_booked_time(@doctor, @appointment.date)
   end
 
   def create
