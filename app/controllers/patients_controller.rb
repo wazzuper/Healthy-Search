@@ -3,7 +3,8 @@ class PatientsController < ApplicationController
   before_action :authenticate_patient!
 
   def appointments
-    @appointments = Appointment.order_by_date_for_patients(@patient)
+    appointments = Appointment.order_by_date_for_patients(@patient)
+    @appointments = appointments.paginate(page: params[:page], per_page: 10)
   end
 
   def reviews
@@ -15,8 +16,6 @@ class PatientsController < ApplicationController
     else
       flash[:alert] = 'Something went wrong'
     end
-
-    # get back to the current page
     redirect_back(fallback_location: request.referer)
   end
 

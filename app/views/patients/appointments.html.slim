@@ -6,6 +6,8 @@
       .card
         .card-header.text-center= t('patients.appointments.table')
         .card-body
+          .flickr_pagination.d-flex.justify-content-center
+            = will_paginate @appointments
           table.table
             thead.thead-light
               tr
