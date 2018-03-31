@@ -1,22 +1,23 @@
 nav#sticky-nav.navbar.navbar-expand-sm.navbar-light
   .container
-    = link_to 'Healthy Search', root_path, class: 'navbar-brand'
+    = link_to t('navbar.title'), root_path, class: 'navbar-brand'
     ul.nav.navbar-nav
       - if doctor_signed_in?
         li.nav-item.dropdown
           a#navbarDropdownMenuLink.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" 
-            | Welcome, #{current_doctor.email}
+            = t('navbar.welcome_doctor', name: current_doctor.full_name)
           .dropdown-menu aria-labelledby="navbarDropdownMenuLink" 
-            = link_to 'My profile', profile_area_doctor_path(current_doctor), class: 'dropdown-item'
-            = link_to 'Settings', edit_doctor_registration_path, class: 'dropdown-item'
-            = link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'dropdown-item'
+            = link_to t('navbar.doctor_profile'), profile_area_doctor_path(current_doctor), class: 'dropdown-item'
+            = link_to t('navbar.doctor_settings'), edit_doctor_registration_path, class: 'dropdown-item'
+            = link_to t('navbar.log_out'), destroy_doctor_session_path, method: :delete, class: 'dropdown-item'
       - elsif patient_signed_in?
         li.nav-item.dropdown
           a#navbarDropdownMenuLink.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" 
-            | Welcome, #{current_patient.email}
+            = t('navbar.welcome_patient', name: current_patient.full_name)
           .dropdown-menu aria-labelledby="navbarDropdownMenuLink" 
-            = link_to 'Settings', edit_patient_registration_path, class: 'dropdown-item'
-            = link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'dropdown-item'
+            = link_to t('navbar.patient_appointments'), appointments_patient_path(current_patient), class: 'dropdown-item'
+            = link_to t('navbar.patient_settings'), edit_patient_registration_path, class: 'dropdown-item'
+            = link_to t('navbar.log_out'), destroy_patient_session_path, method: :delete, class: 'dropdown-item'
       - else
-        li.nav-item= link_to 'Log in', login_page_path, class: 'nav-link'
-        li.nav-item= link_to 'Registration', registration_page_path, class: 'nav-link'
+        li.nav-item = link_to t('navbar.log_in'), login_page_path, class: 'nav-link'
+        li.nav-item = link_to t('navbar.registration'), registration_page_path, class: 'nav-link'

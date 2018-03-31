@@ -70,3 +70,18 @@ en:
     address: 'Address:'
     reviews: 'Reviews'
     find_by: 'Find by certain specialization'
+  appointments:
+    choose_time: 'Choose a time for your visit'
+    back: 'Back'
+    book: 'Book now'
+  navbar:
+    title: 'Healthy Search'
+    welcome_doctor: 'Welcome, %{name}'
+    welcome_patient: 'Welcome, %{name}'
+    doctor_profile: 'My profile'
+    doctor_settings: 'Settings'
+    patient_settings: 'Settings'
+    patient_appointments: 'My appointments'
+    log_out: 'Log out'
+    log_in: 'Log in'
+    registration: 'Registration'

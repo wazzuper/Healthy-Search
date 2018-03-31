@@ -1,5 +1,5 @@
 .container
-  p.h2.text-center.heading Choose a time for your visit
+  p.h2.text-center.heading = t('appointments.choose_time')
   .row.jumbotron.time-select
     - @doctor.visiting_hours.each do |hour|
       - unless @appointments_with_booked_hours.include?(hour.id)
@@ -15,9 +15,9 @@
         = f.hidden_field :doctor_id
         = f.hidden_field :visiting_hour_id
         = f.hidden_field :patient_id
-        = f.submit 'Book now', class: 'btn btn-normal'
+        = f.submit t('appointments.book'), class: 'btn btn-normal'
     .col-md-12.d-flex.justify-content-center
-      = link_to 'Back', :back, class: 'btn btn-back'
+      = link_to t('appointments.back'), :back, class: 'btn btn-back'
 
 javascript:
   function add_hour(id) {
