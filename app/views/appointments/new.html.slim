@@ -1,31 +1,26 @@
 .container
-  = month_calendar do |date|
-    = date.strftime("%-d")
+  p.h2.text-center.heading Choose a time for your visit
+  .row.jumbotron.time-select
+    - @doctor.visiting_hours.each do |hour|
+      - unless Appointment.find_booked_time(@doctor, @appointment.date).include?(hour.id)
+        .col-md-4.text-center
+          button.time-box.text-center onclick="add_hour(#{hour.id}); add_patient(#{current_patient.id})"
+            = hour.time.strftime("%k:%M")
     br/
-    - if date >= Date.today
-      span.btn-check-time data-toggle="modal" data-target="#modalForAppointment" data-date-for-modal="#{date}"
-        | Check time
-  = link_to 'Back', :back, class: 'btn btn-back'
-
-.modal.fade#modalForAppointment tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
-  .modal-dialog.modal-dialog-centered role="document"
-    .modal-content
-      .modal-header
-        h5.modal-title#exampleModalLongTitle
-          = "Your doctor is #{@doctor.full_name}"
-      .modal-body
-        = render 'form_for_signed_in_patient', appointment: @appointment
-      .modal-footer
-        button.btn.btn-secondary data-dismiss="modal" Close
+    .col-md-12.d-flex.justify-content-center
+      = form_for @appointment do |f|
+        = f.hidden_field :date
+        = f.hidden_field :doctor_id
+        = f.hidden_field :visiting_hour_id
+        = f.hidden_field :patient_id
+        = f.submit 'Book now', class: 'btn btn-normal'
+    .col-md-12.d-flex.justify-content-center
+      = link_to 'Back', :back, class: 'btn btn-back'
 
 javascript:
-  var pastElementsArray = document.getElementsByClassName('past');
-  for (var i = 0; i < pastElementsArray.length; i++) {
-    pastElementsArray[i].style.background = "#ddd";
-    pastElementsArray[i].style.border = "1px solid #eee";
-  };
-
-  $('body').on('shown.bs.modal', '#modalForAppointment', function (e) {
-    var date_for_modal = $(e.relatedTarget).data('date-for-modal');
-  $('#appointment_date').val(date_for_modal);
-  });
+  function add_hour(id) {
+    $('#appointment_visiting_hour_id').val(id);
+  }
+  function add_patient(id) {
+    $('#appointment_patient_id').val(id);
+  }

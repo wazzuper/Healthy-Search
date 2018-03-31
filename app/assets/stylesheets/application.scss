@@ -244,6 +244,7 @@ nav.navbar {
 }
 
 .btn.btn-back {
+  margin-top: 20px;
   background-color: #039be5;
 }
 
@@ -401,59 +402,25 @@ input[type=file] {
 
 // new appointments
 
-.prev {
-  padding: 2px;
-  color: #fff;
-  font-size: 15px;
-  background-color: #039be5;
-}
-
-.prev:hover {
-  text-decoration: none;
-  color: #fff;
-  background-color: #017fbc;
-}
-
-.next {
-  margin-left: 10px;
-  padding: 2px;
-  color: #fff;
-  font-size: 15px;
-  background-color: #039be5;
-}
-
-.next:hover {
-  text-decoration: none;
-  color: #fff;
-  background-color: #017fbc;
-}
-
-.btn-check-time {
-  padding: 3px;
-  color: #fff;
-  border: 1px solid #20c997;
-  background-color: #20c997;
-}
-
-.btn-check-time:hover {
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid #20dba4;
-  background-color: #20dba4;
+.time-select {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .time-box {
   margin-bottom: 20px;
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border: none;
+  border-radius: 20%;
+  font-size: 20px;
   color: #fff;
   background-color: #039be5;
 }
 
 .time-box:hover, .time-box:focus {
   color: #fff;
-  background-color: #017fbc;
+  outline: none;
+  background-color: #006a9e;
   cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
 }

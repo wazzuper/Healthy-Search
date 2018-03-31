@@ -18,8 +18,16 @@
           br/
           = doctor.phone_number
       .col-md-4.appointments
-        p = t('search.appointment')
-        = link_to t('search.book'), new_appointment_path(doctor_id: doctor.id), class: 'btn btn-normal'
+        p 
+          | Select a date 
+          br/
+          | (the next 2 weeks available only)
+        = form_tag new_appointment_path, method: :get do
+          = date_field_tag :date, params[:date], min: Date.today, max: Date.today + 14
+          = hidden_field_tag :doctor_id, params[:doctor_id], value: doctor.id
+          br/
+          br/
+          = submit_tag t('search.book'), class: 'btn btn-normal'
         .address
           p
             strong

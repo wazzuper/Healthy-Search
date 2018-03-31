@@ -4,6 +4,7 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
     @appointment.doctor_id = params[:doctor_id]
+    @appointment.date = params[:date]
     @doctor = Doctor.find(params[:doctor_id])
   end
 
