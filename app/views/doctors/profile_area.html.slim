@@ -5,6 +5,8 @@
     .col-md-8.text-center
       h2 = t('doctors.profile.appointments.title')
       .container
+        .flickr_pagination.d-flex.justify-content-center
+          = will_paginate @appointments
         table.table
           thead.thead-light
             tr
