@@ -7,7 +7,10 @@
         .card-header.text-center = t('doctors.profile.visiting_days.title')
         .container
           .card-body
-            p.text-center = t('doctors.profile.visiting_days.add')
+            p.text-center
+              = t('doctors.profile.visiting_days.add_day')
+              br/
+              = t('doctors.profile.visiting_days.two_weeks')
             = form_for [@doctor, @doctor.visiting_days.build] do |f|
               .row
                 .col-md-7.text-center
@@ -23,7 +26,7 @@
                 thead
                   tr
                     th = t('doctors.profile.visiting_days.date')
-                    th Check hours for this day
+                    th = t('doctors.profile.visiting_days.check_hours')
                     th = t('doctors.profile.visiting_days.remove')
                 tbody
                   - current_doctor.visiting_days.each do |day|

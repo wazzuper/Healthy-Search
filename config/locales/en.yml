@@ -40,11 +40,16 @@ en:
         remove: 'Remove?'
       visiting_days:
         title: 'Visiting days and hours'
-        add: 'Add visiting day for patients'
-        added: 'Already added days and hours'
+        add_day: 'Add visiting day for patients'
+        added: 'Already added days'
         date: 'Visiting date'
+        check_hours: 'Check hours'
         check: 'Check'
         remove: 'Remove'
+        hours: 'Hours'
+        no_hours: 'There are no added hours yet, just add them right now'
+        add_hour: 'Add hour'
+        two_weeks: '(Only the next two weeks are available)'
       reviews: 'Reviews about you'
       settings: 'Profile settings'
       btns:
