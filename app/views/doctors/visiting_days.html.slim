@@ -4,30 +4,32 @@
       = render 'profile_settings'
     .col-md-8
       .card
-        .card-header.text-center = t('doctors.profile.visiting_hours.title')
-        .card-body
-          .container
-            p.text-center = t('doctors.profile.visiting_hours.add_hours')
+        .card-header.text-center = t('doctors.profile.visiting_days.title')
+        .container
+          .card-body
+            p.text-center = t('doctors.profile.visiting_days.add')
             = form_for [@doctor, @doctor.visiting_days.build] do |f|
               .row
-                .col-md-5
+                .col-md-7.text-center
                   = f.label :date
                   span.time
                     = f.date_field :date, min: Date.today + 1, max: Date.today + 15
-                .col-md-7
+                .col-md-3
                   = f.submit t('doctors.profile.btns.add'), class: 'btn btn-normal btn-block'
             - if current_doctor.visiting_days.present?
               hr/
-              p.lead.text-center = t('doctors.profile.visiting_hours.added_hours')
+              p.lead.text-center = t('doctors.profile.visiting_days.added')
               table.table.text-center
                 thead
                   tr
-                    th = t('doctors.profile.visiting_hours.hour')
-                    th Add available hours
-                    th = t('doctors.profile.visiting_hours.remove')
+                    th = t('doctors.profile.visiting_days.date')
+                    th Check hours for this day
+                    th = t('doctors.profile.visiting_days.remove')
                 tbody
                   - current_doctor.visiting_days.each do |day|
                     tr
                       td
                         = day.date.strftime("%B %e, %Y")
+                      td
+                        = link_to t('doctors.profile.visiting_days.check'), doctor_visiting_day_path(@doctor, day), class: 'btn btn-normal'
                       td = link_to t('doctors.profile.btns.delete'), [day.doctor, day], method: :delete, class: 'btn btn-danger'

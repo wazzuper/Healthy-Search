@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402094757) do
+ActiveRecord::Schema.define(version: 20180402105337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,11 +90,9 @@ ActiveRecord::Schema.define(version: 20180402094757) do
 
   create_table "visiting_hours", force: :cascade do |t|
     t.time "time"
-    t.bigint "doctor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "visiting_day_id"
-    t.index ["doctor_id"], name: "index_visiting_hours_on_doctor_id"
     t.index ["visiting_day_id"], name: "index_visiting_hours_on_visiting_day_id"
   end
 
@@ -102,6 +100,5 @@ ActiveRecord::Schema.define(version: 20180402094757) do
   add_foreign_key "appointments", "visiting_hours"
   add_foreign_key "doctors", "specializations"
   add_foreign_key "visiting_days", "doctors"
-  add_foreign_key "visiting_hours", "doctors"
   add_foreign_key "visiting_hours", "visiting_days"
 end

@@ -27,9 +27,6 @@ class DoctorsController < ApplicationController
   def price
   end
 
-  def visiting_hours
-  end
-
   def visiting_days
   end
 

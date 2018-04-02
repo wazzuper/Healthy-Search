@@ -1,6 +1,10 @@
 class VisitingDaysController < ApplicationController
   before_action :authenticate_doctor!
 
+  def show
+    @visiting_day = VisitingDay.find(params[:id])
+  end
+
   def create
     @doctor = Doctor.find(params[:doctor_id])
 
@@ -8,7 +12,7 @@ class VisitingDaysController < ApplicationController
     visiting_day.date = visiting_day_params[:date]
 
     if visiting_day.save
-      flash[:notice] = 'Visiting dat added'
+      flash[:notice] = 'Visiting date added'
     else
       flash[:alert] = 'Something went wrong'
     end

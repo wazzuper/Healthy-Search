@@ -38,11 +38,12 @@ en:
         title: 'Profile photo'
         select: ' Select photo'
         remove: 'Remove?'
-      visiting_hours:
-        title: 'Visiting hours'
-        add_hours: 'Add visiting hours for patients'
-        added_hours: 'Already added hours'
-        hour: 'Visiting hour'
+      visiting_days:
+        title: 'Visiting days and hours'
+        add: 'Add visiting day for patients'
+        added: 'Already added days and hours'
+        date: 'Visiting date'
+        check: 'Check'
         remove: 'Remove'
       reviews: 'Reviews about you'
       settings: 'Profile settings'

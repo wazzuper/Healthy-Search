@@ -4,7 +4,6 @@ class Doctor < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :visiting_hours
   has_many :visiting_days
   has_many :appointments
   has_many :patients, through: :appointments
