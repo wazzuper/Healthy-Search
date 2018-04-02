@@ -13,7 +13,7 @@ class VisitingDaysController < ApplicationController
     if visiting_day.save
       flash[:notice] = 'Visiting date added'
     else
-      flash[:alert] = 'Something went wrong'
+      flash[:alert] = visiting_day.errors.full_messages.join(', ')
     end
 
     redirect_back(fallback_location: request.referer)
