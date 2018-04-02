@@ -3,11 +3,18 @@
   .row.jumbotron.time-select
     - @doctor.visiting_hours.each do |hour|
       - unless @appointments_with_booked_hours.include?(hour.id)
-        .col-md-4.text-center
-          button.time-box.text-center onclick="add_hour(#{hour.id}); add_patient(#{current_patient.id})"
-            = hour.time.strftime("%k:%M")
-            p.small
-              = "(or #{hour.time.strftime("%l:%M %p")})"
+        - if @appointment.date == Date.today && hour.time.strftime("%k:%M") > Time.now.strftime("%k:%M")
+          .col-md-4.text-center
+            button.time-box.text-center onclick="add_hour(#{hour.id}); add_patient(#{current_patient.id})"
+              = hour.time.strftime("%k:%M")
+              p.small
+                = "(or #{hour.time.strftime("%l:%M %p")})"
+        - elsif @appointment.date != Date.today
+          .col-md-4.text-center
+            button.time-box.text-center onclick="add_hour(#{hour.id}); add_patient(#{current_patient.id})"
+              = hour.time.strftime("%k:%M")
+              p.small
+                = "(or #{hour.time.strftime("%l:%M %p")})"
     br/
     .col-md-12.d-flex.justify-content-center
       = form_for @appointment do |f|
