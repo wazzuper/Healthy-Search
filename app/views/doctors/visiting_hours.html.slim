@@ -8,27 +8,26 @@
         .card-body
           .container
             p.text-center = t('doctors.profile.visiting_hours.add_hours')
-            = form_for [@doctor, @doctor.visiting_hours.build] do |f|
+            = form_for [@doctor, @doctor.visiting_days.build] do |f|
               .row
                 .col-md-5
-                  = f.label :time
+                  = f.label :date
                   span.time
-                    = f.time_field :time
+                    = f.date_field :date, min: Date.today + 1, max: Date.today + 15
                 .col-md-7
                   = f.submit t('doctors.profile.btns.add'), class: 'btn btn-normal btn-block'
-            - if current_doctor.visiting_hours.present?
+            - if current_doctor.visiting_days.present?
               hr/
               p.lead.text-center = t('doctors.profile.visiting_hours.added_hours')
               table.table.text-center
                 thead
                   tr
                     th = t('doctors.profile.visiting_hours.hour')
+                    th Add available hours
                     th = t('doctors.profile.visiting_hours.remove')
                 tbody
-                  - current_doctor.visiting_hours.each do |hour|
+                  - current_doctor.visiting_days.each do |day|
                     tr
                       td
-                        = hour.time.strftime("%k:%M")
-                        br/
-                        = "(or #{hour.time.strftime("%l:%M %p")})"
-                      td = link_to t('doctors.profile.btns.delete'), [hour.doctor, hour], method: :delete, class: 'btn btn-danger'
+                        = day.date.strftime("%B %e, %Y")
+                      td = link_to t('doctors.profile.btns.delete'), [day.doctor, day], method: :delete, class: 'btn btn-danger'

@@ -39,8 +39,10 @@ Rails.application.routes.draw do
       get 'specialization'
       get 'price'
       get 'visiting_hours'
+      get 'visiting_days'
     end
     resources :visiting_hours, only: [:create, :destroy]
+    resources :visiting_days, only: [:create, :destroy]
   end
 
   resources :patients, except: [:index, :show, :new, :create, :edit] do

@@ -30,6 +30,9 @@ class DoctorsController < ApplicationController
   def visiting_hours
   end
 
+  def visiting_days
+  end
+
   def update
     if @doctor.update(doctor_params)
       flash[:notice] = 'Updated'
@@ -53,6 +56,6 @@ class DoctorsController < ApplicationController
 
   def doctor_params
     params.require(:doctor).permit %i[full_name phone_number email experience bio address specialization_id
-      avatar remove_avatar avatar_cache price time]
+      avatar remove_avatar avatar_cache price time date]
   end
 end

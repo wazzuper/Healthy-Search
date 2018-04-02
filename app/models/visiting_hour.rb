@@ -1,6 +1,7 @@
 class VisitingHour < ApplicationRecord
   belongs_to :doctor
-  has_many :appointments, dependent: :destroy
+  belongs_to :visiting_day
+  has_many :appointments
 
   default_scope { order(time: :asc) }
 end
