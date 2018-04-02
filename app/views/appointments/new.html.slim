@@ -1,22 +1,29 @@
 .container
   - if @visiting_day.present?
-    p.h2.text-center.heading = t('appointments.choose_time')
-    .row.jumbotron.time-select
-      - @visiting_day.visiting_hours.each do |hour|
-        - unless @appointments_with_booked_hours.include?(hour.id)
-          .col-md-4.text-center
-            button.time-box.text-center onclick="add_hour(#{hour.id}); add_patient(#{current_patient.id})"
-              = hour.time.strftime("%k:%M")
-              p.small
-                = "(or #{hour.time.strftime("%l:%M %p")})"
-      .col-md-12.d-flex.justify-content-center
-        = form_for @appointment do |f|
-          = f.hidden_field :visiting_day_id
-          = f.hidden_field :doctor_id
-          = f.hidden_field :visiting_hour_id
-          = f.hidden_field :patient_id
-          = f.submit t('appointments.book'), class: 'btn btn-normal'
-      .col-md-12.d-flex.justify-content-center
+    - if @visiting_day.check_available_hours(@visiting_day) == 0
+      p.h2.text-center.heading = t('appointments.choose_time')
+      .row.jumbotron.time-select
+        - @visiting_day.visiting_hours.each do |hour|
+          - unless @appointments_with_booked_hours.include?(hour.id)
+            .col-md-4.text-center
+              button.time-box.text-center onclick="add_hour(#{hour.id}); add_patient(#{current_patient.id})"
+                = hour.time.strftime("%k:%M")
+                p.small
+                  = "(or #{hour.time.strftime("%l:%M %p")})"
+        .col-md-12.d-flex.justify-content-center
+          = form_for @appointment do |f|
+            = f.hidden_field :visiting_day_id
+            = f.hidden_field :doctor_id
+            = f.hidden_field :visiting_hour_id
+            = f.hidden_field :patient_id
+            = f.submit t('appointments.book'), class: 'btn btn-normal'
+        .col-md-12.d-flex.justify-content-center
+          = link_to t('appointments.back'), :back, class: 'btn btn-back'
+    - else
+      .col-md-6.offset-md-3.jumbotron.time-select.text-center
+        p.h3
+          = "#{@doctor.full_name} does not have available hours on this day"
+        br/
         = link_to t('appointments.back'), :back, class: 'btn btn-back'
   - else
     .col-md-6.offset-md-3.jumbotron.time-select.text-center
