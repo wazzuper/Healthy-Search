@@ -23,6 +23,6 @@
                   br/
                   = appointment.patient.email
                 td
-                  = appointment.date.strftime("%B %e, %Y")
+                  = appointment.visiting_day.date.strftime("%B %e, %Y")
                   br/
                   = appointment.visiting_hour.time.strftime("%l:%M %p")

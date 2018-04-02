@@ -4,8 +4,7 @@ class PatientsController < ApplicationController
   before_action :is_authorised?
 
   def appointments
-    appointments = Appointment.order_by_date_for_patients(@patient)
-    @appointments = appointments.paginate(page: params[:page], per_page: 10)
+    @appointments = Appointment.paginate(page: params[:page], per_page: 10)
   end
 
   def reviews
