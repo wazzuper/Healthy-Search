@@ -11,7 +11,7 @@ class Appointment < ApplicationRecord
     Appointment.where(doctor_id: id).order(date: :desc)
   end
 
-  def self.find_booked_time(doctor, date)
+  def self.find_booked_hours(doctor, date)
     list_of_hours = []
     Appointment.joins(:patient, :doctor).where(date: date).each do |a|
       list_of_hours << a.visiting_hour_id

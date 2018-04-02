@@ -7,7 +7,7 @@ class AppointmentsController < ApplicationController
     else
       @appointment = Appointment.new(doctor_id: params[:doctor_id], date: params[:date])
       @doctor = Doctor.find(params[:doctor_id])
-      @appointments_with_booked_hours = Appointment.find_booked_time(@doctor, @appointment.date)
+      @appointments_with_booked_hours = Appointment.find_booked_hours(@doctor, @appointment.date)
     end
   end
 
