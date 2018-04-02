@@ -1,29 +1,22 @@
 class VisitingHoursController < ApplicationController
+  before_action :set_visiting_day
   before_action :authenticate_doctor!
 
-  def new
-  end
-
   def create
-    day = @day
-
-    visiting_hour = day.visiting_hours.new
+    visiting_hour = @visiting_day.visiting_hours.new
     visiting_hour.time = visiting_hour_params[:time]
 
     if visiting_hour.save
       flash[:notice] = 'Visiting hour added'
     else
       flash[:alert] = 'Something went wrong'
-      flash[:alert] = visiting_hour.errors.full_messages
     end
 
     redirect_back(fallback_location: request.referer)
   end
 
   def destroy
-    day = @day
-
-    visiting_hour = day.visiting_hours.find(params[:id])
+    visiting_hour = @visiting_day.visiting_hours.find(params[:id])
     visiting_hour.destroy
 
     redirect_back(fallback_location: request.referer)
@@ -31,6 +24,10 @@ class VisitingHoursController < ApplicationController
   end
 
   private
+
+  def set_visiting_day
+    @visiting_day ||= VisitingDay.find(params[:visiting_day_id])
+  end
 
   def visiting_hour_params
     params.require(:visiting_hour).permit(:time)

@@ -1,1 +1,27 @@
-p.lead helo
+.container
+  .row.jumbotron
+    .row.col-md-9
+      - if @visiting_day.visiting_hours.present?
+        table.table.text-center
+          thead.thead-light
+            tr
+              th Hours
+              th Remove
+          tbody
+            - @visiting_day.visiting_hours.each do |hour|
+              tr
+                td
+                  = hour.time.strftime("%k:%M")
+                  = " (or #{hour.time.strftime("%k:%M")})"
+                td = link_to t('doctors.profile.btns.delete'),
+                                  doctor_visiting_day_visiting_hour_path(@doctor, @visiting_day, hour), method: :delete,
+                                  class: 'btn btn-danger'
+      - else
+        p.lead There are no added hours yet, just add them right now
+    .col-md-3.text-center
+      p.lead Add hour
+      = form_for [@doctor, @visiting_day, @visiting_day.visiting_hours.build] do |f|
+        = f.label :time
+        = f.time_field :time
+        = f.submit 'Add', class: 'btn btn-normal'
+      = link_to t('doctors.profile.btns.back'), visiting_days_doctor_path(@doctor), class: 'btn btn-back'

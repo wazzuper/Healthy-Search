@@ -51,6 +51,7 @@ en:
         add: 'Add'
         update: 'Update'
         delete: 'Delete'
+        back: 'Back to the visiting days'
     account:
       title: 'Account'
       settings: 'Settings'

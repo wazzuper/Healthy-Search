@@ -1,4 +1,5 @@
 class VisitingDaysController < ApplicationController
+  before_action :set_doctor
   before_action :authenticate_doctor!
 
   def show
@@ -6,8 +7,6 @@ class VisitingDaysController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.find(params[:doctor_id])
-
     visiting_day = @doctor.visiting_days.new
     visiting_day.date = visiting_day_params[:date]
 
@@ -21,8 +20,6 @@ class VisitingDaysController < ApplicationController
   end
 
   def destroy
-    @doctor = Doctor.find(params[:doctor_id])
-
     visiting_day = @doctor.visiting_days.find(params[:id])
     visiting_day.destroy
 
@@ -31,6 +28,10 @@ class VisitingDaysController < ApplicationController
   end
 
   private
+
+  def set_doctor
+    @doctor ||= Doctor.find(params[:doctor_id])
+  end
 
   def visiting_day_params
     params.require(:visiting_day).permit(:date)

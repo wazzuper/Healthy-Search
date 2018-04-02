@@ -41,7 +41,7 @@ Rails.application.routes.draw do
       get 'visiting_days'
     end
     resources :visiting_days, only: [:show, :create, :destroy] do
-      resources :visiting_hours, only: [:new, :create, :destroy]
+      resources :visiting_hours, only: [:create, :destroy]
     end
   end
 
