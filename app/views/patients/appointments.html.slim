@@ -8,7 +8,7 @@
         .card-body
           .flickr_pagination.d-flex.justify-content-center
             = will_paginate @appointments
-          table.table
+          table.table.text-center
             thead.thead-light
               tr
                 th = t('patients.appointments.doctor')
@@ -24,8 +24,9 @@
                     = appointment.doctor.phone_number
                     br/
                     = appointment.doctor.email
-                  td
+                  td.selected-visiting-date
                     = appointment.visiting_day.date.strftime("%B %e, %Y")
                     br/
                     = appointment.visiting_hour.time.strftime("%l:%M %p")
                   td = appointment.doctor.price
+                  td

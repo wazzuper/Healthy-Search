@@ -4,25 +4,30 @@
       = render 'profile_settings'
     .col-md-8.text-center
       h2 = t('doctors.profile.appointments.title')
-      .container
-        .flickr_pagination.d-flex.justify-content-center
-          = will_paginate @appointments
-        table.table
-          thead.thead-light
+      .flickr_pagination.d-flex.justify-content-center
+        = will_paginate @appointments
+      table.table
+        thead.thead-light
+          tr
+            th = t('doctors.profile.appointments.patient')
+            th = t('doctors.profile.appointments.contacts')
+            th = t('doctors.profile.appointments.date')
+            th = t('doctors.profile.appointments.details')
+            th Created at
+        tbody
+          - @appointments.each do |appointment|
             tr
-              th = t('doctors.profile.appointments.patient')
-              th = t('doctors.profile.appointments.contacts')
-              th = t('doctors.profile.appointments.date')
-              th = t('doctors.profile.appointments.details')
-          tbody
-            - @appointments.each do |appointment|
-              tr
-                td = appointment.patient.full_name
-                td
-                  = appointment.patient.phone_number
-                  br/
-                  = appointment.patient.email
-                td
-                  = appointment.visiting_day.date.strftime("%B %e, %Y")
-                  br/
-                  = appointment.visiting_hour.time.strftime("%l:%M %p")
+              td = appointment.patient.full_name
+              td
+                = appointment.patient.phone_number
+                br/
+                = appointment.patient.email
+              td.selected-visiting-date
+                = appointment.visiting_day.date.strftime("%B %e, %Y")
+                br/
+                = appointment.visiting_hour.time.strftime("%l:%M %p")
+              td
+              td.selected-creating-date
+                = appointment.created_at.strftime("%B %e, %Y")
+                br/
+                = appointment.created_at.strftime("%l:%M %p")

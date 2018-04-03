@@ -423,3 +423,15 @@ input[type=file] {
   cursor: pointer;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+// patients profile
+
+.table td.selected-visiting-date {
+  background-color: #c9f2e6;
+  border: none;
+}
+
+.table td.selected-creating-date {
+  background-color: #c3e6f7;
+  border: none;
+}
