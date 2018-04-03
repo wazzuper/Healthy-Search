@@ -19,9 +19,9 @@
           = doctor.phone_number
       .col-md-4.appointments
         p 
-          | Select a date 
+          = t('search.date')
           br/
-          | (the next 2 weeks available only)
+          = t('search.two_weeks')
         = form_tag new_appointment_path, method: :get do
           = date_field_tag :date, params[:date], min: Date.today, max: Date.today + 14
           = hidden_field_tag :doctor_id, params[:doctor_id], value: doctor.id

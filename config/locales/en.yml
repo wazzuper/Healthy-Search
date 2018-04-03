@@ -68,6 +68,8 @@ en:
     email: 'Email'
     password: 'Password'
   search:
+    date: 'Select a date'
+    two_weeks: '(the next 2 weeks available only)'
     title: 'Search page'
     experience: 'Experience: %{doc_exp} years'
     price: 'Price: $%{doc_price}'
