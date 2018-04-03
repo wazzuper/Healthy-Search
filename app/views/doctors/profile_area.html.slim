@@ -26,3 +26,4 @@
                 br/
                 = appointment.visiting_hour.time.strftime("%l:%M %p")
               td
+                = link_to 'Check', appointment_path(appointment), class: 'btn btn-normal'

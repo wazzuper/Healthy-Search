@@ -1,0 +1,54 @@
+.container
+  .row.jumbotron
+    .col-md-4
+      .card.doctor-box
+        .card-header.text-center = "Doctor: #{@appointment.doctor.full_name}"
+        .card-body
+          .crop-box
+            = image_tag doctor_avatar(@appointment.doctor)
+          p.h4
+            strong
+              |Contacts:
+            br/
+            small
+              = @appointment.doctor.phone_number
+            br/
+            small
+              = @appointment.doctor.email
+          p.h4
+            strong
+              |Address:
+            br/
+            small
+              = @appointment.doctor.address
+          p.h4
+            strong
+              |Price for one visite:
+            br/
+            small
+              = "$#{@appointment.doctor.price}"
+      = link_to 'Back', :back, class: 'btn btn-back btn-block'
+      - if Date.today > @appointment.date && patient_signed_in?
+        .card.reviews
+            .card-header.text-center Leave your feedback:
+            .card-body
+              |Feedback here
+    .col-md-8
+      .card.doctor-box
+        .card-header.text-center Appointment details:
+        .card-body
+          .row
+            .col-md-6
+              p.lead Date and time:
+              p
+                = @appointment.visiting_day.date.strftime("%B %e, %Y")
+                br/
+                = @appointment.visiting_hour.time.strftime("%l:%M %p")
+              p.lead Specialization of the doctor:
+              p = @appointment.doctor.specialization.name
+            .col-md-6
+              p.lead Patient notes:
+      .card.google-map
+        .card-header.text-center Google map here
+        .card-body
+          |Map goes here

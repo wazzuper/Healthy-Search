@@ -1,5 +1,9 @@
 class AppointmentsController < ApplicationController
-  before_action :authenticate_patient!
+  before_action :authenticate_patient!, only: [:new, :create]
+
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
 
   def new
     if params[:date].eql?('')

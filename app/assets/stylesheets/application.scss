@@ -446,7 +446,7 @@ input[type=file] {
   margin-top: 25px;
 }
 
-// new appointments
+// appointments
 
 .time-select {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -469,6 +469,42 @@ input[type=file] {
   background-color: #006a9e;
   cursor: pointer;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.crop-box {
+  margin-bottom: 15px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.crop-box img {
+  height: auto;
+  width: 100%;
+}
+
+.card.doctor-box .card-header {
+  background-color: #20c997;
+}
+
+.card.doctor-box {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card.reviews .card-header {
+  background-color: #20c997;
+}
+
+.card.reviews {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card.google-map .card-header {
+  background-color: #20c997;
+}
+
+.card.google-map {
+  margin-top: 25px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 // patients profile
