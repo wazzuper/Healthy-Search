@@ -1,7 +1,8 @@
 .container
   - if @visiting_day.present?
     - if @visiting_day.check_available_hours(@visiting_day) > 0
-      p.h2.text-center.heading = t('appointments.choose_time')
+      p.h2.text-center = t('appointments.info', name: @doctor.full_name, date: @visiting_day.date)
+      p.h3.text-center.heading = t('appointments.choose_time')
       .row.jumbotron.time-select
         - @visiting_day.visiting_hours.each do |hour|
           - unless @appointments_with_booked_hours.include?(hour.id)

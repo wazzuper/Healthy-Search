@@ -80,6 +80,7 @@ en:
     reviews: 'Reviews'
     find_by: 'Find by certain specialization'
   appointments:
+    info: 'Doctor - %{name}, date: %{date}'
     no_hours: 'Sorry, %{name} does not have available hours on this day'
     no_date: 'Sorry, %{name} does not accept patients on this day'
     choose_time: 'Choose a time for your visit'
