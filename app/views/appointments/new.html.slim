@@ -22,13 +22,13 @@
     - else
       .col-md-6.offset-md-3.jumbotron.time-select.text-center
         p.h3
-          = "#{@doctor.full_name} does not have available hours on this day"
+          = t('appointments.no_hours', name: @doctor.full_name)
         br/
         = link_to t('appointments.back'), :back, class: 'btn btn-back'
   - else
     .col-md-6.offset-md-3.jumbotron.time-select.text-center
       p.h3
-        = "#{@doctor.full_name} does not accept patients on this day"
+        = t('appointments.no_date', name: @doctor.full_name)
       br/
       = link_to t('appointments.back'), :back, class: 'btn btn-back'
 

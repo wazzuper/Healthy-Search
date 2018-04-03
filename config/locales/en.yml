@@ -78,6 +78,8 @@ en:
     reviews: 'Reviews'
     find_by: 'Find by certain specialization'
   appointments:
+    no_hours: '%{name} does not have available hours on this day'
+    no_date: '%{name} does not accept patients on this day'
     choose_time: 'Choose a time for your visit'
     back: 'Back'
     book: 'Book now'
