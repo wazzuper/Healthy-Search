@@ -13,7 +13,6 @@
             th = t('doctors.profile.appointments.contacts')
             th = t('doctors.profile.appointments.date')
             th = t('doctors.profile.appointments.details')
-            th Created at
         tbody
           - @appointments.each do |appointment|
             tr
@@ -22,12 +21,8 @@
                 = appointment.patient.phone_number
                 br/
                 = appointment.patient.email
-              td.selected-visiting-date
+              td.selected-visiting-date-doctor
                 = appointment.visiting_day.date.strftime("%B %e, %Y")
                 br/
                 = appointment.visiting_hour.time.strftime("%l:%M %p")
               td
-              td.selected-creating-date
-                = appointment.created_at.strftime("%B %e, %Y")
-                br/
-                = appointment.created_at.strftime("%l:%M %p")
