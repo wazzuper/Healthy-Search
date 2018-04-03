@@ -16,7 +16,7 @@ class DoctorsController < ApplicationController
   end
 
   def profile_area
-    @appointments = Appointment.paginate(page: params[:page], per_page: 10)
+    @appointments = Appointment.order_by_date_for_doctors(@doctor).paginate(page: params[:page], per_page: 10)
   end
 
   def specialization

@@ -13,6 +13,7 @@
                   = "(or #{hour.time.strftime("%l:%M %p")})"
         .col-md-12.d-flex.justify-content-center
           = form_for @appointment do |f|
+            = f.hidden_field :date
             = f.hidden_field :visiting_day_id
             = f.hidden_field :doctor_id
             = f.hidden_field :visiting_hour_id
