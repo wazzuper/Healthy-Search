@@ -17,27 +17,3 @@
 //= require toastr
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function() {
-  $('#sticky-nav').hide();
-
-  if(window.location.pathname == '/') {
-    waypoint();
-  };
-});
-
-const waypoint = () => {
-  var waypoint = new Waypoint({
-    element: document.getElementsByClassName('section-benefits'),
-    handler: function(direction) {
-      if(direction == 'down') {
-        $('#sticky-nav').show();
-        $('#sticky-nav').addClass('fixed-top')
-      } else {
-        $('#sticky-nav').hide();
-        $('#sticky-nav').removeClass('fixed-top')
-      }
-    },
-    offset: 60
-  });
-}
