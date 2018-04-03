@@ -50,6 +50,7 @@ Rails.application.routes.draw do
       get 'appointments'
       get 'reviews'
     end
+    resources :reviews, except: [:index, :show]
   end
 
   resources :appointments, only: [:new, :create, :show]

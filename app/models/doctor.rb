@@ -13,4 +13,8 @@ class Doctor < ApplicationRecord
   def specialization_name(spec_id)
     Specialization.find_by_id(spec_id).name
   end
+
+  # def average_rating
+  #   reviews.count == 0 ? 0 : reviews.average(:rating).round(2).to_i
+  # end
 end
