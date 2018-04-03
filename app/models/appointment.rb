@@ -3,6 +3,7 @@ class Appointment < ApplicationRecord
   belongs_to :patient
   belongs_to :visiting_hour
   belongs_to :visiting_day
+  has_one :review
 
   def self.find_booked_hours
     list_of_hours = []
