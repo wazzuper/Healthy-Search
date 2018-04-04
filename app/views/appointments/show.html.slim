@@ -26,14 +26,14 @@
         - if @appointment.review.present?
           .card-header.text-center = t('appointments.feedback_from', name: @appointment.patient.full_name)
           .card-body
-            = @appointment.review.rating
+            span#applied-rating data-score="#{@appointment.review.rating}"
             p = @appointment.review.comment
         - else
           .card-header.text-center = t('appointments.feedback')
           .card-body
             - if Date.today == @appointment.date # this is a test condition
               = form_for [current_patient, current_patient.reviews.build] do |f|
-                = f.number_field :rating, class: 'form-control'
+                span#rating
                 = f.text_area :comment, class: 'form-control'
                 = f.hidden_field :appointment_id, value: @appointment.id
                 = f.hidden_field :doctor_id, value: @appointment.doctor.id
@@ -60,3 +60,18 @@
         .card-header.text-center = t('appointments.map')
         .card-body
           |Map goes here
+          
+javascript:
+  $('#rating').raty({
+    path: '/assets',
+    scoreName: 'review[rating]',
+    score: 1
+  })
+
+  $('#applied-rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  })
