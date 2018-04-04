@@ -27,12 +27,16 @@
             br/
             small
               = "$#{@appointment.doctor.price}"
-      = link_to 'Back', :back, class: 'btn btn-back btn-block'
-      - if Date.today > @appointment.date && patient_signed_in?
+      = link_to 'Back', appointments_patient_path(current_patient), class: 'btn btn-back btn-block' if patient_signed_in?
+      = link_to 'Back', profile_area_doctor_path(current_doctor), class: 'btn btn-back btn-block' if doctor_signed_in?
+      - if patient_signed_in?
         .card.reviews
-            .card-header.text-center Leave your feedback:
-            .card-body
-              |Feedback here
+          .card-header.text-center Leave your feedback:
+          .card-body
+            - if Date.today > @appointment.date
+              / reviews
+            - else
+              p You can leave your feedback the day after your appointment date
     .col-md-8
       .card.doctor-box
         .card-header.text-center Appointment details:

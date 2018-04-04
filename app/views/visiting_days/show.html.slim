@@ -12,7 +12,7 @@
               tr
                 td
                   = hour.time.strftime("%k:%M")
-                  = " (or #{hour.time.strftime("%k:%M")})"
+                  = " (or #{hour.time.strftime("%l:%M %p")})"
                 td = link_to t('doctors.profile.btns.delete'),
                       doctor_visiting_day_visiting_hour_path(@doctor, @visiting_day, hour), method: :delete,
                       class: 'btn btn-danger'
