@@ -91,6 +91,7 @@ en:
     address: 'Address:'
     price: 'Price for one visite:'
     feedback: 'Leave your feedback:'
+    feedback_from: 'Feedback from %{name}'
     notice: 'You can leave your feedback the day after your appointment date'
     details: 'Appointment details:'
     date_and_time: 'Date and time:'

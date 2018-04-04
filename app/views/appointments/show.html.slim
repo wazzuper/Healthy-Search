@@ -22,11 +22,16 @@
             small = "$#{@appointment.doctor.price}"
       = link_to t('appointments.back'), appointments_patient_path(current_patient), class: 'btn btn-back btn-block' if patient_signed_in?
       = link_to t('appointments.back'), profile_area_doctor_path(current_doctor), class: 'btn btn-back btn-block' if doctor_signed_in?
-      - if patient_signed_in?
-        .card.reviews
+      .card.reviews
+        - if @appointment.review.present?
+          .card-header.text-center = t('appointments.feedback_from', name: @appointment.patient.full_name)
+          .card-body
+            = @appointment.review.rating
+            p = @appointment.review.comment
+        - else
           .card-header.text-center = t('appointments.feedback')
           .card-body
-            - if Date.today == @appointment.date
+            - if Date.today == @appointment.date # this is a test condition
               = form_for [current_patient, current_patient.reviews.build] do |f|
                 = f.number_field :rating, class: 'form-control'
                 = f.text_area :comment, class: 'form-control'
