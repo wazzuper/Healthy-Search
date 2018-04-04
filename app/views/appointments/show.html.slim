@@ -31,7 +31,7 @@
         - else
           .card-header.text-center = t('appointments.feedback')
           .card-body
-            - if Date.today == @appointment.date # this is a test condition
+            - if Date.today > @appointment.date
               = form_for [current_patient, current_patient.reviews.build] do |f|
                 span#rating
                 = f.text_area :comment, class: 'form-control'
@@ -60,7 +60,7 @@
         .card-header.text-center = t('appointments.map')
         .card-body
           |Map goes here
-          
+
 javascript:
   $('#rating').raty({
     path: '/assets',
