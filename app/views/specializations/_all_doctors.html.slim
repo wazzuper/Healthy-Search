@@ -6,7 +6,7 @@
           = image_tag doctor_avatar(doctor)
         - if doctor.reviews.present?
           p.stars = t('search.rating')
-          span#average-rating data-score="#{doctor.average_rating}"
+          span.average-rating data-score="#{doctor.average_rating}"
           p.small = t('search.doctor_reviews', all_reviews: doctor.reviews.count)
         - else
           p.small = t('search.no_reviews')
@@ -43,7 +43,7 @@
   = will_paginate doctors
 
 javascript:
-  $('#average-rating').raty({
+  $('.average-rating').raty({
       path: '/assets',
       readOnly: true,
       score: function() {

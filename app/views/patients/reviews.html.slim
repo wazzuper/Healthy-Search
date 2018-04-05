@@ -1,0 +1,27 @@
+.container
+  .row
+    .col-md-3
+      = render 'patients/profile_menu'
+    .col-md-9
+      - if current_patient.reviews.present?
+        .row
+          - current_patient.reviews.each do |review|
+            .col-md-5.review-card
+              .row
+                .col-md-6
+                  span.rating data-score="#{review.rating}"
+                  br/
+                  = review.comment
+                .col-md-6
+                  = link_to t('patients.review.check'), appointment_path(review.appointment_id), class: 'btn btn-normal'
+      - else
+        p = t('patients.review.no_reviews')
+
+javascript:
+  $('.rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  })

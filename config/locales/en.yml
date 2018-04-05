@@ -15,6 +15,9 @@ en:
     profile:
       info: 'Personal info'
       delete: 'Delete my account'
+    reviews:
+      check: 'Check'
+      no_reviews: 'There are no reviews from you yet'
   doctors:
     profile:
       appointments:
