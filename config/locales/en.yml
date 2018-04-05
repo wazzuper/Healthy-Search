@@ -18,6 +18,7 @@ en:
     reviews:
       check: 'Check'
       no_reviews: 'There are no reviews from you yet'
+      delete: 'Delete'
   doctors:
     profile:
       appointments:

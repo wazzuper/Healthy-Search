@@ -18,13 +18,12 @@ class ReviewsController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
+    review = current_patient.reviews.find(params[:id])
+    review.destroy
+
+    redirect_back(fallback_location: request.referer)
+    flash[:alert] = 'Deleted'
   end
 
   private
