@@ -50,7 +50,9 @@ en:
         no_hours: 'There are no added hours yet, just add them right now'
         add_hour: 'Add hour'
         two_weeks: '(Only the next two weeks are available)'
-      reviews: 'Reviews about you'
+      reviews: 'Last reviews about you'
+      no_reviews: 'There are no reviews yet'
+      rating: 'Rating:'
       settings: 'Profile settings'
       btns:
         add: 'Add'

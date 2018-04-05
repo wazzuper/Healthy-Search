@@ -17,4 +17,8 @@ class Doctor < ApplicationRecord
   def average_rating
     reviews.count == 0 ? 0 : reviews.average(:rating).round(2)
   end
+
+  def last_five_reviews
+    reviews.limit(5).order(created_at: :desc)
+  end
 end

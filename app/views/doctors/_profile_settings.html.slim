@@ -17,3 +17,21 @@ ul.list-group
   
 hr/
 h4 = t('doctors.profile.reviews')
+- if current_doctor.reviews.present?
+  - current_doctor.last_five_reviews.each do |review|
+    = review.find_patient_name(review.patient_id)
+    br/
+    span.rating data-score="#{review.rating}"
+    p.small = review.comment
+    br/
+- else
+  p.small = t('doctors.profile.no_reviews')
+
+javascript:
+  $('.rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  })
