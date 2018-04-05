@@ -4,7 +4,12 @@
       .col-md-3
         .crop
           = image_tag doctor_avatar(doctor)
-        p = t('search.reviews')
+        - if doctor.reviews.present?
+          p.stars = t('search.rating')
+          span#average-rating data-score="#{doctor.average_rating}"
+          p.small = t('search.doctor_reviews', all_reviews: doctor.reviews.count)
+        - else
+          p.small = t('search.no_reviews')
       .col-md-5
         p.lead = doctor.full_name
         p.small
@@ -36,3 +41,12 @@
             = doctor.address
 .flickr_pagination.center-block
   = will_paginate doctors
+
+javascript:
+  $('#average-rating').raty({
+      path: '/assets',
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      }
+    })
