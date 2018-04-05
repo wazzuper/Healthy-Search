@@ -3,7 +3,7 @@
     .jumbotron.row.doctor-card
       .col-md-3
         .crop
-          = image_tag doctor_avatar(doctor)
+          = link_to image_tag(doctor_avatar(doctor)), doctor_path(doctor)
         - if doctor.reviews.present?
           p.stars = t('search.rating')
           span.average-rating data-score="#{doctor.average_rating}"
@@ -11,7 +11,8 @@
         - else
           p.small = t('search.no_reviews')
       .col-md-5
-        p.lead = doctor.full_name
+        p.lead
+          = link_to doctor.full_name, doctor_path(doctor)
         p.small
           = doctor.specialization_name(doctor.specialization_id)
           br/

@@ -530,3 +530,20 @@ input[type=file] {
   padding: 16px 16px;
   background: #eee;
 }
+
+// doctors profile
+
+p.lead a { text-decoration: none; }
+
+.card-footer {
+  border-top: none;
+  background-color: #e9ecef;
+}
+
+.jumbotron.doctor-info { padding: 15px; }
+
+p.h4.text-center { margin-top: 20px; }
+
+.jumbotron.review { padding: 15px; }
+
+.card.doctor-map { margin: 20px 0; }

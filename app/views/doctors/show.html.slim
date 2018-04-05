@@ -1,0 +1,64 @@
+.container
+  .row
+    .col-md-4
+      .card
+        = image_tag doctor_avatar(@doctor), class: 'card-img-top'
+        .card-body
+          p.h3 = @doctor.full_name
+          p 
+            = @doctor.specialization_name(@doctor.specialization_id)
+            br/
+            = t('doctors.public.exp', doc_exp: @doctor.experience)
+          p.lead = t('doctors.public.price', doc_price: @doctor.price)
+        .card-footer
+          - if @doctor.reviews.present?
+            p.stars = t('doctors.public.rating')
+            span#average-rating data-score="#{@doctor.average_rating}"
+            p.small = t('doctors.public.doctor_reviews', all_reviews: @doctor.reviews.count)
+          - else
+            p.small = t('doctors.public.no_reviews')
+      = link_to t('doctors.public.back'), :back, class: 'btn btn-back btn-block'
+    .col-md-8
+      .jumbotron.doctor-info
+        p.lead = t('doctors.public.contacts')
+        p.small
+          = @doctor.phone_number
+          br/
+          = @doctor.email
+        p.lead = t('doctors.public.about')
+        p.small = @doctor.bio
+    .col-md-12
+      .card.doctor-map
+        .card-header.text-center
+          = t('doctors.public.address', doc_address: @doctor.address)
+        .card-body
+          p Mag goes here
+    - if @doctor.reviews.present?
+      .col-md-6.offset-md-3
+        p.h4.text-center = t('doctors.public.all_reviews')
+        - @doctor.reviews.each do |review|
+          .row.jumbotron.review
+            .col-md-4
+              span.rating data-score="#{review.rating}"
+              p.small
+                = review.find_patient_name(review.patient_id)
+                br/
+                = review.created_at.strftime("%B %e, %Y")
+            .col-md-8
+              p = review.comment
+javascript:
+  $('#average-rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  })
+
+  $('.rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  })

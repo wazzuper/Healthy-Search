@@ -63,6 +63,17 @@ en:
         update: 'Update'
         delete: 'Delete'
         back: 'Back to the visiting days'
+    public:
+      exp: '%{doc_exp} years of experience'
+      price: 'Price: $%{doc_price}'
+      rating: 'Average rating:'
+      doctor_reviews: 'Based on %{all_reviews} reviews'
+      no_reviews: 'There are no reviews yet'
+      back: 'Back'
+      contacts: 'Contacts'
+      about: 'About the doctor'
+      address: 'Address: %{doc_address}'
+      all_reviews: 'All reviews'
     account:
       title: 'Account'
       settings: 'Settings'
