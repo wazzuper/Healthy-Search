@@ -98,6 +98,9 @@ en:
     specialization: 'Specialization of the doctor:'
     notes: 'Patient notes:'
     map: "Google map with doctor's address"
+    rating: 'Rating:'
+    comment: 'Comment:'
+    few_words: 'Write a few words about this visit (optional)'
   navbar:
     title: 'Healthy Search'
     welcome_doctor: 'Welcome, %{name}'

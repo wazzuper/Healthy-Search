@@ -26,14 +26,21 @@
         - if @appointment.review.present?
           .card-header.text-center = t('appointments.feedback_from', name: @appointment.patient.full_name)
           .card-body
+            p.stars
+              strong = t('appointments.rating')
             span#applied-rating data-score="#{@appointment.review.rating}"
-            p = @appointment.review.comment
+            p
+              strong = t('appointments.comment')
+              br/
+              = @appointment.review.comment
         - else
           .card-header.text-center = t('appointments.feedback')
           .card-body
             - if Date.today > @appointment.date
               = form_for [current_patient, current_patient.reviews.build] do |f|
+                = t('appointments.rating')
                 span#rating
+                p = t('appointments.few_words')
                 = f.text_area :comment, class: 'form-control'
                 = f.hidden_field :appointment_id, value: @appointment.id
                 = f.hidden_field :doctor_id, value: @appointment.doctor.id
