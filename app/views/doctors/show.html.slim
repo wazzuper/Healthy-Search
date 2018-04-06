@@ -46,6 +46,7 @@
                 = review.created_at.strftime("%B %e, %Y")
             .col-md-8
               p = review.comment
+
 javascript:
   $('#average-rating').raty({
     path: '/assets',
@@ -64,7 +65,7 @@ javascript:
   })
 
   function initialize() {
-    const latlng = new google.maps.LatLng(parseFloat("#{@doctor.address.latitude}"), parseFloat("#{@doctor.address.longitude}"))
+    const latlng = new google.maps.LatLng(parseFloat("#{@doctor.address.latitude}"), parseFloat("#{@doctor.address.longitude}"));
     const options = { center: latlng, zoom: 16 };
     const map = new google.maps.Map(document.getElementById('map'), options);
     const marker = new google.maps.Marker({ position: latlng, map: map });
