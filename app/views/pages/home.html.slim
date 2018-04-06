@@ -4,7 +4,7 @@ header
   .page-intro
     .container
       .row
-        .welcome-box.col-md-4
+        .col-md-4.welcome-box
           h1 Healthy Search
           p
             | Find a trusted doctor to
@@ -17,14 +17,19 @@ header
             = link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'btn btn-outline-blue' if current_patient
           - else
             = link_to 'Log in', login_page_path, class: 'btn btn-outline-green'
-            = link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue'
+            = link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue'          
+section.section-search
+  .container
+    h2.heading.text-center Find your doctor
+    = form_tag specializations_path, method: :get do |f|
       .row
-        .search-box.col-md-8
-          = form_tag specializations_path, method: :get do |f|
-            .search-field
-              = text_field_tag :search, params[:search], placeholder: 'Type specialization'
-              i.fas.fa-search.fa-1x aria-hidden="true"
-            = submit_tag 'Search', class: 'btn-search'
+        .col-md-6.offset-md-3.search-field
+          .row
+            .col-md-9.col-sm-9
+              = select_tag :search, options_for_select(get_specializations, params[:search]), class: 'dropdown'
+            .col-md-3.col-sm-3.text-right
+              = submit_tag 'Search', class: 'btn-search'
+hr/
 section.section-benefits
   .container
     h2.heading.text-center Why Healthy Search is so cool?
@@ -62,6 +67,12 @@ section.section-specializations
           = link_to "#{specialization.name} (#{specialization.doctors.count})", specialization_path(specialization)
           
 javascript:
+  $(document).ready(function(){
+    $('.dropdown').select2({
+      placeholder: 'Select a specialization'
+    });
+  })
+
   $(window).scroll(function() {
     if ($(this).scrollTop() >= 500) {
         $('#return-to-top').fadeIn(400);

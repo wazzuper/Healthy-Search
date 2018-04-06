@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "toastr";
+@import "select2";
 
 body {
   color: #565a5c;
@@ -43,11 +44,53 @@ nav.navbar {
   padding: 100px;
 }
 
-.page-intro .container .row .welcome-box.col-md-4 {
+// login box and search form
+
+.welcome-box.col-md-4 {
   padding: 15px;
   color: white;
   box-shadow: 1px 1px 15px #444;
   background-color: rgba(31,29,15,0.54);
+}
+
+.dropdown {
+  width: 100%;
+}
+
+// .search-field input[type=text] {
+//   padding: 0px 10px;
+//   border-width: thin;
+//   height: 40px;
+//   width: 100%;
+// }
+
+// .search-field input[type=text]:hover {
+//   border: none;
+//   box-shadow: 1px 4px 15px #999;
+// }
+
+// .search-field input[type=text]:focus {
+//   border: none;
+//   outline: none;
+//   box-shadow: 1px 4px 15px #999;
+// }
+
+.btn-search {
+  height: 28px;
+  border: none;
+  background-color: #20c997;
+  color: #fff;
+}
+
+.btn-search:hover {
+  background-color: #22e3aa;
+  box-shadow: 1px 4px 15px #999;
+  cursor: pointer;
+}
+
+.btn-search:focus, .btn-search:active {
+  box-shadow: none;
+  outline: none;
 }
 
 // to the top button
@@ -97,63 +140,11 @@ nav.navbar {
     top: 5px;
 }
 
-// search
+// sections
 
-.row .search-box.col-md-8 {
-  margin-top: 30px;
-  padding: 0px;
+.section-search {
+  padding: 80px 0;
 }
-
-.search-box .search-field input[type=text] {
-  padding-left: 29px;
-  height: 26px;
-  width: 35%;
-  border: none;
-  box-shadow: 1px 1px 15px #444;
-  background-color: rgba(31,29,15,0.54);
-  color: white;
-}
-
-.search-box .search-field input[type=text]::placeholder {
-  color: white;
-}
-
-.search-box .search-field input[type=text]:focus {
-  color: white;
-}
-
-.search-field {
-  position: relative;
-}
-
-.search-box .search-field i {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  padding: 1px;
-  color: white;
-}
-
-.btn-search {
-  position: absolute;
-  top: 0px;
-  right: 323px;
-  color: white;
-  border: none;
-  box-shadow: 1px 1px 15px #444;
-  background-color: rgba(31,29,15,0.54);
-}
-
-.btn-search:hover {
-  background-color: #20c997;
-  cursor: pointer;
-}
-
-.btn-search:active {
-  background-color: #169972;
-}
-
-// benefits
 
 .section-benefits {
   padding: 80px 0;
