@@ -8,6 +8,7 @@ class Doctor < ApplicationRecord
   has_many :appointments
   has_many :patients, through: :appointments
   has_many :reviews
+  has_one :address
   belongs_to :specialization
 
   def specialization_name(spec_id)

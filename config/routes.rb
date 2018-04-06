@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     resources :visiting_days, only: [:show, :create, :destroy] do
       resources :visiting_hours, only: [:create, :destroy]
     end
+    resources :addresses, only: [:create, :update]
   end
 
   resources :patients, except: [:index, :show, :new, :create, :edit] do

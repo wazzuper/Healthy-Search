@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403131145) do
+ActiveRecord::Schema.define(version: 20180406064807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "place"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_addresses_on_doctor_id"
+  end
 
   create_table "appointments", force: :cascade do |t|
     t.date "date"
@@ -44,7 +54,6 @@ ActiveRecord::Schema.define(version: 20180403131145) do
     t.datetime "updated_at", null: false
     t.string "full_name"
     t.string "phone_number"
-    t.string "address"
     t.integer "experience"
     t.text "bio"
     t.string "avatar"
@@ -109,6 +118,7 @@ ActiveRecord::Schema.define(version: 20180403131145) do
     t.index ["visiting_day_id"], name: "index_visiting_hours_on_visiting_day_id"
   end
 
+  add_foreign_key "addresses", "doctors"
   add_foreign_key "appointments", "visiting_days"
   add_foreign_key "appointments", "visiting_hours"
   add_foreign_key "doctors", "specializations"
