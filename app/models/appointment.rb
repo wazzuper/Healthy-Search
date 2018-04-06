@@ -5,6 +5,8 @@ class Appointment < ApplicationRecord
   belongs_to :visiting_day
   has_one :review
 
+  validates :date, presence: true
+
   def self.find_booked_hours
     list_of_hours = []
     Appointment.joins(:patient, :doctor, :visiting_hour, :visiting_day).each do |a|

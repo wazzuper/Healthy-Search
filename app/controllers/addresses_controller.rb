@@ -18,7 +18,7 @@ class AddressesController < ApplicationController
     if @doctor.address.update_attributes(address_params)
       flash[:notice] = 'Address updated'
     else
-      flash[:alert] = address.errors.full_messages.join(', ')
+      flash[:alert] = @doctor.address.errors.full_messages.join(', ')
     end
 
     redirect_back(fallback_location: request.referer)
