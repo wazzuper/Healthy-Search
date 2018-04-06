@@ -7,8 +7,15 @@
         .card-header.text-center = t('doctors.profile.address.title')
         .card-body
           .container
-            = form_for @doctor do |f|
-              .form-group
-                = f.label :address
-                = f.text_field :address, placeholder: t('forms.type'), class: 'form-control'
-              = f.submit t('doctors.profile.btns.update'), class: 'btn btn-normal btn-block'
+            - if @doctor.address.present?
+              = form_for [@doctor, @doctor.address] do |f|
+                .form-group
+                  = f.label :place
+                  = f.text_field :place, placeholder: t('forms.type'), class: 'form-control'
+                = f.submit t('doctors.profile.btns.update'), class: 'btn btn-normal btn-block'
+            - else
+              = form_for [@doctor, @doctor.build_address] do |f|
+                .form-group
+                  = f.label :place
+                  = f.text_field :place, placeholder: t('forms.type'), class: 'form-control'
+                = f.submit t('doctors.profile.btns.update'), class: 'btn btn-normal btn-block'
