@@ -8,6 +8,7 @@ html
     link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://maps.googleapis.com/maps/api/js'
   body
     = render 'shared/navbar' unless current_page?(root_path)
     = render 'shared/messages'
