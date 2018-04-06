@@ -30,7 +30,7 @@
     .col-md-12
       .card.doctor-map
         .card-header.text-center
-          = t('doctors.public.address', doc_address: @doctor.address)
+          = t('doctors.public.address', doc_address: @doctor.address.place)
         .card-body
           p Mag goes here
     - if @doctor.reviews.present?
