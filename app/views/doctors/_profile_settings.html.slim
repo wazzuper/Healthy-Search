@@ -19,7 +19,7 @@ ul.list-group
   hr/
   = form_for current_doctor do |f|
     = f.hidden_field :active, value: true
-    = f.submit 'Activate my profile', class: 'btn btn-normal btn-block', disabled: !current_doctor.filled_required_fields?
+    = f.submit t('doctors.profile.btns.activate'), class: 'btn btn-normal btn-block', disabled: !current_doctor.filled_required_fields?
   
 hr/
 h4 = t('doctors.profile.reviews')

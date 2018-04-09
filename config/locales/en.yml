@@ -63,6 +63,7 @@ en:
         update: 'Update'
         delete: 'Delete'
         back: 'Back to the visiting days'
+        activate: 'Activate my profile'
     public:
       exp: '%{doc_exp} years of experience'
       price: 'Price: $%{doc_price}'

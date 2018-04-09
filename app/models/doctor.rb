@@ -4,11 +4,11 @@ class Doctor < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :visiting_days
-  has_many :appointments
+  has_many :visiting_days, dependent: :destroy
+  has_many :appointments, dependent: :destroy
   has_many :patients, through: :appointments
-  has_many :reviews
-  has_one :address
+  has_many :reviews, dependent: :destroy
+  has_one :address, dependent: :destroy
   belongs_to :specialization
 
   def specialization_name(spec_id)
