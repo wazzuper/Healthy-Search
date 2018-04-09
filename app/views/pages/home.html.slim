@@ -55,8 +55,18 @@ hr/
 section.section-doctors
   .container
     h2.heading.text-center List of our best doctors
-    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
-    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
+    .row
+      - @doctors.each do |doctor|
+        .col-md-4
+          .card
+            = link_to image_tag(doctor_avatar(doctor), class: 'card-img-top'), doctor_path(doctor)
+            .card-body
+              p.h4 = link_to doctor.full_name, doctor_path(doctor)
+              p = doctor.specialization_name(doctor.specialization_id)
+            .card-footer
+              p.stars = t('doctors.public.rating')
+              span.average-rating data-score="#{doctor.average_rating}"
+              p.small = t('doctors.public.doctor_reviews', all_reviews: doctor.reviews.count)
 hr/
 section.section-specializations
   .container
@@ -84,3 +94,11 @@ javascript:
   function scrollBtn() {
     $("html, body").animate({ scrollTop: 0 }, 500);
   }
+
+  $('.average-rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  })
