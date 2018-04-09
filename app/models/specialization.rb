@@ -3,12 +3,8 @@ class Specialization < ApplicationRecord
 
   validates :name, presence: true
 
-  def self.list_of_specializations
-    list = []
-    Specialization.all.each do |spec|
-      list << spec.name
-    end
-    list
+  def self.search_by_request(filter)
+    Specialization.all.where(name: filter)
   end
 
   def doctors_with_active_cards

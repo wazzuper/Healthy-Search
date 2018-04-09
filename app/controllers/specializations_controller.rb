@@ -4,7 +4,7 @@ class SpecializationsController < ApplicationController
   def index
     filter = params[:search]
 
-    if Specialization.list_of_specializations.include?(filter)
+    if Specialization.search_by_request(filter)
       @doctors = Specialization.find_by_name(filter).doctors
     else
       @doctors = Doctor.all
