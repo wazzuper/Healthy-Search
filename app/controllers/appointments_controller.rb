@@ -13,7 +13,11 @@ class AppointmentsController < ApplicationController
       @doctor = Doctor.find(params[:doctor_id])
 
       unless @visiting_day.nil?
-        @appointment = Appointment.new(date: params[:date], doctor_id: params[:doctor_id], visiting_day_id: @visiting_day.id)
+        @appointment = Appointment.new(
+          date: params[:date],
+          doctor_id: params[:doctor_id],
+          visiting_day_id: @visiting_day.id
+        )
         @appointments_with_booked_hours = Appointment.find_booked_hours
       end
     end

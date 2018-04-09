@@ -5,7 +5,7 @@ class VisitingHoursController < ApplicationController
   def create
     visiting_hour = @visiting_day.visiting_hours.new
     visiting_hour.time = visiting_hour_params[:time]
-    
+
     if visiting_hour.save
       flash[:notice] = 'Visiting hour added'
     else
