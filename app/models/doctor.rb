@@ -22,4 +22,12 @@ class Doctor < ApplicationRecord
   def last_five_reviews
     reviews.limit(5).order(created_at: :desc)
   end
+
+  def has_active_card?
+    active.present?
+  end
+
+  def filled_required_fields?
+    specialization.present? && experience.present? && bio.present? && address.present? && price.present?
+  end
 end

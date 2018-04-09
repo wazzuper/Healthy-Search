@@ -1,45 +1,46 @@
 - doctors.each do |doctor|
-  .col-md-12.text-center
-    .jumbotron.row.doctor-card
-      .col-md-3
-        .crop
-          = link_to image_tag(doctor_avatar(doctor)), doctor_path(doctor)
-        - if doctor.reviews.present?
-          p.stars = t('search.rating')
-          span.average-rating data-score="#{doctor.average_rating}"
-          p.small = t('search.doctor_reviews', all_reviews: doctor.reviews.count)
-        - else
-          p.small = t('search.no_reviews')
-      .col-md-5
-        p.lead
-          = link_to doctor.full_name, doctor_path(doctor)
-        p.small
-          = doctor.specialization_name(doctor.specialization_id)
-          br/
-          = t('search.experience', doc_exp: doctor.experience)
-        p.lead = t('search.price', doc_price: doctor.price)
-        p
-          strong
-            = t('search.phone')
-          br/
-          = doctor.phone_number
-      .col-md-4.appointments
-        p 
-          = t('search.date')
-          br/
-          = t('search.two_weeks')
-        = form_tag new_appointment_path, method: :get do
-          = date_field_tag :date, params[:date], min: Date.today, max: Date.today + 14
-          = hidden_field_tag :doctor_id, params[:doctor_id], value: doctor.id
-          br/
-          br/
-          = submit_tag t('search.book'), class: 'btn btn-normal'
-        .address
+  - if doctor.has_active_card?
+    .col-md-12.text-center
+      .jumbotron.row.doctor-card
+        .col-md-3
+          .crop
+            = link_to image_tag(doctor_avatar(doctor)), doctor_path(doctor)
+          - if doctor.reviews.present?
+            p.stars = t('search.rating')
+            span.average-rating data-score="#{doctor.average_rating}"
+            p.small = t('search.doctor_reviews', all_reviews: doctor.reviews.count)
+          - else
+            p.small = t('search.no_reviews')
+        .col-md-5
+          p.lead
+            = link_to doctor.full_name, doctor_path(doctor)
+          p.small
+            = doctor.specialization_name(doctor.specialization_id)
+            br/
+            = t('search.experience', doc_exp: doctor.experience)
+          p.lead = t('search.price', doc_price: doctor.price)
           p
             strong
-              = t('search.address')
+              = t('search.phone')
             br/
-            = doctor.address.place
+            = doctor.phone_number
+        .col-md-4.appointments
+          p 
+            = t('search.date')
+            br/
+            = t('search.two_weeks')
+          = form_tag new_appointment_path, method: :get do
+            = date_field_tag :date, params[:date], min: Date.today, max: Date.today + 14
+            = hidden_field_tag :doctor_id, params[:doctor_id], value: doctor.id
+            br/
+            br/
+            = submit_tag t('search.book'), class: 'btn btn-normal'
+          .address
+            p
+              strong
+                = t('search.address')
+              br/
+              = doctor.address.place
 .flickr_pagination.center-block
   = will_paginate doctors
 

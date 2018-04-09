@@ -14,6 +14,12 @@ ul.list-group
     class: 'list-group-item list-group-item-action'
   = link_to t('doctors.profile.price.title'), price_doctor_path(current_doctor),
     class: 'list-group-item list-group-item-action'
+
+- unless current_doctor.active.present?
+  hr/
+  = form_for current_doctor do |f|
+    = f.hidden_field :active, value: true
+    = f.submit 'Activate my profile', class: 'btn btn-normal btn-block', disabled: !current_doctor.filled_required_fields?
   
 hr/
 h4 = t('doctors.profile.reviews')
