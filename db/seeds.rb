@@ -14,7 +14,7 @@ require 'open-uri'
 # end
 
 # 200.times do
-#   spec_id = rand(106..157)
+#   spec_id = rand(1..52)
 #   exp = rand(1..45)
 #   if exp >= 1 && exp < 5
 #     price = rand(15..30)
@@ -32,6 +32,5 @@ require 'open-uri'
 #                 specialization_id: spec_id,
 #                 experience: exp,
 #                 price: price,
-#                 phone_number: Faker::PhoneNumber.phone_number,
-#                 address: "#{Faker::Address.city}, #{Faker::Address.street_address}")
+#                 phone_number: Faker::PhoneNumber.phone_number)
 # end
