@@ -65,6 +65,8 @@ en:
         spec_and_exp: 'Specialization and experience'
         bio: 'Biography (patients want to know who will treat them)'
         address: 'Address'
+        phone: 'Phone number, you can add it '
+        here: 'here'
         price: 'Price for one visit'
         click_on: 'Then, you can click on the green button "Activate my profile"'
         pause: 'You can deactivate account at any moment by click on the button below'

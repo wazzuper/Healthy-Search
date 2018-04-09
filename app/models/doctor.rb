@@ -28,6 +28,7 @@ class Doctor < ApplicationRecord
   end
 
   def filled_required_fields?
-    specialization.present? && experience.present? && bio.present? && address.present? && price.present?
+    specialization.present? && experience.present? && bio.present? &&
+    address.present? && price.present? && phone_number.present?
   end
 end
