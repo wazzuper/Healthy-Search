@@ -1,0 +1,21 @@
+.container
+  .row
+    .col-md-4.text-center
+      = render 'profile_settings'
+    .col-md-8
+      .card
+        .card-header.text-center = t('doctors.profile.faq.title')
+        .card-body
+          p.h4 = t('doctors.profile.faq.short', name: current_doctor.full_name)
+          p = t('doctors.profile.faq.to_add')
+          ul
+            li = t('doctors.profile.faq.spec_and_exp')
+            li = t('doctors.profile.faq.bio')
+            li = t('doctors.profile.faq.address')
+            li = t('doctors.profile.faq.price')
+          p = t('doctors.profile.faq.click_on')
+          hr/
+          p = t('doctors.profile.faq.pause')
+          = form_for current_doctor do |f|
+            = f.hidden_field :active, value: false
+            = f.submit t('doctors.profile.btns.deactivate'), class: 'btn btn-danger btn-block'

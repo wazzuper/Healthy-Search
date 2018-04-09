@@ -58,12 +58,23 @@ en:
       no_reviews: 'There are no reviews yet'
       rating: 'Rating:'
       settings: 'Profile settings'
+      faq:
+        title: 'FAQ'
+        short: 'Short instructions for %{name}'
+        to_add: 'To add your card to the search system, you need to fill in the following fields:'
+        spec_and_exp: 'Specialization and experience'
+        bio: 'Biography (patients want to know who will treat them)'
+        address: 'Address'
+        price: 'Price for one visit'
+        click_on: 'Then, you can click on the green button "Activate my profile"'
+        pause: 'You can deactivate account at any moment by click on the button below'
       btns:
         add: 'Add'
         update: 'Update'
         delete: 'Delete'
         back: 'Back to the visiting days'
         activate: 'Activate my profile'
+        deactivate: 'Deactivate'
     public:
       exp: '%{doc_exp} years of experience'
       price: 'Price: $%{doc_price}'

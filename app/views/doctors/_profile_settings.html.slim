@@ -14,6 +14,8 @@ ul.list-group
     class: 'list-group-item list-group-item-action'
   = link_to t('doctors.profile.price.title'), price_doctor_path(current_doctor),
     class: 'list-group-item list-group-item-action'
+  = link_to t('doctors.profile.faq.title'), faq_doctor_path(current_doctor),
+    class: 'list-group-item list-group-item-action faq'
 
 - unless current_doctor.active.present?
   hr/

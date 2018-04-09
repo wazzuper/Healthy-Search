@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       get 'specialization'
       get 'price'
       get 'visiting_days'
+      get 'faq'
     end
     resources :visiting_days, only: [:show, :create, :destroy] do
       resources :visiting_hours, only: [:create, :destroy]
@@ -55,5 +56,5 @@ Rails.application.routes.draw do
   end
 
   resources :appointments, only: [:new, :create, :show]
-  resources :specializations
+  resources :specializations, only: [:index, :show]
 end
