@@ -64,6 +64,8 @@
               p = @appointment.doctor.specialization.name
             .col-md-6
               p.lead = t('appointments.notes')
+              p.small = @appointment.note
+              p.small = t('appointments.no_notes') unless @appointment.note.present?
       .card.google-map
         .card-header.text-center = t('appointments.map')
         .card-body

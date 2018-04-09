@@ -20,20 +20,20 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    appointment = Appointment.new(appointment_params)
 
-    if @appointment.save
+    if appointment.save
       flash[:notice] = 'Done! See you!'
+      redirect_to appointment_path(appointment)
     else
       flash[:alert] = 'Something went wrong'
+      redirect_back(fallback_location: request.referer)
     end
-
-    redirect_back(fallback_location: request.referer)
   end
 
   private
 
   def appointment_params
-    params.require(:appointment).permit(:date, :doctor_id, :patient_id, :visiting_day_id, :visiting_hour_id)
+    params.require(:appointment).permit(:date, :doctor_id, :patient_id, :visiting_day_id, :visiting_hour_id, :note)
   end
 end

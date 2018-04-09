@@ -11,8 +11,10 @@
                 = hour.time.strftime("%k:%M")
                 p.small
                   = "(or #{hour.time.strftime("%l:%M %p")})"
-        .col-md-12.d-flex.justify-content-center
+        .col-md-6.offset-md-3.form-group.text-center
           = form_for @appointment do |f|
+            = f.label t('appointments.leave_note'), class: 'small'
+            = f.text_area :note, rows: 5, placeholder: t('forms.type'), style: 'width: 100%;'
             = f.hidden_field :date
             = f.hidden_field :visiting_day_id
             = f.hidden_field :doctor_id
@@ -37,6 +39,7 @@
 javascript:
   function add_hour(id) {
     $('#appointment_visiting_hour_id').val(id);
+    toastr.success('Time is selected.', 'You can book now!')
   }
   function add_patient(id) {
     $('#appointment_patient_id').val(id);
