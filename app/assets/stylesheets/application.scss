@@ -17,18 +17,14 @@ nav.navbar {
 
 // main-nav
 
-#main-nav {
-  margin-bottom: 25px;
-}
+#main-nav { margin-bottom: 25px; }
 
 .center-block {
   display: block;
   margin: 0 auto;
 }
 
-.container {
-  width: 80%;
-}
+.container { width: 80%; }
 
 // bg image
 
@@ -40,9 +36,7 @@ nav.navbar {
   height: 100vh;
 }
 
-.page-intro .container {
-  padding: 100px;
-}
+.page-intro .container { padding: 100px; }
 
 // login box and search form
 
@@ -53,9 +47,7 @@ nav.navbar {
   background-color: rgba(31,29,15,0.54);
 }
 
-.dropdown {
-  width: 100%;
-}
+.dropdown { width: 100%; }
 
 // .search-field input[type=text] {
 //   padding: 0px 10px;
@@ -96,82 +88,76 @@ nav.navbar {
 // to the top button
 
 #return-to-top {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.7);
-    width: 50px;
-    height: 50px;
-    display: block;
-    text-decoration: none;
-    -webkit-border-radius: 35px;
-    -moz-border-radius: 35px;
-    border-radius: 35px;
-    display: none;
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #return-to-top i {
-    color: #fff;
-    margin: 0;
-    position: relative;
-    left: 16px;
-    top: 13px;
-    font-size: 19px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #return-to-top:hover {
   cursor: pointer;
-    background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 #return-to-top:hover i {
-    color: #fff;
-    top: 5px;
+  color: #fff;
+  top: 5px;
 }
 
 // sections
 
-.section-search {
-  padding: 80px 0;
-}
+.section-search { padding: 80px 0; }
 
 .section-benefits {
   padding: 80px 0;
+  background-color: #e9ecef;
 }
 
-.section-doctors {
-  padding: 80px 0;
-}
+.section-doctors { padding: 80px 0; }
 
 .section-specializations {
   padding: 80px 0;
+  background-color: #e9ecef;
 }
 
 // nav-tabs
 
-.nav-tabs {
-  border-bottom: none;
-}
+.nav-tabs { border-bottom: none; }
 
 .nav-tabs .nav-item {
   margin-bottom: 10px;
   color: #000;
 }
 
-.nav-tabs .nav-link {
-  border: none;
-}
+.nav-tabs .nav-link { border: none; }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   color: #039be5;
@@ -190,9 +176,7 @@ nav.navbar {
 
 // for <h> tags
 
-.heading {
-  margin-bottom: 30px;
-}
+.heading { margin-bottom: 20px; }
 
 .heading-form {
   margin-top: 20px;
@@ -291,9 +275,7 @@ nav.navbar {
 }
 
 // forms
-.form-group {
-  margin-bottom: 20px;
-}
+.form-group { margin-bottom: 20px; }
 
 .form-control {
   border-radius: 2px;
@@ -305,9 +287,7 @@ nav.navbar {
   border: 1px solid #00a699;
 }
 
-.form-group textarea {
-  border: 1px solid #00a699;
-}
+.form-group textarea { border: 1px solid #00a699; }
 
 .form-group select {
   width: 100%;
@@ -370,13 +350,9 @@ input[type=file] {
   cursor: default;
 }
 
-.flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
-  padding: 0.2em 0.5em;
-}
+.flickr_pagination a, .flickr_pagination span, .flickr_pagination em { padding: 0.2em 0.5em; }
 
-.flickr_pagination .disabled {
-  color: #aaa;
-}
+.flickr_pagination .disabled { color: #aaa; }
   
 .flickr_pagination .current {
   font-style: normal;
@@ -400,23 +376,15 @@ input[type=file] {
   padding-top: 0.8em;
 }
 
-.flickr_pagination .previous_page, .flickr_pagination .next_page {
-  border-width: 2px;
-}
+.flickr_pagination .previous_page, .flickr_pagination .next_page { border-width: 2px; }
   
-.flickr_pagination .previous_page {
-  margin-right: 1em;
-}
+.flickr_pagination .previous_page { margin-right: 1em; }
   
-.flickr_pagination .next_page {
-  margin-left: 1em;
-}
+.flickr_pagination .next_page { margin-left: 1em; }
 
 // doctors cards (search page)
 
-.doctor-card {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+.doctor-card { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .crop {
   height: 200px;
@@ -429,19 +397,13 @@ input[type=file] {
   border-radius: 15px 50px 30px 5px;
 }
 
-.appointments {
-  border-left: 1px solid #d7d7d7;
-}
+.appointments { border-left: 1px solid #d7d7d7; }
 
-.address {
-  margin-top: 25px;
-}
+.address { margin-top: 25px; }
 
 // appointments
 
-.time-select {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+.time-select { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .time-box {
   margin-bottom: 20px;
@@ -473,17 +435,11 @@ input[type=file] {
   width: 100%;
 }
 
-.card.doctor-box .card-header {
-  background-color: #20c997;
-}
+.card.doctor-box .card-header { background-color: #20c997; }
 
-.card.doctor-box {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
-}
+.card.doctor-box { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19); }
 
-.card.reviews .card-header {
-  background-color: #20c997;
-}
+.card.reviews .card-header { background-color: #20c997; }
 
 .card.reviews {
   margin-top: 20px;
@@ -553,7 +509,18 @@ p.h4.text-center { margin-top: 20px; }
 
 // main page
 
+.row .col-md-4 .card:hover { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19); }
+
 p.h4 a {
   color: #565a5c;
   text-decoration: none;
 }
+
+p.h4 a:hover { color: #a2a2a2; }
+
+.row .col-md-3 a {
+  color: #565a5c;
+  text-decoration: none;
+}
+
+.row .col-md-3 a:hover { color: #a2a2a2; }

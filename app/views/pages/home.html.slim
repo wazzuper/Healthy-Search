@@ -29,29 +29,23 @@ section.section-search
               = select_tag :search, options_for_select(get_specializations, params[:search]), class: 'dropdown'
             .col-md-3.col-sm-3.text-right
               = submit_tag 'Search', class: 'btn-search'
-hr/
+
 section.section-benefits
   .container
     h2.heading.text-center Why Healthy Search is so cool?
     nav
       #nav-tab.nav.nav-tabs.nav-justified role="tablist" 
-        a#nav-home-tab.nav-item.nav-link.active aria-controls="nav-home" aria-selected="true" data-toggle="tab" href="#nav-home" role="tab"  Home
-        a#nav-profile-tab.nav-item.nav-link aria-controls="nav-profile" aria-selected="false" data-toggle="tab" href="#nav-profile" role="tab"  Profile
-        a#nav-contact-tab.nav-item.nav-link aria-controls="nav-contact" aria-selected="false" data-toggle="tab" href="#nav-contact" role="tab"  Contact
+        a#nav-home-tab.nav-item.nav-link.active data-toggle="tab" href="#nav-home" role="tab" Lorem
+        a#nav-profile-tab.nav-item.nav-link data-toggle="tab" href="#nav-profile" role="tab" Ipsum
+        a#nav-contact-tab.nav-item.nav-link data-toggle="tab" href="#nav-contact" role="tab" Dolor
     #nav-tabContent.tab-content.justify-content-center
       #nav-home.tab-pane.fade.show.active aria-labelledby="nav-home-tab" role="tabpanel" 
-        .card style=("width: 18rem;") 
-          .card-body
-            h5.card-title Card title
-            h6.card-subtitle.mb-2.text-muted Card subtitle
-            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-            a.card-link href="#"  Card link
-            a.card-link href="#"  Another link
+        p Proin vel rutrum augue. Sed et ullamcorper urna. Vestibulum eget pretium mi. Duis ullamcorper ante vitae blandit condimentum. Quisque venenatis augue purus, laoreet dapibus diam pellentesque ultrices. Integer sollicitudin, ligula ut sollicitudin auctor, ipsum ipsum finibus ipsum, eu suscipit mauris libero eu dui. Aenean feugiat dictum dui ut porta.
       #nav-profile.tab-pane.fade aria-labelledby="nav-profile-tab" role="tabpanel" 
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
+        p Nam faucibus leo a est malesuada gravida. In id accumsan justo. Donec fermentum quam ultrices, euismod orci ac, ornare neque. Donec a nulla molestie eros elementum dictum vel vitae lectus. Aenean porta varius vulputate. Nam nec maximus tellus. Praesent egestas metus purus, eu imperdiet massa vulputate et. Curabitur posuere, magna quis tempus fermentum, arcu lectus accumsan ex, a faucibus ex sem nec velit. Mauris eleifend pulvinar mauris, ut pellentesque massa gravida non. Nunc quis erat elementum felis sollicitudin sodales. Integer mi odio, ullamcorper sed erat id, rutrum tristique urna. Vestibulum at molestie diam. Donec augue dui, placerat at urna eget, blandit vestibulum nibh.
       #nav-contact.tab-pane.fade aria-labelledby="nav-contact-tab" role="tabpanel" 
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac felis donec. Purus viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum. Posuere sollicitudin aliquam ultrices sagittis. Donec enim diam vulputate ut pharetra. Nisi vitae suscipit tellus mauris a diam maecenas sed. Amet cursus sit amet dictum sit amet justo. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Vitae sapien pellentesque habitant morbi tristique senectus. Morbi quis commodo odio aenean sed. Pharetra convallis posuere morbi leo urna molestie at elementum. Commodo viverra maecenas accumsan lacus. Vulputate ut pharetra sit amet. Mattis molestie a iaculis at erat pellentesque adipiscing commodo. Ullamcorper a lacus vestibulum sed arcu non odio.
-hr/
+        p Donec sed orci velit. Sed suscipit, neque nec fringilla venenatis, lacus risus suscipit lacus, a sodales diam quam vitae arcu. Vivamus facilisis velit et vehicula imperdiet. Nam mollis erat ex, at lobortis elit ornare vitae. In at metus euismod, blandit massa sit amet, sollicitudin felis. Integer blandit tempor nisi, nec facilisis lorem commodo tempor. Nulla finibus eleifend pretium.
+
 section.section-doctors
   .container
     h2.heading.text-center List of our best doctors
@@ -67,7 +61,7 @@ section.section-doctors
               p.stars = t('doctors.public.rating')
               span.average-rating data-score="#{doctor.average_rating}"
               p.small = t('doctors.public.doctor_reviews', all_reviews: doctor.reviews.count)
-hr/
+
 section.section-specializations
   .container
     h2.heading.text-center Doctors specializations
