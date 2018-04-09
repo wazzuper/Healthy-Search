@@ -3,7 +3,7 @@ class Appointment < ApplicationRecord
   belongs_to :patient
   belongs_to :visiting_hour
   belongs_to :visiting_day
-  has_one :review
+  has_one :review, dependent: :destroy
 
   validates :date, presence: true
 
