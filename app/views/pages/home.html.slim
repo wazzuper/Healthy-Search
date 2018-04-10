@@ -4,76 +4,107 @@ header
   .page-intro
     .container
       .row
-        .col-md-4.welcome-box
-          h1 Healthy Search
+        .welcome-box.justify-content-start
+          h1 = t('home.title')
           p
-            | Find a trusted doctor to
+            = t('home.trusted')
             br/
-            | make your life healthy
+            = t('home.healthy')
           - if doctor_signed_in? || patient_signed_in?
-            = link_to 'My profile', profile_area_doctor_path(current_doctor), class: 'btn btn-outline-green' if current_doctor
-            = link_to 'My profile', edit_patient_registration_path, class: 'btn btn-outline-green' if current_patient
-            = link_to 'Log out', destroy_doctor_session_path, method: :delete, class: 'btn btn-outline-blue' if current_doctor
-            = link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'btn btn-outline-blue' if current_patient
+            = link_to t('home.profile'), profile_area_doctor_path(current_doctor), class: 'btn btn-outline-green' if current_doctor
+            = link_to t('home.profile'), edit_patient_registration_path, class: 'btn btn-outline-green' if current_patient
+            = link_to t('home.log_out'), destroy_doctor_session_path, method: :delete, class: 'btn btn-outline-blue' if current_doctor
+            = link_to t('home.log_out'), destroy_patient_session_path, method: :delete, class: 'btn btn-outline-blue' if current_patient
           - else
-            = link_to 'Log in', login_page_path, class: 'btn btn-outline-green'
-            = link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue'
+            = link_to t('home.log_in'), login_page_path, class: 'btn btn-outline-green'
+            = link_to t('home.reg'), registration_page_path, class: 'btn btn-outline-blue'
+
 section.section-search
   .container
-    h2.heading.text-center Find your doctor
+    h2.heading.text-center = t('home.find')
     .row
-      .col-md-6.offset-md-3
-        .jumbotron.search
-          = form_tag specializations_path, method: :get
-            .row
-              .col-md-12.d-flex.justify-content-center
-                = select_tag :search, options_for_select(get_specializations, params[:search]), class: 'dropdown'
-              .col-md-12.d-flex.justify-content-center  
-                = submit_tag 'Search', class: 'btn-search'
+      .col-md-12.d-flex.justify-content-center
+        = form_tag specializations_path, method: :get
+          = select_tag :search, options_for_select(get_specializations, params[:search]), class: 'dropdown'
+          br/
+          .text-center
+            = submit_tag t('home.search'), class: 'btn-search'
 
 section.section-benefits
   .container
-    h2.heading.text-center Why Healthy Search is so cool?
+    h2.heading.text-center = t('home.cool')
     nav
       #nav-tab.nav.nav-tabs.nav-justified role="tablist" 
-        a#nav-home-tab.nav-item.nav-link.active data-toggle="tab" href="#nav-home" role="tab" Lorem
-        a#nav-profile-tab.nav-item.nav-link data-toggle="tab" href="#nav-profile" role="tab" Ipsum
-        a#nav-contact-tab.nav-item.nav-link data-toggle="tab" href="#nav-contact" role="tab" Dolor
+        a#nav-home-tab.nav-item.nav-link.active data-toggle="tab" href="#nav-home" role="tab" = t('home.lorem')
+        a#nav-profile-tab.nav-item.nav-link data-toggle="tab" href="#nav-profile" role="tab" = t('home.ipsum')
+        a#nav-contact-tab.nav-item.nav-link data-toggle="tab" href="#nav-contact" role="tab" = t('home.dolor')
     #nav-tabContent.tab-content.justify-content-center
       #nav-home.tab-pane.fade.show.active aria-labelledby="nav-home-tab" role="tabpanel" 
-        p Proin vel rutrum augue. Sed et ullamcorper urna. Vestibulum eget pretium mi. Duis ullamcorper ante vitae blandit condimentum. Quisque venenatis augue purus, laoreet dapibus diam pellentesque ultrices. Integer sollicitudin, ligula ut sollicitudin auctor, ipsum ipsum finibus ipsum, eu suscipit mauris libero eu dui. Aenean feugiat dictum dui ut porta.
+        p = t('home.lorem_text')
       #nav-profile.tab-pane.fade aria-labelledby="nav-profile-tab" role="tabpanel" 
-        p Nam faucibus leo a est malesuada gravida. In id accumsan justo. Donec fermentum quam ultrices, euismod orci ac, ornare neque. Donec a nulla molestie eros elementum dictum vel vitae lectus. Aenean porta varius vulputate. Nam nec maximus tellus. Praesent egestas metus purus, eu imperdiet massa vulputate et. Curabitur posuere, magna quis tempus fermentum, arcu lectus accumsan ex, a faucibus ex sem nec velit. Mauris eleifend pulvinar mauris, ut pellentesque massa gravida non. Nunc quis erat elementum felis sollicitudin sodales. Integer mi odio, ullamcorper sed erat id, rutrum tristique urna. Vestibulum at molestie diam. Donec augue dui, placerat at urna eget, blandit vestibulum nibh.
+        p = t('home.ipsum_text')
       #nav-contact.tab-pane.fade aria-labelledby="nav-contact-tab" role="tabpanel" 
-        p Donec sed orci velit. Sed suscipit, neque nec fringilla venenatis, lacus risus suscipit lacus, a sodales diam quam vitae arcu. Vivamus facilisis velit et vehicula imperdiet. Nam mollis erat ex, at lobortis elit ornare vitae. In at metus euismod, blandit massa sit amet, sollicitudin felis. Integer blandit tempor nisi, nec facilisis lorem commodo tempor. Nulla finibus eleifend pretium.
+        p = t('home.dolor_text')
 
 section.section-doctors
   .container
-    h2.heading.text-center List of our best doctors
+    h2.heading.text-center = t('home.list_of_doctors')
     .row
       - @doctors.each do |doctor|
         .col-md-4
-          .card
+          .card.main-page-card.text-center
             = link_to image_tag(doctor_avatar(doctor), class: 'card-img-top'), doctor_path(doctor)
             .card-body
               p.h4 = link_to doctor.full_name, doctor_path(doctor)
               p = doctor.specialization_name(doctor.specialization_id)
             .card-footer
-              p.stars = t('doctors.public.rating')
-              span.average-rating data-score="#{doctor.average_rating}"
+              p.average-rating data-score="#{doctor.average_rating}"
               p.small = t('doctors.public.doctor_reviews', all_reviews: doctor.reviews.count)
 
 section.section-specializations
   .container
-    h2.heading.text-center Doctors specializations
+    h2.heading.text-center = t('home.spec')
     .row
       - @specializations.each do |specialization|
-        .col-sm-3.col-md-3
-          = link_to "#{specialization.name} (#{specialization.doctors_with_active_cards.count})", specialization_path(specialization)
+        .col-xs-6.col-sm-6.col-md-3.spec
+          = link_to specialization.name, specialization_path(specialization)
+          span.badge.badge-success
+            = specialization.doctors_with_active_cards.count
 
 footer
   .container
     .row
+      .col-sm-3.col-md-3
+        i.fas.fa-hospital-symbol.fa-1x aria-hidden="true"
+        span.links
+          = link_to t('home.title'), root_path
+        p.small
+          = t('home.made')
+          br/
+          = t('home.year')
+      .col-sm-3.col-md-3
+        h5 = t('home.patients')
+        ul.list-unstyled
+          .small
+            li = link_to t('home.reg'), new_patient_registration_path
+            li = link_to t('home.log_in'), new_patient_session_path
+      .col-sm-3.col-md-3
+        h5 = t('home.doctors')
+        ul.list-unstyled
+          .small
+            li = link_to t('home.reg'), new_doctor_registration_path
+            li = link_to t('home.log_in'), new_doctor_session_path
+      .col-sm-3.col-md-3
+        h5 = t('home.contacts')
+        ul.list-unstyled
+          li
+            i.fab.fa-github.fa-1x aria-hidden="true"
+            span.links
+              = link_to t('home.git'), "https://github.com/wazzuper", class: 'small'
+          li
+            i.fab.fa-linkedin.fa-1x aria-hidden="true"
+            span.links
+              = link_to t('home.in'), "https://www.linkedin.com/in/artem-korotchenko-b65082126/", class: 'small'
           
 javascript:
   $(document).ready(function(){

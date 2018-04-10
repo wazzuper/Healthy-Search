@@ -36,8 +36,6 @@ nav.navbar {
   height: 100vh;
 }
 
-.page-intro .container { padding: 100px; }
-
 // to the top button
 
 #return-to-top {
@@ -179,42 +177,6 @@ nav.navbar {
   border-radius: 5px;
   font-weight: bold;
   padding: 9px 27px;
-}
-
-.btn.btn-outline-green {
-  background-color: transparent;
-  background-image: none;
-  border-color: #20c997;
-}
-
-.btn.btn-outline-green:hover {
-  color: #fff;
-  background-color: #20c997;
-  border-color: #20c997;
-}
-
-.btn.btn-outline-green:active {
-  color: #fff;
-  background-color: #169972;
-  border-color: #169972;
-}
-
-.btn.btn-outline-blue {
-  background-color: transparent;
-  background-image: none;
-  border-color: #039be5;
-}
-
-.btn.btn-outline-blue:hover {
-  color: #fff;
-  background-color: #039be5;
-  border-color: #039be5;
-}
-
-.btn.btn-outline-blue:active {
-  color: #fff;
-  background-color: #017fbc;
-  border-color: #017fbc;
 }
 
 .btn.btn-back {
@@ -462,16 +424,51 @@ p.h4.text-center { margin-top: 20px; }
 
 // main page
 
-.welcome-box.col-md-4 {
+.welcome-box {
+  margin-top: 150px;
   padding: 15px;
   color: white;
   box-shadow: 1px 1px 15px #444;
   background-color: rgba(31,29,15,0.54);
 }
 
-.jumbotron.search {
-  padding: 20px 10px;
-  background-color: #565a5c;
+.btn.btn-outline-green {
+  margin-right: 10px;
+  padding: 10px 15px;
+  background-color: transparent;
+  background-image: none;
+  border-color: #20c997;
+}
+
+.btn.btn-outline-green:hover {
+  color: #fff;
+  background-color: #20c997;
+  border-color: #20c997;
+}
+
+.btn.btn-outline-green:active {
+  color: #fff;
+  background-color: #169972;
+  border-color: #169972;
+}
+
+.btn.btn-outline-blue {
+  padding: 10px 15px;
+  background-color: transparent;
+  background-image: none;
+  border-color: #039be5;
+}
+
+.btn.btn-outline-blue:hover {
+  color: #fff;
+  background-color: #039be5;
+  border-color: #039be5;
+}
+
+.btn.btn-outline-blue:active {
+  color: #fff;
+  background-color: #017fbc;
+  border-color: #017fbc;
 }
 
 .btn-search {
@@ -493,26 +490,45 @@ p.h4.text-center { margin-top: 20px; }
   outline: none;
 }
 
-.row .col-md-4 .card { margin-top: 20px; }
+.card.main-page-card { margin-top: 20px; }
+.card.main-page-card:hover { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19); }
 
-.row .col-md-4 .card:hover { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19); }
+p.h4 a { color: #565a5c; }
 
-p.h4 a {
-  color: #565a5c;
+p.h4 a:hover {
+  color: #a2a2a2;
   text-decoration: none;
 }
 
-p.h4 a:hover { color: #a2a2a2; }
+.spec a { color: #565a5c; }
 
-.row .col-md-3 a {
-  color: #565a5c;
+.spec a:hover {
+  color: #a2a2a2;
   text-decoration: none;
 }
 
-.row .col-md-3 a:hover { color: #a2a2a2; }
+span.badge.badge-success { margin-left: 5px; }
 
 footer {
-  padding: 40px 0;
+  padding: 20px 0;
   background-color: #565a5c;
   color: #a2a2a2;
 }
+
+.row .col-md-3 span a { color: #a2a2a2; }
+
+.row .col-md-3 span a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+span.links { margin-left: 5px; }
+
+li a { color: #a2a2a2; }
+
+li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.badge-success { background-color: #20c997; }

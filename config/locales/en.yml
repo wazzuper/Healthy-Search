@@ -147,3 +147,43 @@ en:
     log_out: 'Log out'
     log_in: 'Log in'
     registration: 'Registration'
+  home:
+    title: 'Healthy Search'
+    made: 'Made by Artem Korotchenko'
+    year: '© 2018'
+    patients: 'Patients'
+    doctors: 'Doctors'
+    contacts: 'Contacts'
+    git: 'GitHub'
+    in: 'LinkedIn'
+    spec: 'Doctors specializations'
+    list_of_doctors: 'List of our best doctors'
+    lorem: 'Lorem'
+    lorem_text: 'Proin vel rutrum augue. Sed et ullamcorper urna. Vestibulum eget pretium mi.
+      Duis ullamcorper ante vitae blandit condimentum. Quisque venenatis augue purus,
+      laoreet dapibus diam pellentesque ultrices. Integer sollicitudin, ligula ut sollicitudin auctor,
+      ipsum ipsum finibus ipsum, eu suscipit mauris libero eu dui. Aenean feugiat dictum dui ut porta.'
+    ipsum: 'Ipsum'
+    ipsum_text: 'Nam faucibus leo a est malesuada gravida. In id accumsan justo. Donec fermentum quam ultrices,
+      euismod orci ac, ornare neque. Donec a nulla molestie eros elementum dictum vel vitae lectus.
+      Aenean porta varius vulputate. Nam nec maximus tellus. Praesent egestas metus purus,
+      eu imperdiet massa vulputate et. Curabitur posuere, magna quis tempus fermentum,
+      arcu lectus accumsan ex, a faucibus ex sem nec velit. Mauris eleifend pulvinar mauris,
+      ut pellentesque massa gravida non. Nunc quis erat elementum felis sollicitudin sodales.
+      Integer mi odio, ullamcorper sed erat id, rutrum tristique urna. Vestibulum at molestie diam.
+      Donec augue dui,'
+    dolor: 'Dolor'
+    dolor_text: 'Donec sed orci velit. Sed suscipit, neque nec fringilla venenatis, lacus risus suscipit lacus,
+      a sodales diam quam vitae arcu. Vivamus facilisis velit et vehicula imperdiet.
+      Nam mollis erat ex, at lobortis elit ornare vitae. In at metus euismod, blandit massa sit amet,
+      sollicitudin felis. Integer blandit tempor nisi, nec facilisis lorem commodo tempor.
+      Nulla finibus eleifend pretium.'
+    cool: 'Why Healthy Search is so cool?'
+    search: 'Search'
+    find: 'Find your doctor'
+    reg: 'Registration'
+    log_in: 'Log in'
+    log_out: 'log_out'
+    profile: 'My profile'
+    trusted: 'Find a trusted doctor to'
+    healthy: 'make your life healthy'
