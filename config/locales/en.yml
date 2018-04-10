@@ -187,3 +187,8 @@ en:
     profile: 'My profile'
     trusted: 'Find a trusted doctor to'
     healthy: 'make your life healthy'
+  errors:
+    not_found: 'Page not found'
+    message: 'Whoops we couldn’t find the page you were looking for!'
+    title: 'Whoops!'
+    warning: 'Something went wrong on our end, we’ve been informed of this issue!'

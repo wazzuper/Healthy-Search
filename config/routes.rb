@@ -57,4 +57,7 @@ Rails.application.routes.draw do
 
   resources :appointments, only: [:new, :create, :show]
   resources :specializations, only: [:index, :show]
+
+  get '/404', to: 'errors#not_found'
+  get '/500', to: 'errors#internal_error'
 end
