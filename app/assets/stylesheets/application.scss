@@ -38,53 +38,6 @@ nav.navbar {
 
 .page-intro .container { padding: 100px; }
 
-// login box and search form
-
-.welcome-box.col-md-4 {
-  padding: 15px;
-  color: white;
-  box-shadow: 1px 1px 15px #444;
-  background-color: rgba(31,29,15,0.54);
-}
-
-.dropdown { width: 100%; }
-
-// .search-field input[type=text] {
-//   padding: 0px 10px;
-//   border-width: thin;
-//   height: 40px;
-//   width: 100%;
-// }
-
-// .search-field input[type=text]:hover {
-//   border: none;
-//   box-shadow: 1px 4px 15px #999;
-// }
-
-// .search-field input[type=text]:focus {
-//   border: none;
-//   outline: none;
-//   box-shadow: 1px 4px 15px #999;
-// }
-
-.btn-search {
-  height: 28px;
-  border: none;
-  background-color: #20c997;
-  color: #fff;
-}
-
-.btn-search:hover {
-  background-color: #22e3aa;
-  box-shadow: 1px 4px 15px #999;
-  cursor: pointer;
-}
-
-.btn-search:focus, .btn-search:active {
-  box-shadow: none;
-  outline: none;
-}
-
 // to the top button
 
 #return-to-top {
@@ -509,6 +462,39 @@ p.h4.text-center { margin-top: 20px; }
 
 // main page
 
+.welcome-box.col-md-4 {
+  padding: 15px;
+  color: white;
+  box-shadow: 1px 1px 15px #444;
+  background-color: rgba(31,29,15,0.54);
+}
+
+.jumbotron.search {
+  padding: 20px 10px;
+  background-color: #565a5c;
+}
+
+.btn-search {
+  margin-top: 15px;
+  padding: 5px 15px;
+  border: none;
+  background-color: #20c997;
+  color: #fff;
+}
+
+.btn-search:hover {
+  background-color: #22e3aa;
+  box-shadow: 1px 4px 15px #999;
+  cursor: pointer;
+}
+
+.btn-search:focus, .btn-search:active {
+  box-shadow: none;
+  outline: none;
+}
+
+.row .col-md-4 .card { margin-top: 20px; }
+
 .row .col-md-4 .card:hover { box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 20px 0 rgba(0, 0, 0, 0.19); }
 
 p.h4 a {
@@ -524,3 +510,9 @@ p.h4 a:hover { color: #a2a2a2; }
 }
 
 .row .col-md-3 a:hover { color: #a2a2a2; }
+
+footer {
+  padding: 40px 0;
+  background-color: #565a5c;
+  color: #a2a2a2;
+}

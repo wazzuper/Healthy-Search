@@ -17,18 +17,19 @@ header
             = link_to 'Log out', destroy_patient_session_path, method: :delete, class: 'btn btn-outline-blue' if current_patient
           - else
             = link_to 'Log in', login_page_path, class: 'btn btn-outline-green'
-            = link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue'          
+            = link_to 'Registration', registration_page_path, class: 'btn btn-outline-blue'
 section.section-search
   .container
     h2.heading.text-center Find your doctor
-    = form_tag specializations_path, method: :get do |f|
-      .row
-        .col-md-6.offset-md-3.search-field
-          .row
-            .col-md-9.col-sm-9
-              = select_tag :search, options_for_select(get_specializations, params[:search]), class: 'dropdown'
-            .col-md-3.col-sm-3.text-right
-              = submit_tag 'Search', class: 'btn-search'
+    .row
+      .col-md-6.offset-md-3
+        .jumbotron.search
+          = form_tag specializations_path, method: :get
+            .row
+              .col-md-12.d-flex.justify-content-center
+                = select_tag :search, options_for_select(get_specializations, params[:search]), class: 'dropdown'
+              .col-md-12.d-flex.justify-content-center  
+                = submit_tag 'Search', class: 'btn-search'
 
 section.section-benefits
   .container
@@ -67,8 +68,12 @@ section.section-specializations
     h2.heading.text-center Doctors specializations
     .row
       - @specializations.each do |specialization|
-        .col-md-3
+        .col-sm-3.col-md-3
           = link_to "#{specialization.name} (#{specialization.doctors_with_active_cards.count})", specialization_path(specialization)
+
+footer
+  .container
+    .row
           
 javascript:
   $(document).ready(function(){
