@@ -11,19 +11,6 @@ class Doctor < ApplicationRecord
   has_one :address, dependent: :destroy
   belongs_to :specialization
 
-  def self.three_best_doctors
-    best_doctors_with_reviews = {}
-    Doctor.all.each do |doctor|
-      if doctor.reviews.count > 0 && doctor.average_rating >= 4
-        best_doctors_with_reviews[doctor] = doctor.average_rating
-      end
-    end
-
-    sorted_doctors = best_doctors_with_reviews.sort_by { |doctor, rating| rating }
-    reversed = sorted_doctors.reverse_each.to_h
-    reversed.first(3).to_h.keys
-  end
-
   def specialization_name(spec_id)
     Specialization.find_by_id(spec_id).name
   end

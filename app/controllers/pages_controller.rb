@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @specializations = Specialization.all
-    @doctors = Doctor.three_best_doctors
+    @doctors = RatingCounterService.new.get_three_best_doctors
   end
 
   def registration
