@@ -2,6 +2,7 @@
   h2.heading.text-center = t('devise.registrations.doctor_title')
   .row
     .col-md-4.offset-md-4
+      = render 'shared/devise_messages'
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .form-group
           = f.label :specialization_id
