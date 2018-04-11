@@ -11,6 +11,8 @@ class Doctor < ApplicationRecord
   has_one :address, dependent: :destroy
   belongs_to :specialization
 
+  validates :full_name, :email, presence: true
+
   def specialization_name(spec_id)
     Specialization.find_by_id(spec_id).name
   end
