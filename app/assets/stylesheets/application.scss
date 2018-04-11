@@ -524,9 +524,9 @@ footer {
 
 span.links { margin-left: 5px; }
 
-li a { color: #a2a2a2; }
+.list-unstyled li a { color: #a2a2a2; }
 
-li a:hover {
+.list-unstyled li a:hover {
   color: #fff;
   text-decoration: none;
 }

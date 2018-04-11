@@ -64,7 +64,7 @@ section.section-doctors
 section.section-specializations
   .container
     h2.heading.text-center = t('home.spec')
-    .row
+    .row.text-center
       - @specializations.each do |specialization|
         .col-xs-6.col-sm-6.col-md-3.spec
           = link_to specialization.name, specialization_path(specialization)
@@ -73,7 +73,7 @@ section.section-specializations
 
 footer
   .container
-    .row
+    .row.text-center
       .col-sm-3.col-md-3
         i.fas.fa-hospital-symbol.fa-1x aria-hidden="true"
         span.links
