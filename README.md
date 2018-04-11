@@ -1,24 +1,18 @@
-# README
+# Healthy Search app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Demo site is here: [Healthy Search](https://healthy-search.herokuapp.com/)
 
-Things you may want to cover:
+---
+### First, install all gems:
 
-* Ruby version
+`bundle install`
 
-* System dependencies
+### Second, setup database and migrations
 
-* Configuration
+`rails db:setup && rails db:migrate`
 
-* Database creation
+### Last, start the server
 
-* Database initialization
+`rails server`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Go to http://localhost:3000
