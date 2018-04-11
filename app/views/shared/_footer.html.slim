@@ -1,0 +1,34 @@
+footer
+  .container
+    .row.text-center
+      .col-sm-3.col-md-3
+        i.fas.fa-hospital-symbol.fa-1x aria-hidden="true"
+        span.links
+          = link_to t('home.title'), root_path
+        p.small
+          = t('home.made')
+          br/
+          = t('home.year')
+      .col-sm-3.col-md-3
+        h5 = t('home.patients')
+        ul.list-unstyled
+          .small
+            li = link_to t('home.reg'), new_patient_registration_path
+            li = link_to t('home.log_in'), new_patient_session_path
+      .col-sm-3.col-md-3
+        h5 = t('home.doctors')
+        ul.list-unstyled
+          .small
+            li = link_to t('home.reg'), new_doctor_registration_path
+            li = link_to t('home.log_in'), new_doctor_session_path
+      .col-sm-3.col-md-3
+        h5 = t('home.contacts')
+        ul.list-unstyled
+          li
+            i.fab.fa-github.fa-1x aria-hidden="true"
+            span.links
+              = link_to t('home.git'), "https://github.com/wazzuper", class: 'small'
+          li
+            i.fab.fa-linkedin.fa-1x aria-hidden="true"
+            span.links
+              = link_to t('home.in'), "https://www.linkedin.com/in/artem-korotchenko-b65082126/", class: 'small'

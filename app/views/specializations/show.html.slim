@@ -2,3 +2,5 @@
   h2.heading.text-center = t('search.find_by')
   .row
     = render partial: 'all_doctors', locals: { doctors: @doctors.paginate(page: @page_params, per_page: 10) }
+
+= render 'shared/footer'
