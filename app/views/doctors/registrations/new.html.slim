@@ -3,7 +3,6 @@
   .row
     .col-md-4.offset-md-4
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render 'shared/devise_messages'
         .form-group
           = f.label :specialization_id
           = f.select :specialization_id, options_from_collection_for_select(Specialization.all, :id, :name), class: 'form-control'
