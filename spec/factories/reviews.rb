@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :review do
-    rating 1
-    comment "MyText"
-    patient ""
-    doctor ""
-    appointment ""
+    rating { rand(1..5) }
+    comment 'Test feedback'
+    patient
+    doctor
+    appointment
   end
 end
