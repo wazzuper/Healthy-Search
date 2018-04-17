@@ -8,7 +8,5 @@ FactoryBot.define do
     bio 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     price { rand(15..50) }
     phone_number { Faker::PhoneNumber.phone_number }
-    address
-    active true
   end
 end

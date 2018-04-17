@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :visiting_hour do
     time Time.now
-    doctor
+    visiting_day
   end
 end
