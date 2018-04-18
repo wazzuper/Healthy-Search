@@ -48,6 +48,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
   gem 'database_cleaner'
+  gem 'launchy'
+  gem 'capybara-webkit'
 end
 
 group :development do
