@@ -1,10 +1,6 @@
 FactoryBot.define do
   factory :visiting_hour do
-    time do
-      time = Time.now
-      time = Time.now + 3600 if VisitingHour.exists?(time: time)
-      time
-    end
+    sequence(:time) { |n| Time.now + n * 3600 }
     visiting_day
   end
 end
