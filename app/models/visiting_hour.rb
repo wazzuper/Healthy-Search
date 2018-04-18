@@ -6,4 +6,5 @@ class VisitingHour < ApplicationRecord
   validates :time, uniqueness: { scope: :visiting_day_id }
 
   default_scope { order(time: :asc) }
+  scope :availabe_hours, -> { left_outer_joins(:appointment).where(appointments: { patient_id: nil }) }
 end

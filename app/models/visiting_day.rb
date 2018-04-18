@@ -7,12 +7,4 @@ class VisitingDay < ApplicationRecord
   validates :date, presence: true
 
   default_scope { order(date: :asc) }
-
-  def check_available_hours(day)
-    available_hours = day.visiting_hours.count
-    day.visiting_hours.each do |h|
-      available_hours -= 1 if h.appointment
-    end
-    available_hours
-  end
 end

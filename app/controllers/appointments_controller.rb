@@ -9,8 +9,8 @@ class AppointmentsController < ApplicationController
     if params[:date].eql?('')
       redirect_back(fallback_location: request.referer, alert: 'You must specify a date.')
     else
-      @visiting_day = Doctor.find(params[:doctor_id]).visiting_days.find_by_date(params[:date])
       @doctor = Doctor.find(params[:doctor_id])
+      @visiting_day = Doctor.find(params[:doctor_id]).visiting_days.find_by_date(params[:date])
 
       unless @visiting_day.nil?
         @appointment = Appointment.new(
@@ -18,7 +18,6 @@ class AppointmentsController < ApplicationController
           doctor_id: params[:doctor_id],
           visiting_day_id: @visiting_day.id
         )
-        @appointments_with_booked_hours = Appointment.find_booked_hours
       end
     end
   end
