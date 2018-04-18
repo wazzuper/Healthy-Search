@@ -50,6 +50,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'capybara-webkit'
+  gem 'letter_opener'
 end
 
 group :development do
