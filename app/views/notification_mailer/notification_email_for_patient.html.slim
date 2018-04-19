@@ -1,0 +1,4 @@
+p
+  | Dear #{@patient.full_name}!
+p Don't forget about your appointment with the doctor #{@appointment.doctor.full_name}.
+p = link_to t('mailer.check'), appointment_url(@appointment)
