@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
       redirect_back(fallback_location: request.referer, alert: 'You must specify a date.')
     else
       @doctor = Doctor.find(params[:doctor_id])
-      @visiting_day = Doctor.find(params[:doctor_id]).visiting_days.find_by_date(params[:date])
+      @visiting_day = @doctor.visiting_days.find_by_date(params[:date])
 
       unless @visiting_day.nil?
         @appointment = Appointment.new(
@@ -24,8 +24,10 @@ class AppointmentsController < ApplicationController
 
   def create
     appointment = Appointment.new(appointment_params)
+    doctor = appointment.doctor
 
     if appointment.save
+      NotificationMailer.notification_email_for_doctor(doctor, appointment).deliver_now
       flash[:notice] = 'Done! See you!'
       redirect_to appointment_path(appointment)
     else
