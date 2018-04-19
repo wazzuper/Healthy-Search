@@ -6,8 +6,8 @@ RSpec.describe NotificationMailer, type: :mailer do
     let(:mail) { NotificationMailer.notification_email_for_doctor(appointment.doctor, appointment) }
 
     it 'renders the headers' do
-      expect(mail.from).to eq(['no-reply@healthy-search.com'])
-      expect(mail.subject).to eq('Patient make an appointment!')
+      expect(mail.from).to eq([I18n.t('mailer.default')])
+      expect(mail.subject).to eq(I18n.t('mailer.make_appointment'))
       expect(mail.to).to eq([appointment.doctor.email])
     end
 

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no-reply@healthy-search.com'
+  default from: I18n.t('mailer.default')
   layout 'mailer'
 end

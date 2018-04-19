@@ -192,3 +192,7 @@ en:
     message: 'Whoops we couldn’t find the page you were looking for!'
     title: 'Whoops!'
     warning: 'Something went wrong on our end, we’ve been informed of this issue!'
+  mailer:
+    default: 'no-reply@healthy-search.com'
+    make_appointment: 'Patient make an appointment!'
+    check: 'Check'
