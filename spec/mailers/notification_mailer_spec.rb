@@ -23,4 +23,27 @@ RSpec.describe NotificationMailer, type: :mailer do
       expect(mail.body.encoded).to match("http://localhost:3000/appointments/#{appointment.id}")
     end
   end
+
+  describe '#notification_email_for_patient' do
+    let(:appointment) { create(:appointment) }
+    let(:mail) { NotificationMailer.notification_email_for_patient(appointment.patient, appointment) }
+
+    it 'renders the headers' do
+      expect(mail.from).to eq([I18n.t('mailer.default')])
+      expect(mail.subject).to eq(I18n.t('mailer.tomorrow'))
+      expect(mail.to).to eq([appointment.patient.email])
+    end
+
+    it 'renders the doctor\'s name' do
+      expect(mail.body.encoded).to match(appointment.doctor.full_name)
+    end
+
+    it 'renders the patient\'s name' do
+      expect(mail.body.encoded).to match(appointment.patient.full_name)
+    end
+
+    it 'renders the appointment\'s url' do
+      expect(mail.body.encoded).to match("http://localhost:3000/appointments/#{appointment.id}")
+    end
+  end
 end
