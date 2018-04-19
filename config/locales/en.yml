@@ -195,4 +195,5 @@ en:
   mailer:
     default: 'no-reply@healthy-search.com'
     make_appointment: 'Patient make an appointment!'
+    tomorrow: 'Tommorow you have a meeting with a doctor!'
     check: 'Check'
