@@ -8,6 +8,6 @@ class NotificationMailer < ApplicationMailer
   def notification_email_for_patient(patient, appointment)
     @patient = patient
     @appointment = appointment
-    mail(to: @patient.email, subject: 'Tommorow you have a meeting with a doctor!')
+    mail(to: @patient.email, subject: I18n.t('mailer.tomorrow'))
   end
 end

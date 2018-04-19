@@ -25,9 +25,11 @@ class AppointmentsController < ApplicationController
   def create
     appointment = Appointment.new(appointment_params)
     doctor = appointment.doctor
+    patient = appointment.patient
 
     if appointment.save
       NotificationMailer.notification_email_for_doctor(doctor, appointment).deliver_now
+      NotificationJob.set(wait_until: Time.parse(appointment.date.to_s) - 3600 * 24).perform_later(patient, appointment)
       flash[:notice] = 'Done! See you!'
       redirect_to appointment_path(appointment)
     else
