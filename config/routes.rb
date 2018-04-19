@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: '/sidekiq'
+
   root 'pages#home'
 
   get 'registration_page', to: 'pages#registration', as: :registration_page
