@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :address do
-    place "MyString"
-    latitude 1.5
-    longitude 1.5
-    doctor nil
+    place '12629 Riverside Drive, North Hollywood'
+    latitude 34.1580146
+    longitude -118.4084562
+    doctor
   end
 end

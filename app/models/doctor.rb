@@ -13,6 +13,10 @@ class Doctor < ApplicationRecord
 
   validates :full_name, :email, presence: true
 
+  def self.three_best_doctors
+    Doctor.joins(:reviews).group('doctors.id').order('AVG(reviews.rating) DESC').limit(3)
+  end
+
   def specialization_name(spec_id)
     Specialization.find_by_id(spec_id).name
   end
